@@ -1,0 +1,118 @@
+:root {
+    --cor-bg: #fff;
+    --cor-primaria: #00A7B0;
+    --cor-secundaria: #B2F5BF;
+    --cor-terciaria: #BFD5E2;
+    --cor-quarternaria: #C7EBF0;
+    --cor-texto: #5d8c93;
+    --cor-bg2: #e7f7f9;
+    
+  }
+html{
+    /* width: 100%;
+    margin: 0px;
+    padding: 0px; */
+}
+body {
+    /* width: 100%;
+    margin: 0px;
+    padding: 0px; */
+    background-color: var(--cor-bg);
+}
+
+header{
+    height: 137px;
+    /* border: 1px solid black; */
+    display: flex;
+}
+
+header img{
+    margin-left: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 202px;
+    /* width: 20vw; */
+    height: 36px;
+}
+
+header button{
+    background-color: #fff;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    padding: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;    
+    width: 50px;
+    height: 50px;
+    transform: rotateY(180deg);
+}
+button:hover{
+    transform: rotateY(180deg);
+}
+header button img{
+    width: 29px;
+    height: 29px;
+    transform: rotate(0deg);
+    transition: transform 0.8s;
+}
+
+header button img:hover{    
+    cursor: pointer;
+}
+header button img:active{
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+#menu{
+    margin: 0px 40px 20px 40px;
+    padding: 10px;
+    display: none;
+    height: 0;
+    transform:  max-height 0.8s ease;
+    /* border: 1px solid black; */
+}
+#bemvindo{
+    width: (100% - 80px);
+    padding: 0px 40px;
+    display: flex;
+}
+#bemvindo .row{
+    display: flex;    
+    padding: 40px;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: var(--cor-bg2);
+}
+#bemvindo .col{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#bemvindo .row .col img{
+    height: 200px;
+    margin: auto;
+    border: 4px solid var(--cor-terciaria);
+    border-radius: 50%;
+}
+#bemvindo div h1{    
+    color: var(--cor-primaria);
+    font-family: 'Nunito', sans-serif;
+    font-size: 24pt;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#bemvindo div p{
+    margin: 30px auto auto auto;
+    padding: 20px;    
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color: var(--cor-texto);
+    text-align: justify;
+    text-indent: 30px;            
+    max-width: 40vw;
+
+}
