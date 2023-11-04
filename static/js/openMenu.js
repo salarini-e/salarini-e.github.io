@@ -1,14 +1,14 @@
-const botaoMenu = document.querySelector('#botaoMenu')
+const botaoMenu = document.querySelector('#botaoMenu');
 const nav = document.querySelector("#menu");
-let forOpen=true
+let isOpen = false;
+
 botaoMenu.addEventListener("click", function() {
-    if (open){
-        nav.style.display = "flex"; 
-        nav.style.height="auto"
-        open=false
-    }else{
-        nav.style.height="0px"
-        nav.style.display = "none"; 
-        open=true
+    if (!isOpen) {
+        nav.classList.add('show');
+        isOpen = true;
+    } else {
+        nav.classList.remove('show');
+        isOpen = false;
     }
-  });
+});
+    
