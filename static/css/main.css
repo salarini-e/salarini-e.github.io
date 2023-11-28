@@ -364,6 +364,11 @@ footer {
         margin-bottom: 10px;
     }
 }
+@media (max-width: 1013px) {
+    .row{
+        flex-direction: column;
+    }
+}
 @media (max-width: 400px){
     #menu .opcao{
         margin: 0 auto 10px auto;
