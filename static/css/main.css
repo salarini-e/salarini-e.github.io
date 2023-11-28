@@ -385,8 +385,8 @@ footer {
     header button{
         margin: auto !important;
     }
-    #bem-vindo{
+    #bem-vindo, #curriculo{
         width: 100%;
-        padding: 0 auto;
+        padding: 0 !important;
     }
 }
