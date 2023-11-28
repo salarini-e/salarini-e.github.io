@@ -19,11 +19,12 @@ header{
     height: 137px;
     display: flex;
 }
-
-header img{
+header a{
     margin-left: 50px;
     margin-top: auto;
     margin-bottom: auto;
+}
+header a img{
     width: 202px;
     height: 36px;
 }
@@ -65,12 +66,13 @@ header button{
     padding: 0;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: auto;    
+    margin-left: auto;  
+    margin-right: 40px;  
     width: 50px;
     height: 50px;
     transform: rotateY(180deg);
 }
-button:hover{
+header button:hover{
     transform: rotateY(180deg);
 }
 header button img{
@@ -248,6 +250,24 @@ header button img:active{
     text-align: center;
     font-size: 16px;
 }
+#curriculo{
+    width: (100% - 80px);
+    padding: 0px 40px;
+    display: flex;
+}
+#curriculo .row{
+    display: flex;    
+    padding: 20px 40px;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: var(--cor-bg2);
+}
+#curriculo.col{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 #politica-de-privacidade{
     width: (100% - 80px);
     padding: 0px 40px;
@@ -334,4 +354,34 @@ footer {
 .footer-bottom {
     margin-top: 20px;
     text-align: center;
+}
+/* media query for 1013 */
+@media (max-width: 1013px) {
+    #menu{
+        flex-direction: column;        
+    }
+    #menu .opcao{
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 400px){
+    #menu .opcao{
+        margin: 0 auto 10px auto;
+    }
+}
+@media (max-width: 380px){
+    header{
+        text-align: center;
+        flex-direction: column;
+    }
+    header a{
+        margin: auto !important;
+    }
+    header button{
+        margin: auto !important;
+    }
+    #bem-vindo{
+        width: 100%;
+        padding: 0 auto;
+    }
 }

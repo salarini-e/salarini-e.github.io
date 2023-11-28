@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - Salarini-e</title>
+    <title>
+        Contato - Salarini-E
+    </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/main.css">
 </head>
-
 <body>
     <header>
-        <img src="/static/images/logo_aqua.png" alt="">
+        <a href="/">
+            <img src="/static/images/logo_aqua.png" alt="">
+        </a>
         <button>
             <img id="botaoMenu" src="/static/images/icons/menu-bar.png" alt="">
         </button>
     </header>
-
     <main>
         <div id="menu">
             <a href="#" class="opcao">
@@ -40,16 +41,27 @@
                 Ensino
             </a>
         </div>
-        <section id="sobre">
-            <div class="row">
+        <section id="contato">
+            <div class="row">                
                 <div class="col">
-                    <h1>Sobre</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ex, possimus consequuntur dolores accusamus, doloremque ullam officiis voluptatem molestiae, praesentium perferendis esse similique architecto unde voluptate quae accusantium iure illo.</p>
+                    <h1>Entre em Contato</h1>
+                    <p>Se você tiver alguma dúvida ou precisar de mais informações:</p>
+                    <form class="contact-form mt-2">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu E-mail" required>
+                        <textarea placeholder="Sua Mensagem" required></textarea>
+                        <button type="submit" class="btn mt-1">Enviar</button>
+                    </form>
+                    <div class="contact-info">
+                        <p>Você também pode nos contatar através do e-mail: <br><br>lecsalarini@gmail.com</p>
+                    </div>
+                    <a href="./index.html" class="btn m-auto mt-5">
+                        Voltar ao início
+                    </a> 
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -58,9 +70,9 @@
                     <a href="#" class="opcao">Contato</a>
                     <a href="./politica-de-privacidade.html" class="opcao">Política de Privacidade</a>
                 </div>
-                <div class="contact-info">
-                    <p>&copy; 2023 Salarini-e | Todos os direitos reservados</p>
-                </div>
+                    <div class="contact-info">
+                        <p>&copy; 2023 Salarini-e | Todos os direitos reservados</p>
+                    </div>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -71,8 +83,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>    
     <script src="/static/js/openMenu.js"></script>
 </body>
-
 </html>
