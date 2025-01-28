@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entenda as vantagens de usar a Programação Orientada a Objetos (POO) em vez de uma abordagem procedural para organizar o código em projetos de software.">
+    <title>De Procedural a Orientado a Objetos: A Transformação do Seu Código</title>
+</head>
+<body>
+    <header>
+        <h1>De Procedural a Orientado a Objetos: A Transformação do Seu Código</h1>
+    </header>
+
+    <article>
+        <section>
+            <h2>O Problema da Abordagem Procedural</h2>
+            <p>A programação procedural organiza o código em funções ou procedimentos que operam sobre dados, seguindo uma sequência linear de execução. Apesar de ser direta e eficiente para problemas pequenos, essa abordagem apresenta limitações quando o projeto cresce em escala ou complexidade. Frequentemente, isso resulta em:</p>
+            <ul>
+                <li>Código difícil de manter e entender;</li>
+                <li>Redundância e repetição de lógica;</li>
+                <li>Maior risco de efeitos colaterais indesejados ao modificar funções ou dados globais.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Os Benefícios da Programação Orientada a Objetos (POO)</h2>
+            <p>Por outro lado, a POO organiza o código em objetos que representam entidades do mundo real, cada um com seus próprios atributos (dados) e métodos (funções). Essa abordagem oferece:</p>
+            <ul>
+                <li><strong>Modularidade:</strong> Cada classe ou objeto possui responsabilidades bem definidas, facilitando a organização do projeto;</li>
+                <li><strong>Reutilização:</strong> Componentes podem ser reaproveitados em diferentes partes do projeto ou até em projetos futuros;</li>
+                <li><strong>Manutenção facilitada:</strong> Alterações em um objeto não afetam outros componentes do sistema;</li>
+                <li><strong>Segurança:</strong> O encapsulamento protege os dados e reduz o risco de erros indesejados;</li>
+                <li><strong>Escalabilidade:</strong> Projetos grandes se beneficiam da estrutura mais clara e organizada.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Transformando o Código: Um Exemplo Prático</h2>
+            <p>Considere um script procedural como o seguinte:</p>
+            <pre><code>function createColumn(id, name) {
+    // Lógica para criar uma coluna
+}
+
+function addCard(columnId, cardId, taskName) {
+    // Lógica para adicionar um cartão
+}
+
+// Funções independentes operando sobre dados</code></pre>
+
+            <p>Ao aplicar a POO, o código poderia ser reestruturado assim:</p>
+            <pre><code>class Column {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+        this.cards = [];
+    }
+
+    addCard(card) {
+        this.cards.push(card);
+    }
+}
+
+class Card {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}</code></pre>
+
+            <p>Agora, as responsabilidades estão encapsuladas nas classes <code>Column</code> e <code>Card</code>, tornando o código mais organizado e fácil de entender.</p>
+        </section>
+
+        <section>
+            <h2>Por Que Adotar a POO?</h2>
+            <p>Adotar a POO vai além de uma mudança de paradigma; é uma forma de construir uma base sólida e escalável para suas aplicações. Segundo o artigo da <a href="https://www.macoratti.net/14/06/oop_proc.htm" target="_blank" rel="noopener noreferrer">Macoratti.net</a>, a POO permite lidar com projetos complexos de forma mais eficiente, graças ao encapsulamento, herança e polimorfismo.</p>
+        </section>
+
+        <section>
+            <h2>Conclusão</h2>
+            <p>Se você está iniciando ou buscando evoluir na carreira de desenvolvimento, entender e aplicar a POO é um passo crucial. Essa abordagem não apenas organiza seu código de maneira mais lógica, mas também torna o trabalho em equipe mais eficiente e menos propenso a erros. Está pronto para transformar o seu código?</p>
+        </section>
+    </article>
+
+    <footer>
+        <p>Publicado por Eduardo Salarini | 2025</p>
+    </footer>
+</body>
+</html>

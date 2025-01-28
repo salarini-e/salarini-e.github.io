@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprenda a usar Type Hints no Python para melhorar a legibilidade e manutenção do código.">
+    <meta name="keywords" content="Python, Type Hints, Tipagem, Programação, Desenvolvimento">
+    <meta name="author" content="Eduardo Salarini">
+    <title>Entenda Type Hints no Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: #0077cc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #0077cc;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: monospace;
+            color: #c7254e;
+        }
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #0077cc;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Entenda Type Hints no Python</h1>
+    </header>
+    <div class="container">
+        <p>O Python, apesar de ser uma linguagem dinamicamente tipada, permite o uso de <strong>type hints</strong> para melhorar a legibilidade do código e ajudar ferramentas de análise estática. Vamos explorar como usar type hints e ver exemplos práticos que você pode aplicar no seu dia a dia!</p>
+
+        <h2>O que são Type Hints?</h2>
+        <p>Type hints são anotações que indicam os tipos esperados para variáveis, parâmetros e valores de retorno de funções. Eles foram introduzidos no Python 3.5 através do módulo <code>typing</code> e, desde então, têm sido amplamente utilizados em projetos para tornar o código mais robusto e autodocumentado.</p>
+
+        <p>Essas anotações não alteram o comportamento do código em tempo de execução, mas podem ser validadas por ferramentas como <a href="https://mypy-lang.org/" target="_blank">MyPy</a>, ajudando a detectar inconsistências.</p>
+
+        <h2>Exemplos Práticos de Type Hints</h2>
+
+        <h3>1. Função com Tipagem Básica</h3>
+        <p>Em uma função simples que soma dois números inteiros, podemos usar type hints para especificar os tipos esperados:</p>
+        <pre><code>def soma(a: int, b: int) -> int:
+    """
+    Soma dois números inteiros.
+
+    :param a: Primeiro número inteiro.
+    :param b: Segundo número inteiro.
+    :return: Resultado da soma.
+    """
+    return a + b
+
+resultado = soma(5, 10)
+print(resultado)  # Saída: 15</code></pre>
+
+        <h3>2. Trabalhando com Listas</h3>
+        <p>Quando lidamos com coleções, como listas, podemos especificar o tipo dos elementos:</p>
+        <pre><code>from typing import List
+
+def calcular_media(notas: List[float]) -> float:
+    """
+    Calcula a média de uma lista de notas.
+
+    :param notas: Lista de notas (valores float).
+    :return: Média das notas.
+    """
+    return sum(notas) / len(notas)
+
+notas = [8.5, 9.0, 7.0, 6.5]
+media = calcular_media(notas)
+print(f"Média: {media:.2f}")  # Saída: Média: 7.75</code></pre>
+
+        <h3>3. Parâmetros Opcionais</h3>
+        <p>Para parâmetros opcionais, usamos o tipo <code>Optional</code>:</p>
+        <pre><code>from typing import Optional
+
+def saudacao(nome: Optional[str] = None) -> str:
+    """
+    Retorna uma saudação personalizada ou genérica.
+
+    :param nome: Nome da pessoa (opcional).
+    :return: Saudação.
+    """
+    if nome:
+        return f"Olá, {nome}!"
+    return "Olá, visitante!"
+
+print(saudacao("Eduardo"))  # Saída: Olá, Eduardo!
+print(saudacao())  # Saída: Olá, visitante!</code></pre>
+
+        <h3>4. Usando Union para Tipos Múltiplos</h3>
+        <p>Se um parâmetro pode ter mais de um tipo, utilizamos <code>Union</code>:</p>
+        <pre><code>from typing import Union
+
+def processar_dado(dado: Union[int, str]) -> str:
+    """
+    Processa um dado que pode ser inteiro ou string.
+
+    :param dado: Dado a ser processado.
+    :return: Descrição do dado.
+    """
+    if isinstance(dado, int):
+        return f"Número recebido: {dado}"
+    return f"Texto recebido: {dado}"
+
+print(processar_dado(42))  # Saída: Número recebido: 42
+print(processar_dado("Olá"))  # Saída: Texto recebido: Olá</code></pre>
+
+        <h3>5. Funções Assíncronas com Tipagem</h3>
+        <p>Funções assíncronas também podem se beneficiar de type hints:</p>
+        <pre><code>import asyncio
+from typing import Coroutine
+
+async def busca_dados(url: str) -> str:
+    """
+    Simula uma requisição assíncrona para buscar dados.
+
+    :param url: URL a ser acessada.
+    :return: Dados simulados.
+    """
+    await asyncio.sleep(1)  # Simula tempo de resposta
+    return f"Dados de {url}"
+
+async def main():
+    dados = await busca_dados("https://exemplo.com")
+    print(dados)
+
+asyncio.run(main())  # Saída: Dados de https://exemplo.com</code></pre>
+
+        <h2>Benefícios do Uso de Type Hints</h2>
+        <ul>
+            <li>Melhora a legibilidade e a compreensão do código.</li>
+            <li>Facilita a detecção de erros por ferramentas de análise estática.</li>
+            <li>Ajuda na documentação automática e autocompletar em IDEs.</li>
+        </ul>
+
+        <h2>Conclusão</h2>
+        <p>Type hints são uma ferramenta poderosa para escrever códigos mais claros, seguros e fáceis de manter. Adote essa prática nos seus projetos e experimente o impacto positivo na qualidade do seu desenvolvimento!</p>
+    </div>
+    <!-- <footer>
+        <p>&copy; 2025 - Blog do Eduardo Salarini</p>
+    </footer> -->
+</body>
+
+</html>

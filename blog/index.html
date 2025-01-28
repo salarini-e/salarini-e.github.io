@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduardo Salarini - Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="./blog.css">
+</head>
+<body class="scroll-container">
+  <header>
+    <div class="navbar">
+      <a href="/novo/index.html" class="btn btn-outline-primary">
+        <i class="fa-solid fa-house me-2"></i>Salarini-e
+      </a>
+      <button class="btn menu ms-auto my-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-bars"></i>                                                    
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                <span class="m-auto prosto-one-regular" style="font-size: 16pt;">
+                    Salarini-e
+                </span>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Página Inicial
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Quem sou
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Projetos abertos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Repositórios    
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/novo/blog.html">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Login
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </div>
+        </div>
+      </div>
+    </div>      
+  </header>
+  <main>
+    <div class="header">
+      <h1>Ultimos Artigos</h1>      
+    </div>
+    <div class="row">
+      <div id="articlesList" class="news">
+        
+       
+      </div>
+      <div class="fakeDivRight"></div>
+      <div class="divRight">
+        <div class="profile">
+          <img src="/novo/Imagem colada.png" alt="Perfil">
+          <div class="d-flex flex-column">
+            <span class="mt-1" style="font-weight: 600;">Eduardo Salarini</span>
+            <div class="" style="margin-top: -5px; font-size: 11pt; color: rgb(173, 173, 173);">32 anos</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="mb-0" style="color: rgb(102, 102, 102); text-align: justify;">Profissional brasileiro apaixonado por criar soluções inovadoras e experiências impactantes para os usuários.</p>
+          </div>
+        </div>
+        <hr style="border: 1px solid #adabab98; margin: 30px 0px;">
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar notícias...">
+        </div>
+      
+        <div class="highlight categories">
+          <h2>Categorias</h2>
+          <ul>
+            <li>Tecnologia</li>
+            <li>Ciência</li>
+            <li>Saúde</li>
+            <li>Entretenimento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ESalarini. Todos os direitos reservados.</p>
+    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function get_articles() {
+      fetch('http://127.0.0.1:8000/blog/get-articles/')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.status === 200) { 
+            loadArticles(data.articles);
+          } else {
+            console.error('Erro na resposta:', data);
+          }
+        })
+        .catch(error => {
+          console.error('Erro na requisição:', error);
+        });
+    }
+    function loadArticles(articles){
+      const articlesList = document.getElementById('articlesList');
+      articles.forEach(article => {
+        const articleCard = `<div class="article">
+          <div class="img">
+            <a href="/blog/artigo/?slug=${article.slug}">
+              <img src="http://localhost:8000${article.imagem}" alt="Artigo">
+            </a>
+          </div>
+          <div class="divDescrition">
+            <h1 class="title">
+              ${article.titulo}
+            </h1>
+            <h2 class="data">
+              <i class="fa-solid fa-calendar-day me-2"></i>
+              ${article.dt_inclusao}
+            </h2>
+            <p class="descrition">
+              ${article.descricao}
+            </p>
+            <hr>
+            <ul>
+              ${listCategories(article.categorias)}
+            </ul>
+          </div>
+        </div>
+        `;
+        articlesList.innerHTML += articleCard;
+      });
+    }
+    function listCategories(categories){
+      let list = '';
+      categories.forEach(category => {
+        list += `<li>${category}</li>`;
+      });
+      return list;
+    }
+    get_articles();
+    // const articles = [
+    //   {
+    //     title: "Como os Algoritmos Estão Mudando o Mundo",
+    //     description: "Entenda como os algoritmos afetam todos os aspectos da nossa vida cotidiana e o impacto que podem causar no futuro.",
+    //     imageUrl: "https://via.placeholder.com/500x300",
+    //     link: "#"
+    //   },
+
+    // ];
+
+    // const articlesList = document.getElementById('articlesList');
+
+    // Função para exibir os artigos
+    // function loadArticles() {
+    //   articles.forEach(article => {
+    //     const articleCard = `
+    //       <div class="col-md-4">
+    //         <div class="article-card">
+    //           <img src="${article.imageUrl}" alt="Artigo">
+    //           <div class="article-card-body">
+    //             <h3>${article.title}</h3>
+    //             <p>${article.description}</p>
+    //             <a href="${article.link}" class="btn btn-primary">Leia Mais</a>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     `;
+    //     articlesList.innerHTML += articleCard;
+    //   });
+    // }
+
+    // Carregar os artigos ao carregar a página
+    // window.onload = loadArticles;
+
+    // Função de filtro para pesquisa
+    // document.getElementById('searchInput').addEventListener('input', function() {
+    //   const query = this.value.toLowerCase();
+    //   const filteredArticles = articles.filter(article =>
+    //     article.title.toLowerCase().includes(query) ||
+    //     article.description.toLowerCase().includes(query)
+    //   );
+    //   articlesList.innerHTML = '';
+    //   filteredArticles.forEach(article => {
+    //     const articleCard = `
+    //       <div class="col-md-4">
+    //         <div class="article-card">
+    //           <img src="${article.imageUrl}" alt="Artigo">
+    //           <div class="article-card-body">
+    //             <h3>${article.title}</h3>
+    //             <p>${article.description}</p>
+    //             <a href="${article.link}" class="btn btn-primary">Leia Mais</a>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     `;
+    //     articlesList.innerHTML += articleCard;
+    //   });
+    // });
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

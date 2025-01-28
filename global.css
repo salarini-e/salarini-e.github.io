@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #ffc55a;
+    --secondary-color: #000;
+    --text-color: #fff;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #333;
+    background-size: cover;
+    background-position: center;
+}
+
+.scroll-container {
+    /* max-height: 400px; Define a altura máxima do container */
+    overflow-y: auto; /* Adiciona barra de rolagem apenas se necessário */
+    scrollbar-width: thin; /* Apenas Firefox: barra de rolagem fina */
+    scrollbar-color: #ffdd98 #121212; /* Apenas Firefox: cor da barra e do fundo */
+}
+
+/* Para navegadores baseados em WebKit (Chrome, Edge, Safari) */
+.scroll-container::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #121212; /* Fundo da barra de rolagem */
+    border-radius: 5px; /* Cantos arredondados */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ffdd98; /* Cor do indicador */
+    border-radius: 5px; /* Cantos arredondados */
+    border: 2px solid #121212; /* Espaço ao redor do indicador */
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background-color: #ffc55a; /* Cor no hover */
+}
+
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+h1, h2, h3, h4 {
+    color: #ffc55a;
+    font-family: 'Poppins', sans-serif;
+}
+h4{
+    color: #fcdb9f;
+    font-size: 25px;
+}
+button {
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 18px;
+}
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 30px;
+}
+.name-highlight {
+    font-family: 'Bebas Neue', sans-serif; /* Para seções marcantes */
+}
+.highlight {
+    font-family: 'Poppins', sans-serif;
+    color: #ffc55a;
+}
+header button.menu {
+    font-family: 'Montserrat', sans-serif; /* Fontes geométricas para botões */
+    color: rgb(0, 0, 0) !important;
+    border: 1px solid #000000 !important;
+    background-color: #ffc55a !important;
+    border-radius: 100% !important;
+}
+header a.btn {
+    color: #ffc55a;
+}

@@ -1,0 +1,25 @@
+header {
+    background-color: transparent;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+header .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+@media (max-width: 768px) {
+    header {
+        text-align: left;
+    }
+
+    .offcanvas-body ul li {
+        margin-bottom: 10px;
+    }
+
+    .btn-outline-primary {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
