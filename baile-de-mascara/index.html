@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baile de Máscara - Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .chat-container {
+            width: 98%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+        }
+
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .input-group {
+            display: flex;
+        }
+
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .message-text {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="text-start">
+            <h1 class="display-4">Baile de Máscara</h1>
+        </header>
+
+        <div class="chat-body" id="chat-box"></div>
+
+        <div class="input-group">
+            <input type="text" id="message-input" class="form-control" placeholder="Digite sua mensagem...">
+            <button id="send-button" class="btn btn-primary">Enviar</button>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+
+    <script>
+           const socket = io("http://192.168.3.21:5000");
+    const session_id = localStorage.getItem("session_id") || Math.random().toString(36).substr(2, 9);
+    localStorage.setItem("session_id", session_id);
+    let user = {};
+
+    async function getPersonality() {
+        const response = await fetch("http://192.168.3.21:5000/get_personality", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ session_id })
+        });
+        user = await response.json();
+        console.log(user);
+        addMessage("Sistema", `${user.avatar}`, `${user.name} entrou no baile.`);
+    }
+
+    async function loadMessages() {
+        const response = await fetch("http://192.168.3.21:5000/get_messages");
+        const messages = await response.json();
+        messages.forEach(msg => addMessage(msg.name, msg.avatar, msg.text));
+    }
+
+    function addMessage(name, avatar, text) {
+        const chatBox = document.getElementById('chat-box');
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerHTML = `
+            <img src="${avatar}" alt="Avatar" class="avatar">
+            <div class="message-text"><strong>${name}:</strong> ${text}</div>
+        `;
+        chatBox.appendChild(messageElement);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    document.getElementById('send-button').addEventListener('click', () => {
+        const input = document.getElementById('message-input');
+        const message = input.value.trim();
+
+        if (message) {
+            const data = { name: user.name, avatar: user.avatar, text: message };
+            socket.send(data);
+            input.value = '';
+        }
+    });
+
+    document.getElementById('message-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            document.getElementById('send-button').click();
+        }
+    });
+
+    socket.on("message", (data) => {
+        addMessage(data.name, data.avatar, data.text);
+    });
+
+    // Ao desconectar do servidor
+    socket.on('disconnect', () => {
+        // addMessage("Sistema", "https://via.placeholder.com/40", `${user.name} saiu do baile.`);
+        const data = { name: 'Sistema', avatar: user.avatar, text: `${user.name} saiu do baile.` };
+        socket.send(data);
+    });
+    getPersonality();
+    loadMessages();      
+
+    </script>
+</body>
+</html>

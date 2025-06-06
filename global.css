@@ -13,7 +13,9 @@ html, body {
     background-size: cover;
     background-position: center;
 }
-
+#root{
+    min-height: 100vh;
+}
 .scroll-container {
     /* max-height: 400px; Define a altura máxima do container */
     overflow-y: auto; /* Adiciona barra de rolagem apenas se necessário */

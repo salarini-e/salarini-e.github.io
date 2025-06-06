@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos de Data Science</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .project {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .project:hover {
+            background: #e3e3e3;
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Projetos de Data Science</h1>
+        
+        <div class="project" onclick="toggleDetails(this)">
+            <h2>Detecção de Fraudes em Transações Financeiras</h2>
+            <div class="details">
+                <p><strong>Descrição:</strong> Construir um modelo de classificação para detectar transações suspeitas com base em padrões de comportamento.</p>
+                <p><strong>Tech stack:</strong> Python, scikit-learn, PyCaret, SMOTE.</p>
+                <p><strong>Diferencial:</strong> Implementar um sistema que atualiza o modelo com novos dados (aprendizado contínuo).</p>
+            </div>
+        </div>
+        
+        <div class="project" onclick="toggleDetails(this)">
+            <h2>Previsão de Demanda para E-commerce</h2>
+            <div class="details">
+                <p><strong>Descrição:</strong> Usar séries temporais para prever a demanda de produtos em um e-commerce, ajudando na gestão de estoque.</p>
+                <p><strong>Tech stack:</strong> Python, statsmodels, Prophet, TensorFlow (LSTMs).</p>
+                <p><strong>Diferencial:</strong> Criar um sistema que sugere compras automáticas para otimizar estoques.</p>
+            </div>
+        </div>
+        
+        <div class="project" onclick="toggleDetails(this)">
+            <h2>Identificação de Espécies de Plantas ou Animais</h2>
+            <div class="details">
+                <p><strong>Descrição:</strong> Criar um modelo que identifica espécies de plantas ou animais a partir de imagens, auxiliando biólogos e ambientalistas.</p>
+                <p><strong>Tech stack:</strong> Python, OpenCV, TensorFlow, PlantNet, iNaturalist.</p>
+                <p><strong>Diferencial:</strong> Poderia ser usado como um app de campo para cientistas e amantes da natureza.</p>
+            </div>
+        </div>
+        
+        <div class="project" onclick="toggleDetails(this)">
+            <h2>Detecção Automática de Meteoritos</h2>
+            <div class="details">
+                <p><strong>Descrição:</strong> Criar um sistema que analisa imagens do céu em tempo real e detecta meteoritos com visão computacional.</p>
+                <p><strong>Tech stack:</strong> Python, OpenCV, TensorFlow, bases da NASA e IMO.</p>
+                <p><strong>Diferencial:</strong> Poderia contribuir com a ciência cidadã e monitoramento de impactos.</p>
+            </div>
+        </div>
+        
+        <div class="project" onclick="toggleDetails(this)">
+            <h2>Predição de Erupções Solares</h2>
+            <div class="details">
+                <p><strong>Descrição:</strong> Criar um modelo que prevê erupções solares usando dados de telescópios espaciais.</p>
+                <p><strong>Tech stack:</strong> Python, TensorFlow, dados da NASA (Solar Dynamics Observatory).</p>
+                <p><strong>Diferencial:</strong> Poderia ajudar a prever eventos que afetam satélites e redes elétricas na Terra.</p>
+            </div>
+        </div>
+        
+        <div class="project" onclick="toggleDetails(this)">
+            <h2>Análise de Radiação Cósmica e seus Efeitos na Terra</h2>
+            <div class="details">
+                <p><strong>Descrição:</strong> Criar um modelo que analisa o impacto da radiação cósmica na saúde humana e nos sistemas eletrônicos.</p>
+                <p><strong>Tech stack:</strong> Python, Pandas, TensorFlow, bases como ESA e NOAA.</p>
+                <p><strong>Diferencial:</strong> Poderia ser útil para a indústria aeroespacial e telecomunicações.</p>
+            </div>
+        </div>
+        
+        <div class="project" onclick="toggleDetails(this)">
+            <h2>Algoritmo de Previsão de Epidemias de Alergias Sazonais</h2>
+            <div class="details">
+                <p><strong>Descrição:</strong> Criar um sistema que prevê surtos de alergias sazonais com base em dados climáticos e níveis de pólen.</p>
+                <p><strong>Tech stack:</strong> Python, Pandas, scikit-learn, dados de redes meteorológicas.</p>
+                <p><strong>Diferencial:</strong> Pode ajudar pessoas alérgicas a se prepararem melhor.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleDetails(element) {
+            const details = element.querySelector('.details');
+            const isVisible = details.style.display === 'block';
+            details.style.display = isVisible ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
