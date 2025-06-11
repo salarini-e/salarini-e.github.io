@@ -34,8 +34,8 @@
     
                     </div>
                     <div class="col-1 idioma d-flex">
-                        <div class="floating-menu-pill ms-auto my-auto">
-                            <button class="btn menu" id="openMenuModal" type="button" tabindex="0">
+                        <div class="floating-menu-pill ms-auto my-auto" id="openMenuModal" >
+                            <button class="btn menu" type="button" tabindex="0">
                                 <i class="fa-solid fa-bars"></i>
                             </button>
                             <span class="floating-menu-pill-text">Menu</span>
@@ -298,22 +298,59 @@
     align-items: center;
 }
 .floating-menu-pill {
+    position: relative;
+    overflow: hidden; /* Garante que o ::before não transborde */
     display: flex;
     align-items: center;
     border: 2px solid #ffdd98;
     border-radius: 999px;
     background: transparent;
-    padding: 2px 16px 2px 6px;
+    padding: 0px 16px 0px 0px;
     gap: 0.5em;
-    height: 40px;
-    /* Mantém o botão original, só adiciona o contorno pill */
+    height: 44px;
+    cursor: pointer;
+    color: #ffdd98; /* Cor padrão do texto */
+    transition: color 0.2s;
 }
+
+/* pseudo-elemento para o preenchimento animado */
+.floating-menu-pill::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #ffc55a;
+    z-index: 0;
+    transition: width 0.3s ease;
+    border-radius: 999px;
+}
+
+/* hover: anima o preenchimento da esquerda pra direita */
+.floating-menu-pill:hover::before,
+.floating-menu-pill.active::before {
+    width: 100%;
+}
+
+/* coloca o conteúdo acima do ::before */
+.floating-menu-pill > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* hover: muda cor do texto */
+.floating-menu-pill:hover,
+.floating-menu-pill.active {
+    color: #23243a !important;
+}
+
 .floating-menu-pill .menu {
     border: none !important;
     background: transparent;
     color: inherit;
     box-shadow: none;
-    padding: 0 4px;
+    /* padding: 0 4px;*/
     font-size: 1.3em;
     outline: none;
     border-radius: 999px;
@@ -324,7 +361,7 @@
     box-shadow: 0 0 0 2px #ffdd9855;
 }
 .floating-menu-pill-text {
-    color: #ffdd98;
+    /* color: #ffdd98; */
     font-size: 1.08em;
     font-weight: 500;
     letter-spacing: 0.01em;
@@ -362,28 +399,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const openBtn = document.getElementById('openMenuModal');
     const closeBtn = document.getElementById('closeMenuModal');
     const modal = document.getElementById('menuModal');
+    const menuPill = openBtn; // floating-menu-pill
+
+    function activateMenuPill() {
+        menuPill.classList.add('active');
+    }
+    function deactivateMenuPill() {
+        // Remove com transição suave
+        menuPill.classList.remove('active');
+    }
 
     openBtn.addEventListener('click', function() {
         modal.classList.add('show');
+        activateMenuPill();
         // For re-triggering animation
         const content = modal.querySelector('.custom-modal-content');
         content.style.animation = 'none';
         void content.offsetWidth; // trigger reflow
         content.style.animation = '';
     });
-    closeBtn.addEventListener('click', function() {
+    function closeModal() {
         modal.classList.remove('show');
-    });
+        deactivateMenuPill();
+    }
+    closeBtn.addEventListener('click', closeModal);
     // Fechar ao clicar fora do conteúdo
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
-            modal.classList.remove('show');
+            closeModal();
         }
     });
     // Fechar com ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === "Escape") {
-            modal.classList.remove('show');
+            closeModal();
         }
     });
 });
