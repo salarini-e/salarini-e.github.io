@@ -1,170 +1,391 @@
+<!-- linkedin e curriculo lattes -->
+<!-- projetos e githubs -->
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salarini-e</title>
-    <link rel="stylesheet" href="myframe.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Salarini-e - Home</title>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- <link rel="stylesheet" href="novo-style.css"> -->
+      <link rel="stylesheet" href="/global.css">
+      <link rel="stylesheet" href="/novo/index.css">
+
+     <!-- Importação das fontes Archivo Black, Cabin Sketch e Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
+
 </head>
-<body>
-    <header>
-        <div class="row">            
-            <div class="col d-flex">
-                <div id="avatar" class="ms-6 my-auto me-5 avatar">
-                    <img src="https://media.licdn.com/dms/image/D4D03AQF6Ox8X9SyaEg/profile-displayphoto-shrink_200_200/0/1709235077166?e=2147483647&v=beta&t=PG-Hn3nG6A9vQ0VfA-jp3d1OaSmtLkKFzc2m-ldo9KE" alt="Avatar">
-                </div>
-                <div id="nav" class="me-auto ms-5 d-flex flex-column">
-                    <h1 class="text-left">Salarini-e</h1>
-                    <nav class="text-left mb-6">
-                        <a href="#about" class="active"><i class="fa-solid fa-chevron-right me-2"></i>Página inicial</a>
-                        <a href="./portfolio.html">Portfólio</a>
-                        <a href="#">Repositórios</a>
-                        <a href="./microblog.html">Microblog</a>
-                        <a href="./contato.html">Contato</a>
-                    </nav>
-                </div>
-                <div id="redes" class="ms-auto my-auto me-6">                    
-                    <div>
-                        <a href="#">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
+<body class="container-fluid d-flex flex-column">
+    <header class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-1 logo-superior d-flex">
+                        <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98 ;">
+                            <!-- Salarini-e -->
+                        </span>
                     </div>
-                    <div>
-                        <a href="#">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </div>                    
+                    <div class="col">
+    
+                    </div>
+                    <div class="col-1 idioma d-flex">
+                        <div class="floating-menu-pill ms-auto my-auto">
+                            <button class="btn menu" id="openMenuModal" type="button" tabindex="0">
+                                <i class="fa-solid fa-bars"></i>
+                            </button>
+                            <span class="floating-menu-pill-text">Menu</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
-    <style>
-        #bemvindo{
-            box-shadow: none;
-        }
-    </style>
-    <div class="row">
-        <div id="main" class="col pt-6" >
-            <div class="content d-flex flex-wrap"  style="height:90%;">
-                <div id="bemvindo" class="col p-3 me-5">
-                    <h2><i class="fa-solid fa-angles-right me-2"></i>Bem-vindo, viajante!</h2>
-                    <p class="text-justify">Olá! Eu sou Eduardo Salarini, desenvolvedor, entusiasta da ciência e apaixonado por skateboarding. Este é o meu espaço na web onde compartilho minhas criações, experiências, ideias e projetos. </p>
-                    <div class="row">
-                        <div class="col">
-                            <h2><i class="fa-solid fa-angles-right me-2" style="color: white;"></i>A respeito desta página</h2>
-                            <p class="text-justify">
-                                Esta página web foi desenvolvida utilizando HTML5, CSS3 e JavaScript para a interface do usuário. 
-                                A persistência de dados, crucial para o funcionamento completo da aplicação, é gerenciada por um backend em Python, hospedado em um servidor VPS, garantindo segurança e escalabilidade.
-                                A comunicação entre as camadas frontend e backend  é realizada de forma assíncrona através de requisições via Fetch. A escolha do GitHub Pages 
-                                para hospedagem foi estratégica, permitindo um desenvolvimento ágil, escalável e de fácil manutenção.
-
-                            </p>
+    <!-- Remover offcanvas antigo -->
+    <!-- Modal customizado do menu -->
+    <div id="menuModal" class="custom-modal">
+        <div class="custom-modal-content">
+            <button class="close-modal" id="closeMenuModal" aria-label="Fechar menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <!-- <div class="text-center mb-4">
+                <img src="/novo/foto_sala.png" alt="Avatar" class="rounded-circle shadow" style="width: 90px; border: 4px solid #ffdd98;">
+                <h3 class="mt-3 mb-0 prosto-one-regular" style="color: #ffdd98;">Eduardo Salarini</h3>
+                <span class="text-secondary" style="font-size: 1.1rem;">Desenvolvedor Full Stack</span>
+            </div> -->
+            <ul class="nav flex-column mb-4 mt-4">
+                <li class="nav-item mb-2">
+                    <a class="nav-link active" href="#"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-user me-2"></i>Quem sou</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
+                </li>
+                    <!-- <li class="nav-item mb-2">
+                        <a class="nav-link" href="#"><i class="fa-brands fa-github me-2"></i>Repositórios</a>
+                    </li> -->
+                <li class="nav-item mb-2">
+                    <a class="nav-link" href="/blog/"><i class="fa-solid fa-pen-nib me-2"></i>Blog</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-envelope me-2"></i>Contato</a>
+                </li>
+            </ul>
+            <div class="d-flex justify-content-center gap-3 mb-3">
+                <a href="https://github.com/salarini-e" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/eduardo-salarini" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://lattes.cnpq.br/" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="Lattes"><i class="fa-solid fa-graduation-cap"></i></a>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary w-100 mb-2">Login</button>
+                <button class="btn btn-outline-primary w-100">Registrar</button>
+            </div>
+        </div>
+    </div>
+    <main class="container-fluid my-auto" style="height: 95%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-lg-4 p-5 d-flex">
+                <div class="m-auto">
+                    <!-- <img src="https://tunis-nextjs.netlify.app/assets/img/hero/dark.jpg" class="img-fluid" style="border-radius: 15px;" alt=""> -->
+                    <img src="/novo/foto_sala.png" style="border-radius: 15px; max-height: 80vh !important; margin-top: -75px;" alt="">
+                </div>
+            </div>
+            <div class="col-lg-8 d-flex p-5">
+                <div class="m-auto" style="max-width: 720px; color: white;">
+                    <!-- <h1 class="display-1 mb-5">Bem vindo!</h1> -->
+                    <div class="row w-100 d-flex">
+                        <div class="mt-4 me-5 mb-sm-4 col-lg-1 col-sm-12 flex-column">
+                            <img src="./novo/python.webp" class="mx-lg-auto ms-sm-auto" style="height: 70px;" alt="">
+                            <img src="./novo/react.webp" class="mt-3 mx-sm-3 mx-lg-auto" style="height: 70px;" alt="">
+                            <img src="./novo/fedora.png" class="mt-3 mx-lg-auto me-sm-auto" style="height: 70px;" alt="">                                                        
                         </div>
-                    </div>                
-                    <div class="row">
-                        <div class="col">                            
-                                <h2><i class="fa-solid fa-angles-right me-2" style="color: white;"></i>Vamos nos Conectar?</h2>
-                                <p>Estou sempre aberto a novas colaborações, projetos emocionantes e discussões inspiradoras. Se você é um entusiasta da tecnologia ou simplesmente alguém com uma paixão por aprender e criar, não hesite em entrar em contato.</p>                            
+                        <div class="col">
+                            <h2 class="display-6" style="font-weight: bold; font-size: 48px;">Eduardo Salarini</h2>
+                            <h4 class="mb-4" style="font-weight: bold;">Desenvolvedor Full Stack</h4>
+                            <p style="text-align: justify;">Profissional brasileiro apaixonado por criar soluções inovadoras e experiências impactantes para os usuários. Com foco em desenvolver sistemas web eficientes, dedicado a a construir ferramentas que aproximam pessoas e transformam o cotidiano. Experiente com projetos próprios, públicos e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>                            
+                        <div class="d-flex">                            
+                            <!-- <button class="btn btn-outline-primary me-1 w-100">
+                                Projetos
+                            </button>
+                            <a href="/blog/" class="btn btn-outline-primary mx-1">
+                                Meu blog
+                            </a>
+                            <button class="btn btn-outline-primary mx-1 w-100">
+                                Contato
+                            </button> -->
+                            <!-- <button class="btn btn-outline-primary mx-1">
+                                Saiba mais
+                            </button> -->
                         </div>
                     </div>
-                   <!-- <div class="row">
-                    <div id="githubdiv" class="col">
-                        <h2><i class="fa-solid fa-thumbtack me-2" style="font-size: 14pt;"></i>Repositórios públicos (open source)</h2>
-                        <div class="spinner"></div>
-                        <div id="github" class="d-flex flex-wrap">
-                            
-                        </div>
-                    </div> 
-                   </div>-->
+                    
+                    </div>
                 </div>
-                       
-                <!-- <div id="history" class="col-5 d-flex p-3">
-                    <script src="https://snapwidget.com/js/snapwidget.js"></script>
-                    <iframe src="https://snapwidget.com/embed/1072726" class="snapwidget-widget ms-auto" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width: 600px; " title="Posts from Instagram"></iframe>
-                </div> -->
-                            
             </div>
-        </div>        
-    </div>
-    <script>
-        // const GITHUB_TOKEN = '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'; 
-        // async function fetchPinnedRepos() {
-        //     const query = `
-        //         {
-        //             user(login: "salarini-e") {
-        //                 pinnedItems(first: 6, types: REPOSITORY) {
-        //                     nodes {
-        //                         ... on Repository {
-        //                             name
-        //                             description
-        //                             url
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     `;
-
-        //     const response = await fetch('https://api.github.com/graphql', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //             'Authorization': `Bearer ${GITHUB_TOKEN}`
-        //         },
-        //         body: JSON.stringify({ query })
-        //     });
-
-        //     const result = await response.json();
-        //     const repos = result.data.user.pinnedItems.nodes;
-
-        //     const githubDiv = document.getElementById('github');
-        //     githubDiv.innerHTML = ''; // Limpa o spinner
-
-        //     repos.forEach(repo => {
-        //         const repoDiv = document.createElement('div');
-        //         repoDiv.classList.add('repo');
-        //         repoDiv.setAttribute('data-max-chars', '20'); // Define o número máximo de caracteres
-
-        //         repoDiv.innerHTML = `
-        //             <i class="fa-brands fa-square-github me-1"></i>
-        //             <a href="${repo.url}" target="_blank" class="repo-name">${repo.name}</a>
-        //         `;
-
-        //         githubDiv.appendChild(repoDiv);
-        //     });
-
-        //     document.querySelectorAll('.repo-name').forEach(element => {
-        //         const maxChars = element.closest('.repo').getAttribute('data-max-chars');
-        //         truncateText(element, maxChars);
-        //     });
-
-        //     hidePreloader('#githubdiv');
-        // }
-
-        function truncateText(element, maxChars) {
-            const text = element.innerText;
-            if (text.length > maxChars) {
-                element.innerText = text.slice(0, maxChars) + '...';
-            }
-        }
-
-        // function hidePreloader(id) {
-        //     const preloader = document.querySelector(id + ' .spinner');
-        //     if (preloader) {
-        //         preloader.style.display = 'none';
-        //     }
-        // }
-
-        // window.onload = () => {
-        //     fetchPinnedRepos();
-        //     const snapWidgetIframe = document.querySelector('iframe[src*="snapwidget"]');
-        //     snapWidgetIframe.onload = () => hidePreloader('#history');
-        // };
-    </script>
+        </div>
+    </main>
     
 </body>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<style>
+/* Modal customizado */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(20,20,30,0.85);
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+.custom-modal.show {
+    display: flex;
+    animation: fadeInBg 0.3s;
+}
+@keyframes fadeInBg {
+    from { background: rgba(20,20,30,0); }
+    to   { background: rgba(20,20,30,0.85); }
+}
+.custom-modal-content {
+    background: #23243a;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    padding: 2.5rem 2rem 2rem 2rem;
+    min-width: 320px;
+    max-width: 95vw;
+    width: 370px;
+    position: relative;
+    transform: translateY(-60vh);
+    opacity: 0;
+    animation: slideDownModal 0.5s cubic-bezier(.6,1.5,.5,1) forwards;
+}
+@keyframes slideDownModal {
+    from {
+        transform: translateY(-60vh) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+.close-modal {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: #ffdd98;
+    font-size: 1.5rem;
+    z-index: 2;
+    transition: color 0.2s;
+}
+.close-modal:hover {
+    color: #fff;
+}
+.custom-modal .nav-link {
+    color: #ffdd98;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+}
+.custom-modal .nav-link.active,
+.custom-modal .nav-link:hover {
+    background: #ffdd98;
+    color: #23243a !important;
+}
+.custom-modal .btn-outline-light {
+    border-color: #ffdd98;
+    color: #ffdd98;
+}
+.custom-modal .btn-outline-light:hover {
+    background: #ffdd98;
+    color: #23243a;
+}
+.custom-modal .btn-primary {
+    background: #ffdd98;
+    border: none;
+    color: #23243a;
+    font-weight: bold;
+}
+.custom-modal .btn-outline-primary {
+    border-color: #ffdd98;
+    color: #ffdd98;
+}
+.custom-modal .btn-outline-primary:hover {
+    background: #ffdd98;
+    color: #23243a;
+}
+.floating-menu-label-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.floating-menu-label-wrapper .menu {
+    border: 2px solid #ffdd98 !important;
+    border-radius: 12px;
+    background: transparent;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 0.2s;
+}
+.floating-menu-label-wrapper .menu:focus,
+.floating-menu-label-wrapper .menu:hover {
+    box-shadow: 0 0 0 2px #ffdd9855;
+}
+.floating-menu-label {
+    position: absolute;
+    top: -0.9em;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #23243a;
+    color: #ffdd98;
+    font-size: 0.95em;
+    font-weight: 500;
+    padding: 0 0.5em;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 8px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+.floating-menu-label-inline {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffdd98;
+    border-radius: 12px;
+    background: transparent;
+    padding: 2px 12px 2px 6px;
+    gap: 0.5em;
+    height: 40px;
+    /* Ajuste para centralizar verticalmente */
+}
+.floating-menu-label-inline .menu {
+    border: none !important;
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+    padding: 0 4px;
+    font-size: 1.3em;
+    outline: none;
+}
+.floating-menu-label-inline .menu:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffdd9855;
+}
+.floating-menu-label-inline-text {
+    color: #ffdd98;
+    font-size: 1.08em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    user-select: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: transparent;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+.floating-menu-pill {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffdd98;
+    border-radius: 999px;
+    background: transparent;
+    padding: 2px 16px 2px 6px;
+    gap: 0.5em;
+    height: 40px;
+    /* Mantém o botão original, só adiciona o contorno pill */
+}
+.floating-menu-pill .menu {
+    border: none !important;
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+    padding: 0 4px;
+    font-size: 1.3em;
+    outline: none;
+    border-radius: 999px;
+    /* Mantém o formato do botão original */
+}
+.floating-menu-pill .menu:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffdd9855;
+}
+.floating-menu-pill-text {
+    color: #ffdd98;
+    font-size: 1.08em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    user-select: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: transparent;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 991px) {
+    .floating-menu-label {
+        font-size: 0.85em;
+    }
+    .floating-menu-label-inline-text {
+        font-size: 0.95em;
+    }
+    .floating-menu-label-inline {
+        height: 36px;
+        padding: 2px 8px 2px 4px;
+    }
+    .floating-menu-pill-text {
+        font-size: 0.95em;
+    }
+    .floating-menu-pill {
+        height: 36px;
+        padding: 2px 10px 2px 4px;
+    }
+}
+/* ...existing code... */
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const openBtn = document.getElementById('openMenuModal');
+    const closeBtn = document.getElementById('closeMenuModal');
+    const modal = document.getElementById('menuModal');
+
+    openBtn.addEventListener('click', function() {
+        modal.classList.add('show');
+        // For re-triggering animation
+        const content = modal.querySelector('.custom-modal-content');
+        content.style.animation = 'none';
+        void content.offsetWidth; // trigger reflow
+        content.style.animation = '';
+    });
+    closeBtn.addEventListener('click', function() {
+        modal.classList.remove('show');
+    });
+    // Fechar ao clicar fora do conteúdo
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+        }
+    });
+    // Fechar com ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+            modal.classList.remove('show');
+        }
+    });
+});
+</script>
 </html>
