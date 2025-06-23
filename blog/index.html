@@ -59,7 +59,7 @@
       </div>
       <div class="text-center">
         <button class="btn btn-primary w-100 mb-2">Login</button>
-        <button class="btn btn-outline-primary w-100">Registrar</button>
+        <!-- <button class="btn btn-outline-primary w-100">Registrar</button>  -->
       </div>
     </div>
   </div>
@@ -389,6 +389,46 @@
       line-height: 1;
       display: flex;
       align-items: center;
+    }
+    /* Social links styling (copiado do index) */
+    .social-links-home {
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .social-link-inline {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      text-decoration: none;
+      color: #ffdd98;
+      font-weight: 600;
+      font-size: 1.18rem;
+      transition: color 0.18s;
+      padding: 0.15em 0.5em;
+      border-radius: 8px;
+    }
+    .social-link-inline i {
+      font-size: 1.5em;
+      transition: color 0.18s, transform 0.15s;
+    }
+    .social-link-inline:hover,
+    .social-link-inline:focus {
+      color: #ffc55a;
+      background: none;
+      text-decoration: underline;
+    }
+    .social-link-inline:hover i,
+    .social-link-inline:focus i {
+      color: #ffc55a;
+      transform: scale(1.13);
+    }
+    .social-link-inline .label {
+      margin-left: 0.25em;
+      color: inherit;
+      font-size: 1.08em;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 4px #23243a55;
     }
     @media (max-width: 991px) {
       .floating-menu-pill-text {

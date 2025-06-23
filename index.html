@@ -18,9 +18,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
-
+    <script>
+      // Redireciona para versão mobile se for tela pequena
+      if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+        if (window.innerWidth < 768) {
+          window.location.href = "/m/index.html";
+        }
+      }
+    </script>
 </head>
-<body class="container-fluid d-flex flex-column">
+<body>
     <!-- Modal customizado do menu -->
     <div id="menuModal" class="custom-modal">
         <div class="custom-modal-content">
@@ -58,8 +65,7 @@
                 <a href="https://lattes.cnpq.br/" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="Lattes"><i class="fa-solid fa-graduation-cap"></i></a>
             </div>
             <div class="text-center">
-                <button class="btn btn-primary w-100 mb-2">Login</button>
-                <button class="btn btn-outline-primary w-100">Registrar</button>
+                <button class="btn btn-primary w-100 mb-2">Login</button>                
             </div>
         </div>
     </div>
@@ -94,8 +100,7 @@
         <div class="row" style="height: 100%;">
             <div class="col-lg-4 p-5 d-flex">
                 <div class="m-auto">
-                    <!-- <img src="https://tunis-nextjs.netlify.app/assets/img/hero/dark.jpg" class="img-fluid" style="border-radius: 15px;" alt=""> -->
-                    <img src="/novo/foto_sala.png" style="border-radius: 15px; max-height: 80vh !important; margin-top: -75px;" alt="">
+                    <img src="/novo/foto_sala3.png" style="border-radius: 15px; max-height: 80vh !important; margin-top: -75px;" alt="">
                 </div>
             </div>
             <div class="col-lg-8 d-flex p-5">
@@ -111,20 +116,20 @@
                             <h2 class="display-6" style="font-weight: bold; font-size: 48px;">Eduardo Salarini</h2>
                             <h4 class="mb-4" style="font-weight: bold;">Desenvolvedor Full Stack</h4>
                             <p style="text-align: justify;">Profissional brasileiro apaixonado por criar soluções inovadoras e experiências impactantes para os usuários. Com foco em desenvolver sistemas web eficientes, dedicado a a construir ferramentas que aproximam pessoas e transformam o cotidiano. Experiente com projetos próprios, públicos e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>
-                            <div class="d-flex gap-4 social-links-home mt-4 mb-2">
-                                <a href="https://github.com/salarini-e" target="_blank" class="social-link-inline" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                    <span class="label">GitHub</span>
-                                </a>
-                                <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="social-link-inline" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span class="label">LinkedIn</span>
-                                </a>
-                                <a href="/contato.html" class="social-link-inline" title="Contato">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <span class="label">Contato</span>
-                                </a>
-                            </div>
+                            <div class="d-flex social-links-home mt-4 mb-2">
+    <a href="https://github.com/salarini-e" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="GitHub">
+        <i class="fab fa-github"></i>
+        <span class="label">GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+        <span class="label">LinkedIn</span>
+    </a>
+    <a href="/contato.html" class="social-link-inline" title="Contato">
+        <i class="fa-solid fa-envelope"></i>
+        <span class="label">Contato</span>
+    </a>
+</div>
                         <div class="d-flex">                            
                             <!-- <button class="btn btn-outline-primary me-1">
                                 Github
@@ -155,7 +160,7 @@
 .custom-modal {
     display: none;
     position: fixed;
-    z-index: 9999; /* garantir que fique acima de tudo */
+    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
     left: 0; top: 0; width: 100vw; height: 100vh;
     background: rgba(20,20,30,0.85);
     justify-content: center;
@@ -429,56 +434,105 @@
     height: 100vh;
     z-index: 1;
     pointer-events: none;
-    background: rgba(0, 0, 0, 0.747); /* Altere a cor/alpha conforme desejar */
+    background: rgba(0, 0, 0, 0.747);
     transition: background 0.3s;
 }
 
-/* Garante que o conteúdo fique acima do filtro e do canvas */
-body > *:not(.background-canvas):not(.background-filter) {
+/* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
+body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
     position: relative;
     z-index: 2;
 }
 
-.social-links-home {
-    justify-content: flex-start;
+/* O modal deve sempre estar acima de tudo */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(20,20,30,0.85);
+    justify-content: center;
     align-items: center;
+    transition: background 0.3s;
+}
+
+/* Impede rolagem na página */
+html, body {
+    overflow: hidden !important;
+    height: 100%;
+}
+
+/* Social links estilo mobile + label (ajustado para não sobrepor) */
+.social-links-home {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 24px 0 12px 0;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .social-link-inline {
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    text-decoration: none;
+    justify-content: flex-start;
+    /* background: #23243a; */
     color: #ffdd98;
+    border-radius: 50px;
+    min-width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+    transition: background 0.18s, color 0.18s, transform 0.15s;
+    text-decoration: none;
+    padding: 0 18px 0 14px;
+    position: relative;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.social-link-inline .label {
+    display: inline-block;
+    color: #ffdd98;
+    font-size: 0.9em;
     font-weight: 600;
-    font-size: 1.18rem;
+    letter-spacing: 0.01em;
+    margin-left: 12px;
+    text-shadow: 0 1px 4px #23243a55;
     transition: color 0.18s;
-    padding: 0.15em 0.5em;
-    border-radius: 8px;
+    line-height: 1;
+}
+.social-link-inline:hover, .social-link-inline:focus {
+    /* background: #ffdd98; */
+    /* color: #23243a; */
+    transform: scale(1.08);
+}
+.social-link-inline:hover .label,
+.social-link-inline:focus .label {
+    /* color: #23243a; */
 }
 .social-link-inline i {
     font-size: 1.5em;
     transition: color 0.18s, transform 0.15s;
 }
-.social-link-inline:hover,
-.social-link-inline:focus {
-    color: #ffc55a;
-    background: none;
-    text-decoration: underline;
-}
 .social-link-inline:hover i,
 .social-link-inline:focus i {
-    color: #ffc55a;
+    /* color: #23243a; */
     transform: scale(1.13);
 }
-.social-link-inline .label {
-    margin-left: 0.25em;
-    color: inherit;
-    font-size: 1.08em;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    text-shadow: 0 1px 4px #23243a55;
+@media (max-width: 600px) {
+    .social-links-home {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .social-link-inline {
+        width: 90vw;
+        justify-content: center;
+        font-size: 1.15rem;
+        padding: 0 12px 0 10px;
+    }
+    .social-link-inline .label {
+        font-size: 1em;
+        margin-left: 8px;
+    }
 }
-/* ...existing code... */
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -524,134 +578,120 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-    const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let particlesArray = []
-
-let mouse ={
-    x: undefined,
-    y: undefined,
-    radius: (canvas.height/110) * (canvas.width/110)
-}
-
-window.addEventListener('mousemove', function(event){
-    mouse.x = event.x;
-    mouse.y = event.y;
+    // Partículas de fundo igual ao mobile
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    let mouse = {
+        x: undefined,
+        y: undefined,
+        radius: (window.innerHeight/110) * (window.innerWidth/110)
+    };
+    let particlesArray = [];
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        mouse.radius = (canvas.height/110) * (canvas.width/110);
     }
-);
+    function init(){
+        particlesArray = [];
+        let nParticles = 60; // <-- Altere aqui para ajustar a quantidade de partículas (padrão: 60)
+        for(let i=0; i < nParticles; i++){
+            let size = (Math.random()*5) + 1;
+            let x = (Math.random() * ((window.innerWidth - size * 2 )-(size * 2)) + size * 2);
+            let y = (Math.random() * ((window.innerHeight - size * 2 )-(size * 2)) + size * 2);
 
-// particles
-class Particle{
-    constructor(x, y, directionX, directionY, size, color){
-        this.x = x;
-        this.y=y;
-        this.directionX = directionX;
-        this.directionY = directionY;
-        this.size = size;
-        this.color = color;
-    }
-    draw(){
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#fcd457';
-        ctx.fill();
-    }
-    update(){
-        if(this.x > canvas.width || this.x < 0){
-            this.directionX = -this.directionX;
+            // Velocidade das partículas: diminua o valor absoluto para deixá-las mais lentas
+            let directionX = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
+            let directionY = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
+            let color = '#fcd457';
+
+            particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
         }
-        if(this.y > canvas.height || this.y < 0){
-            this.directionY = -this.directionY;
+    }
+    class Particle{
+        constructor(x, y, directionX, directionY, size, color){
+            this.x = x;
+            this.y = y;
+            this.directionX = directionX;
+            this.directionY = directionY;
+            this.size = size;
+            this.color = color;
         }
-        //collision
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx*dx + dy * dy)
-        if(distance < mouse.radius + this.size){
-            if(mouse.x < this.x && this.x < canvas.width - this.size * 10){
-                this.x += 10;
-            }
-            if(mouse.x > this.x && this.x > this.size * 10){
-                this.x -= 10;
-            }
-            if(mouse.y < this.y && this.y < canvas.height - this.size * 10){
-                this.y += 10;
-            }
-            if(mouse.y > this.y && this.y > this.size * 10){
-                this.y -= 10;
-            }
+        draw(){
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = '#fcd457';
+            ctx.fill();
         }
-        //move 
-        this.x += this.directionX;
-        this.y += this.directionY;
-        this.draw();
+        update(){
+            if(this.x > canvas.width || this.x < 0){
+                this.directionX = -this.directionX;
+            }
+            if(this.y > canvas.height || this.y < 0){
+                this.directionY = -this.directionY;
+            }
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx*dx + dy*dy);
+            if(distance < mouse.radius + this.size){
+                if(mouse.x < this.x && this.x < canvas.width - this.size * 10){
+                    this.x += 10;
+                }
+                if(mouse.x > this.x && this.x > this.size * 10){
+                    this.x -= 10;
+                }
+                if(mouse.y < this.y && this.y < canvas.height - this.size * 10){
+                    this.y += 10;
+                }
+                if(mouse.y > this.y && this.y > this.size * 10){
+                    this.y -= 10;
+                }
+            }
+            this.x += this.directionX;
+            this.y += this.directionY;
+            this.draw();
+        }
     }
-}
-
-// controller
-function init(){
-    particlesArray = [];
-    let nParticles = 100;
-    for(let i=0; i < nParticles; i++){
-        let size = (Math.random()*5) + 1;
-        let x = (Math.random() * ((innerWidth - size * 2 )-(size * 2)) + size * 2);
-        let y = (Math.random() * ((innerHeight - size * 2 )-(size * 2)) + size * 2);
-
-        //speed
-        let directionX = (Math.random()*5)-2.5;
-        let directionY = (Math.random()*5)-2.5;
-        let color = '#fcd457';
-
-        particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
-
+    function animate(){
+        requestAnimationFrame(animate);
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(let i=0; i<particlesArray.length; i++){
+            particlesArray[i].update();
+        }
+        connect();
     }
-}
-
-function animate(){
-    requestAnimationFrame(animate);
-    ctx.clearRect(0,0,innerWidth,innerHeight);
-
-    for(let i=0; i<particlesArray.length; i++){
-        particlesArray[i].update();
-    }
-    connect();
-}
-
-//connect dots
-function connect(){
-    let opacityValue = 1;
-    for(let a=0; a<particlesArray.length; a++){
-        for(let b = a; b<particlesArray.length;b++){
-            let distance = ((particlesArray[a].x - particlesArray[b].x)* (particlesArray[a].x-particlesArray[b].x))+((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y-particlesArray[b].y));
-            if(distance < (canvas.width/7) * (canvas.height/7)){
-                opacityValue = 1 - (distance/30000);
-                ctx.strokeStyle='rgba(252,212,87,' + opacityValue + ')';
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke();
+    function connect(){
+        let opacityValue = 1;
+        for(let a=0; a<particlesArray.length; a++){
+            for(let b = a; b<particlesArray.length;b++){
+                let distance = ((particlesArray[a].x - particlesArray[b].x)* (particlesArray[a].x-particlesArray[b].x))+((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y-particlesArray[b].y));
+                if(distance < (canvas.width/7) * (canvas.height/7)){
+                    opacityValue = 1 - (distance/30000);
+                    ctx.strokeStyle='rgba(252,212,87,' + opacityValue + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
             }
         }
     }
-}
-
-//To not screw up the page if the window space change
-window.addEventListener('resize',function(){
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-    mouse.radius = ((canvas.height/110) * (canvas.height/110));
+    window.addEventListener('resize',function(){
+        resizeCanvas();
+        init();
+    });
+    window.addEventListener('mousemove', function(event){
+        mouse.x = event.x;
+        mouse.y = event.y;
+    });
+    window.addEventListener('mouseout', function(){
+        mouse.x = undefined;
+        mouse.y = undefined;
+    });
+    // Inicialização correta do canvas e partículas
+    resizeCanvas();
     init();
-});
-
-window.addEventListener('mouseout', function(){
-    mouse.x = undefined;
-    mouse.y = undefined;
-});
-
-init();
-animate();
+    animate();
 </script>
 </html>
