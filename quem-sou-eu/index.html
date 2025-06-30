@@ -41,10 +41,10 @@
             </div> -->
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item mb-2">
-                    <a class="nav-link active" href="#"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
+                    <a class="nav-link" href="/"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Quem sou</a>
+                    <a class="nav-link active" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Quem sou</a>
                 </li>
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="#"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
@@ -71,14 +71,13 @@
     </div>
     <canvas id="canvas" class="background-canvas"></canvas>
     <div class="background-filter"></div>
-    <script type="module" src="/js/generative-art/dots.js"></script>
     <header class="container-fluid">
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col-1 logo-superior d-flex">
+                    <div class="col logo-superior d-flex">
                         <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98 ;">
-                            <!-- Salarini-e -->
+                            QUEM SOU EU
                         </span>
                     </div>
                     <div class="col">
@@ -96,58 +95,93 @@
             </div>
         </div>
     </header>
-    <main class="container-fluid my-auto" style="height: 95%;">
-        <div class="row" style="height: 100%;">
-            <div class="col-lg-4 p-5 d-flex">
-                <div class="m-auto">
-                    <img src="/novo/foto_sala3.png" style="border-radius: 15px; max-height: 80vh !important; margin-top: -75px;" alt="">
-                </div>
-            </div>
-            <div class="col-lg-8 d-flex p-5">
-                <div class="m-auto" style="max-width: 720px; color: white;">
-                    <!-- <h1 class="display-1 mb-5">Bem vindo!</h1> -->
-                    <div class="row w-100 d-flex">
-                        <div class="mt-4 me-5 mb-sm-4 col-lg-1 col-sm-12 flex-column">
-                            <img src="./novo/python.webp" class="mx-lg-auto ms-sm-auto" style="height: 70px;" alt="">
-                            <img src="./novo/react.webp" class="mt-3 mx-sm-3 mx-lg-auto" style="height: 70px;" alt="">
-                            <img src="./novo/fedora.png" class="mt-3 mx-lg-auto me-sm-auto" style="height: 70px;" alt="">                                                        
-                        </div>
-                        <div class="col">
-                            <h2 class="display-6" style="font-weight: bold; font-size: 48px;">Eduardo Salarini</h2>
-                            <h4 class="mb-4" style="font-weight: bold;">Desenvolvedor Full Stack</h4>
-                            <p style="text-align: justify;">Profissional brasileiro apaixonado por criar soluções inovadoras e experiências impactantes para os usuários. Com foco em desenvolver sistemas web eficientes, dedicado a a construir ferramentas que aproximam pessoas e transformam o cotidiano. Experiente com projetos próprios, públicos e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>
-                            <div class="d-flex social-links-home mt-4 mb-2">
-    <a href="https://github.com/salarini-e" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="GitHub">
-        <i class="fab fa-github"></i>
-        <span class="label">GitHub</span>
-    </a>
-    <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-        <span class="label">LinkedIn</span>
-    </a>
-    <a href="/contato.html" class="social-link-inline" title="Contato">
-        <i class="fa-solid fa-envelope"></i>
-        <span class="label">Contato</span>
-    </a>
-</div>
-                        <div class="d-flex">                            
-                            <!-- <button class="btn btn-outline-primary me-1">
-                                Github
-                            </button>
-                            <a href="/blog/" class="btn btn-outline-primary mx-1">
-                                Linkedin
-                            </a>
-                            <button class="btn btn-outline-primary mx-1">
-                                Contato
-                            </button> -->
-                            <!-- <button class="btn btn-outline-primary mx-1">
-                                Saiba mais
-                            </button> -->
-                        </div>
-                    </div>
-                    
+    
+    <!-- Container simulando folha A4 para currículo -->
+    <main class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 96vh; padding: 2vh 2vw;">
+        <div class="curriculum-sheet">
+            <div class="curriculum-content">
+                <!-- Cabeçalho do Currículo -->
+                <div class="curriculum-header mb-4">
+                    <h1>Luís Eduardo Cordeiro Salarini</h1>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope me-2"></i>lecsalarini@gmail.com</p>
+                        <p><i class="fas fa-phone me-2"></i>(22) 99252-2121</p>
                     </div>
                 </div>
+
+                <!-- Resumo -->
+                <section class="curriculum-section mb-4">
+                    <h2>Resumo</h2>
+                    <p>Desenvolvedor Full-Stack com experiência sólida em backend com Python e Django, integração entre sistemas, automação, infraestrutura Fedora com Apache, e criação de aplicações web escaláveis. Organizado, estratégico e com foco em soluções eficientes e reutilizáveis. Experiência com projetos próprios e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>
+                </section>
+
+                <!-- Experiência Profissional -->
+                <section class="curriculum-section mb-4">
+                    <h2>Experiência Profissional</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Desenvolvedor Full-Stack</h3>
+                            <span class="period">2021 – Presente</span>
+                        </div>
+                        <div class="company">Prefeitura Municipal de Nova Friburgo</div>
+                  <ul class="experience-list">
+      <li>Desenvolvimento de sistemas internos utilizando Django, com foco em performance, escalabilidade e manutenibilidade.</li>
+      <li>Criação e manutenção de aplicações web com integração a bancos de dados relacionais, autenticação, relatórios e controle de permissões.</li>
+      <li>Implementação de soluções para leitura e visualização de logs do Apache em tempo real por meio de interfaces web com Bootstrap.</li>
+      <li>Administração de servidores Linux (Fedora), com configuração de ambiente de produção, tuning de performance, e deploys.</li>
+      <li>Gerenciamento de integração com storage remoto via FTP em sistemas legados, com posterior implementação de conexões seguras via SFTP em aplicações modernas com autenticação e automação de transferência.</li>
+      <li>Desenvolvimento de mecanismos de monitoramento de serviços e infraestrutura, utilizando Python e ferramentas de logwatching.</li>
+      <li>Colaboração em projetos estratégicos como sistemas de controle de ponto, feedback institucional e gestão de chamados técnicos.</li>
+      <li>Liderança técnica de estagiários de nível técnico e superior, com orientação em boas práticas de desenvolvimento, versionamento e documentação.</li>
+      <li>Contribuição na padronização da intranet institucional e melhoria da experiência do usuário com navegação estruturada por hierarquias e dropdowns.</li>
+    </ul>
+                    </div>
+                </section>
+
+                <!-- Habilidades Técnicas -->
+<section class="curriculum-section mb-4">
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <strong>Frontend:</strong> HTML5, CSS3, Bootstrap, JavaScript (ES6+), jQuery
+    </div>
+    <div class="skill-category">
+      <strong>Backend:</strong> Django, Flask, NodeJS, Codeigniter, APIs RESTful e GraphQL
+    </div>
+    <div class="skill-category">
+      <strong>Infraestrutura:</strong> Fedora Linux, Apache, Nginx, Mikrotik
+    </div>
+    <div class="skill-category">
+      <strong>Banco de Dados:</strong> MariaDB, MySQL, SQLite e PostgreSQL
+    </div>
+    <div class="skill-category">
+      <strong>Versionamento e Colaboração:</strong> Git e GitHub
+    </div>    
+    <div class="skill-category">
+      <strong>Outros:</strong> Shell Script, SFTP, SSH, consumo de APIs e automação de tarefas
+    </div>
+  </div>
+</section>
+
+
+                <!-- Formação Acadêmica -->
+                <section class="curriculum-section">
+                    <h2>Formação Acadêmica</h2>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Análise e Desenvolvimento de Sistemas</h3>
+                            <span class="status">Em andamento</span>
+                        </div>
+                        <div class="institution">UniBF Centro Universitário</div>
+                    </div>
+                    <div class="education-item mt-3">
+                        <div class="education-header">
+                            <h3>Física</h3>
+                            <span class="status">Concluído</span>
+                        </div>
+                        <div class="institution">CEFET/RJ – Nova Friburgo</div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
@@ -456,82 +490,176 @@ body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
     transition: background 0.3s;
 }
 
-/* Impede rolagem na página */
-html, body {
-    overflow: hidden !important;
-    height: 100%;
+/* Folha A4 do currículo */
+.curriculum-sheet {
+    background: white;
+    width: 96vw;
+    max-width: 210mm; /* Largura A4 real */
+    min-height: 297mm; /* Altura A4 real */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Social links estilo mobile + label (ajustado para não sobrepor) */
-.social-links-home {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin: 24px 0 12px 0;
-    align-items: center;
-    flex-wrap: wrap;
+.curriculum-content {
+    padding: 40px;
+    color: #333;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.6;
 }
-.social-link-inline {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    /* background: #23243a; */
-    color: #ffdd98;
-    border-radius: 50px;
-    min-width: 48px;
-    height: 48px;
-    font-size: 1.35rem;
-    transition: background 0.18s, color 0.18s, transform 0.15s;
-    text-decoration: none;
-    padding: 0 18px 0 14px;
-    position: relative;
-    white-space: nowrap;
-    box-sizing: border-box;
+
+.curriculum-content h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #ffdd98;
+    padding-bottom: 10px;
 }
-.social-link-inline .label {
-    display: inline-block;
-    color: #ffdd98;
-    font-size: 0.9em;
+
+.curriculum-content p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Cabeçalho do currículo */
+.curriculum-header h1 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Seções do currículo */
+.curriculum-section h2 {
+    color: #2c3e50;
+    font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 0.01em;
-    margin-left: 12px;
-    text-shadow: 0 1px 4px #23243a55;
-    transition: color 0.18s;
-    line-height: 1;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffdd98;
+    padding-bottom: 5px;
 }
-.social-link-inline:hover, .social-link-inline:focus {
-    /* background: #ffdd98; */
-    /* color: #23243a; */
-    transform: scale(1.08);
+
+/* Grid de habilidades */
+.skills-grid {
+    display: grid;
+    gap: 12px;
 }
-.social-link-inline:hover .label,
-.social-link-inline:focus .label {
-    /* color: #23243a; */
+
+.skill-category {
+    padding: 8px 0;
+    font-size: 1rem;
+    line-height: 1.4;
 }
-.social-link-inline i {
-    font-size: 1.5em;
-    transition: color 0.18s, transform 0.15s;
+
+.skill-category strong {
+    color: #2c3e50;
 }
-.social-link-inline:hover i,
-.social-link-inline:focus i {
-    /* color: #23243a; */
-    transform: scale(1.13);
+
+/* Experiência profissional */
+.experience-item {
+    margin-bottom: 25px;
 }
-@media (max-width: 600px) {
-    .social-links-home {
-        flex-direction: column;
-        gap: 12px;
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.experience-header h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.period {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.company {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.experience-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.experience-list li {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Formação acadêmica */
+.education-item {
+    margin-bottom: 15px;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.education-header h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.status {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.institution {
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsivo para tablets e mobile */
+@media (max-width: 768px) {
+    .curriculum-sheet {
+        width: 98vw;
+        min-height: auto;
+        margin: 10px 0;
     }
-    .social-link-inline {
-        width: 90vw;
-        justify-content: center;
-        font-size: 1.15rem;
-        padding: 0 12px 0 10px;
+    
+    .curriculum-content {
+        padding: 20px;
     }
-    .social-link-inline .label {
-        font-size: 1em;
-        margin-left: 8px;
+    
+    .curriculum-content h1 {
+        font-size: 2rem;
     }
+}
+
+/* Permite rolagem na página do currículo */
+html, body {
+    height: auto;
+    overflow-x: hidden;
 }
 </style>
 <script>
