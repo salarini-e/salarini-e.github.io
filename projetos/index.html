@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salarini-e - Home</title>
+    <title>Salarini-e - Projetos</title>
 
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <!-- <link rel="stylesheet" href="novo-style.css"> -->
-      <link rel="stylesheet" href="/global.css">
-      <link rel="stylesheet" href="/novo/index.css">
+     <link rel="stylesheet" href="/global.css">
+     <link rel="stylesheet" href="/novo/index.css">
 
-     <!-- Importação das fontes Archivo Black, Cabin Sketch e Poppins -->
+     <!-- Importação das fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
-    
-    <!-- Animações customizadas -->
-    <link rel="stylesheet" href="/animacao.css">
     
     <script>
       // Redireciona para versão mobile se for tela pequena
@@ -49,24 +44,16 @@
             <button class="close-modal" id="closeMenuModal" aria-label="Fechar menu">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <!-- <div class="text-center mb-4">
-                <img src="/novo/foto_sala.png" alt="Avatar" class="rounded-circle shadow" style="width: 90px; border: 4px solid #ffdd98;">
-                <h3 class="mt-3 mb-0 prosto-one-regular" style="color: #ffdd98;">Eduardo Salarini</h3>
-                <span class="text-secondary" style="font-size: 1.1rem;">Desenvolvedor Full Stack</span>
-            </div> -->
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item mb-2">
-                    <a class="nav-link active" href="#"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
+                    <a class="nav-link" href="/"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
                 </li>
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Currículo</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/projetos/"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
+                    <a class="nav-link active" href="/projetos/"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
                 </li>
-                    <!-- <li class="nav-item mb-2">
-                        <a class="nav-link" href="#"><i class="fa-brands fa-github me-2"></i>Repositórios</a>
-                    </li> -->
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="/blog/"><i class="fa-solid fa-pen-nib me-2"></i>Blog</a>
                 </li>
@@ -86,14 +73,13 @@
     </div>
     <canvas id="canvas" class="background-canvas"></canvas>
     <div class="background-filter"></div>
-    <!-- <script type="module" src="/js/generative-art/dots.js"></script>    -->
-    <header class="container-fluid custom-animated slide-in-down custom-hidden">
+    <header class="container-fluid">
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col-1 logo-superior d-flex">
+                    <div class="col logo-superior d-flex">
                         <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98 ;">
-                            <!-- Salarini-e -->
+                            PROJETOS
                         </span>
                     </div>
                     <div class="col">
@@ -111,57 +97,207 @@
             </div>
         </div>
     </header>
-    <main class="container-fluid my-auto custom-animated slide-in-up custom-hidden" style="height: 95%;">
-        <div class="row" style="height: 100%;">
-            <div class="col-lg-4 p-5 d-flex custom-animated slide-in-left custom-hidden">
-                <div class="m-auto">
-                    <img src="/novo/foto_sala3.png" class="hover-lift" style="border-radius: 15px; max-height: 80vh !important; margin-top: -75px;" alt="">
-                </div>
-            </div>
-            <div class="col-lg-8 d-flex p-5 custom-animated slide-in-right custom-hidden">
-                <div class="m-auto" style="max-width: 720px; color: white;">
-                    <!-- <h1 class="display-1 mb-5">Bem vindo!</h1> -->
-                    <div class="row w-100 d-flex">
-                        <div class="mt-4 me-5 mb-sm-4 col-lg-1 col-sm-12 flex-column stagger-children">
-                            <img src="./novo/python.webp" class="mx-lg-auto ms-sm-auto" style="height: 70px;" alt="">
-                            <img src="./novo/react.webp" class="mt-3 mx-sm-3 mx-lg-auto" style="height: 70px;" alt="">
-                            <img src="./novo/fedora.png" class="mt-3 mx-lg-auto me-sm-auto" style="height: 70px;" alt="">                                                        
-                        </div>
-                        <div class="col">
-                            <h2 class="display-6 custom-animated fade-in-scale" style="font-weight: bold; font-size: 48px;">Eduardo Salarini</h2>
-                            <h4 class="mb-4 custom-animated" style="font-weight: bold; width: 325px;">Desenvolvedor Full Stack</h4>
-                            <p class="custom-animated reveal custom-hidden" style="text-align: justify;">Profissional brasileiro apaixonado por criar soluções inovadoras e experiências impactantes para os usuários. Com foco em desenvolver sistemas web eficientes, dedicado a a construir ferramentas que aproximam pessoas e transformam o cotidiano. Experiente com projetos próprios, públicos e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>
-                            <div class="d-flex social-links-home mt-4 mb-2 stagger-children">
-                                <a href="https://github.com/salarini-e" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                    <span class="label">GitHub</span>
+    
+    <!-- Container principal para projetos -->
+    <main class="container-fluid" style="min-height: 96vh; padding: 2vh 2vw;">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="projects-container">
+                    
+                    <!-- Cabeçalho da seção -->
+                    <div class="projects-header text-center mb-5">
+                        <h1 class="display-4 mb-3" style="color: white; font-weight: bold;">Meus Projetos</h1>
+                        <p class="lead" style="color: #ffdd98; max-width: 600px; margin: 0 auto;">
+                            Explore alguns dos projetos que desenvolvi ao longo da minha carreira, 
+                            desde sistemas web completos até automações e ferramentas especializadas.
+                        </p>
+                    </div>
+
+                    <!-- Grade de projetos -->
+                    <div class="projects-grid">
+                        
+                        <!-- Projeto 1 -->
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <h3>Sistema de Gestão Municipal</h3>
+                            </div>
+                            <div class="project-card-body">
+                                <p>Sistema web completo para gestão administrativa municipal, desenvolvido em Django com interface responsiva e múltiplos módulos integrados.</p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                    <span class="tech-tag">MySQL</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-2"></i>Ver Código
                                 </a>
-                                <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span class="label">LinkedIn</span>
-                                </a>
-                                <a href="/contato.html" class="social-link-inline" title="Contato">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <span class="label">Contato</span>
+                                <a href="#" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>Demo
                                 </a>
                             </div>
-                        <div class="d-flex">                            
-                            <!-- <button class="btn btn-outline-primary me-1">
-                                Github
-                            </button>
-                            <a href="/blog/" class="btn btn-outline-primary mx-1">
-                                Linkedin
-                            </a>
-                            <button class="btn btn-outline-primary mx-1">
-                                Contato
-                            </button> -->
-                            <!-- <button class="btn btn-outline-primary mx-1">
-                                Saiba mais
-                            </button> -->
+                        </div>
+
+                        <!-- Projeto 2 -->
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Monitor de Logs Apache</h3>
+                            </div>
+                            <div class="project-card-body">
+                                <p>Aplicação web para monitoramento e visualização de logs do Apache em tempo real, com dashboard interativo e alertas automáticos.</p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Flask</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-2"></i>Ver Código
+                                </a>
+                                <a href="#" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>Demo
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Projeto 3 -->
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <h3>Automação SFTP</h3>
+                            </div>
+                            <div class="project-card-body">
+                                <p>Sistema de automação para transferência segura de arquivos via SFTP, com agendamento, logs detalhados e notificações.</p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">SFTP</span>
+                                    <span class="tech-tag">Cron</span>
+                                    <span class="tech-tag">Linux</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-2"></i>Ver Código
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Projeto 4 -->
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3>Sistema de Controle de Ponto</h3>
+                            </div>
+                            <div class="project-card-body">
+                                <p>Aplicação para controle de ponto eletrônico com interface web, relatórios automáticos e integração com sistemas legados.</p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Redis</span>
+                                    <span class="tech-tag">Celery</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-2"></i>Ver Código
+                                </a>
+                                <a href="#" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>Demo
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Projeto 5 -->
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <h3>Portal de Feedback</h3>
+                            </div>
+                            <div class="project-card-body">
+                                <p>Sistema para coleta e análise de feedback institucional, com dashboard analítico e relatórios gerenciais automatizados.</p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">Chart.js</span>
+                                    <span class="tech-tag">SQLite</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-2"></i>Ver Código
+                                </a>
+                                <a href="#" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>Demo
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Projeto 6 -->
+                        <div class="project-card">
+                            <div class="project-card-header">
+                                <div class="project-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3>Sistema de Chamados</h3>
+                            </div>
+                            <div class="project-card-body">
+                                <p>Plataforma completa para gestão de chamados técnicos com sistema de tickets, notificações e painel administrativo.</p>
+                                <div class="project-technologies">
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">WebSockets</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">jQuery</span>
+                                </div>
+                            </div>
+                            <div class="project-card-footer">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-2"></i>Ver Código
+                                </a>
+                                <a href="#" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt me-2"></i>Demo
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Call to action -->
+                    <div class="projects-cta text-center mt-5">
+                        <div class="cta-content">
+                            <h3 style="color: white; margin-bottom: 20px;">Interessado em algum projeto?</h3>
+                            <p style="color: #ffdd98; margin-bottom: 30px;">
+                                Entre em contato para saber mais detalhes ou para discutir uma possível colaboração.
+                            </p>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                <a href="https://github.com/salarini-e" target="_blank" class="btn btn-outline-light">
+                                    <i class="fab fa-github me-2"></i>GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="btn btn-outline-light">
+                                    <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+                                </a>
+                                <a href="/contato.html" class="btn btn-primary">
+                                    <i class="fas fa-envelope me-2"></i>Contato
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -223,7 +359,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     opacity: 0;
-    animation: fadeInUp 1s ease 0s forwards;
+    animation: fadeInUp 1s ease 1s forwards;
 }
 
 @keyframes fadeInUp {
@@ -241,7 +377,7 @@
 .custom-modal {
     display: none;
     position: fixed;
-    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
+    z-index: 99999 !important;
     left: 0; top: 0; width: 100vw; height: 100vh;
     background: rgba(20,20,30,0.85);
     justify-content: center;
@@ -319,89 +455,11 @@
     color: #23243a;
     font-weight: bold;
 }
-.custom-modal .btn-outline-primary {
-    border-color: #ffdd98;
-    color: #ffdd98;
-}
-.custom-modal .btn-outline-primary:hover {
-    background: #ffdd98;
-    color: #23243a;
-}
-.floating-menu-label-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.floating-menu-label-wrapper .menu {
-    border: 2px solid #ffdd98 !important;
-    border-radius: 12px;
-    background: transparent;
-    color: inherit;
-    position: relative;
-    z-index: 1;
-    transition: box-shadow 0.2s;
-}
-.floating-menu-label-wrapper .menu:focus,
-.floating-menu-label-wrapper .menu:hover {
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-label {
-    position: absolute;
-    top: -0.9em;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #23243a;
-    color: #ffdd98;
-    font-size: 0.95em;
-    font-weight: 500;
-    padding: 0 0.5em;
-    z-index: 2;
-    pointer-events: none;
-    border-radius: 8px;
-    line-height: 1;
-    letter-spacing: 0.02em;
-}
-.floating-menu-label-inline {
-    display: flex;
-    align-items: center;
-    border: 2px solid #ffdd98;
-    border-radius: 12px;
-    background: transparent;
-    padding: 2px 12px 2px 6px;
-    gap: 0.5em;
-    height: 40px;
-    /* Ajuste para centralizar verticalmente */
-}
-.floating-menu-label-inline .menu {
-    border: none !important;
-    background: transparent;
-    color: inherit;
-    box-shadow: none;
-    padding: 0 4px;
-    font-size: 1.3em;
-    outline: none;
-}
-.floating-menu-label-inline .menu:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-label-inline-text {
-    color: #ffdd98;
-    font-size: 1.08em;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    user-select: none;
-    padding-left: 2px;
-    padding-right: 2px;
-    background: transparent;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-}
+
+/* Estilos do menu pill */
 .floating-menu-pill {
     position: relative;
-    overflow: hidden; /* Garante que o ::before não transborde */
+    overflow: hidden;
     display: flex;
     align-items: center;
     border: 2px solid #ffdd98;
@@ -411,11 +469,9 @@
     gap: 0.5em;
     height: 44px;
     cursor: pointer;
-    color: #ffdd98; /* Cor padrão do texto */
+    color: #ffdd98;
     transition: color 0.2s;
 }
-
-/* pseudo-elemento para o preenchimento animado */
 .floating-menu-pill::before {
     content: "";
     position: absolute;
@@ -428,42 +484,28 @@
     transition: width 0.3s ease;
     border-radius: 999px;
 }
-
-/* hover: anima o preenchimento da esquerda pra direita */
 .floating-menu-pill:hover::before,
 .floating-menu-pill.active::before {
     width: 100%;
 }
-
-/* coloca o conteúdo acima do ::before */
 .floating-menu-pill > * {
     position: relative;
     z-index: 1;
 }
-
-/* hover: muda cor do texto */
 .floating-menu-pill:hover,
 .floating-menu-pill.active {
     color: #23243a !important;
 }
-
 .floating-menu-pill .menu {
     border: none !important;
     background: transparent;
     color: inherit;
     box-shadow: none;
-    /* padding: 0 4px;*/
     font-size: 1.3em;
     outline: none;
     border-radius: 999px;
-    /* Mantém o formato do botão original */
-}
-.floating-menu-pill .menu:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffdd9855;
 }
 .floating-menu-pill-text {
-    /* color: #ffdd98; */
     font-size: 1.08em;
     font-weight: 500;
     letter-spacing: 0.01em;
@@ -474,25 +516,6 @@
     line-height: 1;
     display: flex;
     align-items: center;
-}
-@media (max-width: 991px) {
-    .floating-menu-label {
-        font-size: 0.85em;
-    }
-    .floating-menu-label-inline-text {
-        font-size: 0.95em;
-    }
-    .floating-menu-label-inline {
-        height: 36px;
-        padding: 2px 8px 2px 4px;
-    }
-    .floating-menu-pill-text {
-        font-size: 0.95em;
-    }
-    .floating-menu-pill {
-        height: 36px;
-        padding: 2px 10px 2px 4px;
-    }
 }
 
 /* Canvas como background fixo */
@@ -519,90 +542,197 @@
     transition: background 0.3s;
 }
 
-/* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
+/* Garante que o conteúdo fique acima do filtro e do canvas */
 body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
     position: relative;
     z-index: 2;
 }
 
-/* O modal deve sempre estar acima de tudo */
-
-/* Impede rolagem na página */
-html, body {
-    overflow: hidden !important;
-    height: 100%;
+/* Container de projetos */
+.projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Social links estilo mobile + label (ajustado para não sobrepor) */
-.social-links-home {
+/* Grade de projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Card do projeto */
+.project-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.project-card-header {
+    padding: 25px 25px 20px 25px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.project-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ffdd98, #ffc55a);
+    border-radius: 12px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 18px;
-    margin: 24px 0 12px 0;
-    align-items: center;
-    flex-wrap: wrap;
+    margin-bottom: 15px;
 }
-.social-link-inline {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    /* background: #23243a; */
-    color: #ffdd98;
-    border-radius: 50px;
-    min-width: 48px;
-    height: 48px;
-    font-size: 1.35rem;
-    transition: background 0.18s, color 0.18s, transform 0.15s;
-    text-decoration: none;
-    padding: 0 18px 0 14px;
-    position: relative;
-    white-space: nowrap;
-    box-sizing: border-box;
+
+.project-icon i {
+    font-size: 28px;
+    color: #2c3e50;
 }
-.social-link-inline .label {
-    display: inline-block;
-    color: #ffdd98;
-    font-size: 0.9em;
+
+.project-card-header h3 {
+    color: #2c3e50;
+    font-size: 1.4rem;
     font-weight: 600;
-    letter-spacing: 0.01em;
-    margin-left: 12px;
-    text-shadow: 0 1px 4px #23243a55;
-    transition: color 0.18s;
-    line-height: 1;
+    margin: 0;
+    line-height: 1.3;
 }
-.social-link-inline:hover, .social-link-inline:focus {
-    /* background: #ffdd98; */
-    /* color: #23243a; */
-    transform: scale(1.08);
+
+.project-card-body {
+    padding: 20px 25px;
 }
-.social-link-inline:hover .label,
-.social-link-inline:focus .label {
-    opacity: 0.8;
+
+.project-card-body p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
-.social-link-inline i {
-    font-size: 1.5em;
-    transition: color 0.18s, transform 0.15s;
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
-.social-link-inline:hover i,
-.social-link-inline:focus i {
-    /* color: #23243a; */
-    transform: scale(1.13);
+
+.tech-tag {
+    background: #f8f9fa;
+    color: #2c3e50;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid #e9ecef;
 }
-@media (max-width: 600px) {
-    .social-links-home {
-        flex-direction: column;
-        gap: 12px;
+
+.project-card-footer {
+    padding: 20px 25px 25px 25px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.project-card-footer .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-primary {
+    border-color: #2c3e50;
+    color: #2c3e50;
+}
+
+.btn-outline-primary:hover {
+    background: #2c3e50;
+    border-color: #2c3e50;
+    color: white;
+}
+
+.btn-primary {
+    background: #ffdd98;
+    border-color: #ffdd98;
+    color: #2c3e50;
+}
+
+.btn-primary:hover {
+    background: #ffc55a;
+    border-color: #ffc55a;
+    color: #2c3e50;
+}
+
+/* CTA Section */
+.projects-cta {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 50px 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 221, 152, 0.2);
+}
+
+.cta-content h3 {
+    font-weight: 600;
+}
+
+.projects-cta .btn {
+    padding: 12px 24px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.projects-cta .btn-outline-light {
+    border-color: #ffdd98;
+    color: #ffdd98;
+}
+
+.projects-cta .btn-outline-light:hover {
+    background: #ffdd98;
+    color: #23243a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-    .social-link-inline {
-        width: 90vw;
-        justify-content: center;
-        font-size: 1.15rem;
-        padding: 0 12px 0 10px;
+    
+    .project-card-header,
+    .project-card-body,
+    .project-card-footer {
+        padding: 20px;
     }
-    .social-link-inline .label {
-        font-size: 1em;
-        margin-left: 8px;
+    
+    .projects-cta {
+        padding: 30px 20px;
     }
+    
+    .floating-menu-pill {
+        height: 36px;
+        padding: 2px 10px 2px 4px;
+    }
+    
+    .floating-menu-pill-text {
+        font-size: 0.95em;
+    }
+}
+
+/* Permite rolagem na página */
+html, body {
+    height: auto;
+    overflow-x: hidden;
 }
 </style>
 <script>
@@ -613,61 +743,6 @@ window.addEventListener('load', function() {
     // Aguarda um tempo mínimo para mostrar o preloader
     setTimeout(() => {
         preloader.classList.add('fade-out');
-        
-        // Ativar animações dos conteúdos após o preloader começar a sumir
-        setTimeout(() => {
-            // Função para ativar animação de um elemento
-            function activateAnimation(selector) {
-                const element = document.querySelector(selector);
-                if (element) {
-                    element.classList.remove('custom-hidden');
-                    element.classList.add('custom-visible');
-                }
-            }
-            
-            // Ativar animações em sequência
-            activateAnimation('header');
-            
-            setTimeout(() => {
-                activateAnimation('main');
-            }, 100);
-            
-            setTimeout(() => {
-                activateAnimation('.col-lg-4');
-            }, 200);
-            
-            setTimeout(() => {
-                activateAnimation('.col-lg-8');
-            }, 300);
-            
-            // Ativar animações dos elementos internos
-            setTimeout(() => {
-                const title = document.querySelector('h2.fade-in-scale');
-                const subtitle = document.querySelector('h4.fade-in-blur');
-                const paragraph = document.querySelector('p.reveal');
-                
-                if (title) {
-                    title.classList.remove('custom-hidden');
-                    title.classList.add('custom-visible');
-                }
-                
-                setTimeout(() => {
-                    if (subtitle) {
-                        subtitle.classList.remove('custom-hidden');
-                        subtitle.classList.add('custom-visible');
-                    }
-                }, 200);
-                
-                setTimeout(() => {
-                    if (paragraph) {
-                        paragraph.classList.remove('custom-hidden');
-                        paragraph.classList.add('custom-visible');
-                    }
-                }, 400);
-                
-            }, 500);
-            
-        }, 100); // Inicia as animações um pouco antes do preloader sumir completamente
         
         // Remove o preloader do DOM após a animação
         setTimeout(() => {
@@ -787,43 +862,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const openBtn = document.getElementById('openMenuModal');
     const closeBtn = document.getElementById('closeMenuModal');
     const modal = document.getElementById('menuModal');
-    const menuPill = openBtn; // floating-menu-pill
-
-    if (!openBtn || !closeBtn || !modal) {
-        console.error('Erro: Elementos do menu não encontrados!');
-        return;
-    }
+    const menuPill = openBtn;
 
     function activateMenuPill() {
-        if (menuPill) menuPill.classList.add('active');
+        menuPill.classList.add('active');
     }
     function deactivateMenuPill() {
-        if (menuPill) menuPill.classList.remove('active');
+        menuPill.classList.remove('active');
     }
 
-    // Adicionar event listener ao container e ao botão
-    function openModal(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    openBtn.addEventListener('click', function() {
         modal.classList.add('show');
         activateMenuPill();
-        
-        // For re-triggering animation
         const content = modal.querySelector('.custom-modal-content');
-        if (content) {
-            content.style.animation = 'none';
-            void content.offsetWidth; // trigger reflow
-            content.style.animation = '';
-        }
-    }
-
-    openBtn.addEventListener('click', openModal);
-    
-    // Também adicionar ao botão interno
-    const menuButton = openBtn.querySelector('.menu');
-    if (menuButton) {
-        menuButton.addEventListener('click', openModal);
-    }
+        content.style.animation = 'none';
+        void content.offsetWidth;
+        content.style.animation = '';
+    });
     
     function closeModal() {
         modal.classList.remove('show');
@@ -832,14 +887,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     closeBtn.addEventListener('click', closeModal);
     
-    // Fechar ao clicar fora do conteúdo
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
     });
     
-    // Fechar com ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === "Escape") {
             closeModal();
@@ -848,7 +901,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-    // Partículas de fundo igual ao mobile
+    // Partículas de fundo
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     let mouse = {
@@ -857,27 +910,27 @@ document.addEventListener('DOMContentLoaded', function() {
         radius: (window.innerHeight/110) * (window.innerWidth/110)
     };
     let particlesArray = [];
+    
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         mouse.radius = (canvas.height/110) * (canvas.width/110);
     }
+    
     function init(){
         particlesArray = [];
-        let nParticles = 60; // <-- Altere aqui para ajustar a quantidade de partículas (padrão: 60)
+        let nParticles = 60;
         for(let i=0; i < nParticles; i++){
             let size = (Math.random()*5) + 1;
             let x = (Math.random() * ((window.innerWidth - size * 2 )-(size * 2)) + size * 2);
             let y = (Math.random() * ((window.innerHeight - size * 2 )-(size * 2)) + size * 2);
-
-            // Velocidade das partículas: diminua o valor absoluto para deixá-las mais lentas
-            let directionX = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
-            let directionY = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
+            let directionX = (Math.random()*1.5)-0.75;
+            let directionY = (Math.random()*1.5)-0.75;
             let color = '#fcd457';
-
             particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
         }
     }
+    
     class Particle{
         constructor(x, y, directionX, directionY, size, color){
             this.x = x;
@@ -922,6 +975,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.draw();
         }
     }
+    
     function animate(){
         requestAnimationFrame(animate);
         ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -930,6 +984,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         connect();
     }
+    
     function connect(){
         let opacityValue = 1;
         for(let a=0; a<particlesArray.length; a++){
@@ -947,19 +1002,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+    
     window.addEventListener('resize',function(){
         resizeCanvas();
         init();
     });
+    
     window.addEventListener('mousemove', function(event){
         mouse.x = event.x;
         mouse.y = event.y;
     });
+    
     window.addEventListener('mouseout', function(){
         mouse.x = undefined;
         mouse.y = undefined;
     });
-    // Inicialização correta do canvas e partículas
+    
     resizeCanvas();
     init();
     animate();

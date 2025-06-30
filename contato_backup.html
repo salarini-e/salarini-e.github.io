@@ -80,13 +80,14 @@
 
         body {
             min-height: 100vh;
+            /* Remova o background fixo, pois o canvas será o fundo */
             color: #ffdd98;
             font-family: 'Poppins', 'Inter', Arial, sans-serif;
         }
         .contato-container {
             max-width: 420px;
             margin: 7vh auto 0 auto;
-            background: rgba(0, 0, 0, 0.97);
+            background: rgba(35,36,58,0.97);
             border-radius: 18px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.18);
             padding: 2.5rem 2rem 2rem 2rem;
@@ -180,146 +181,92 @@
             <div class="preloader-text">Carregando...</div>
         </div>
     </div>
-
     <canvas id="canvas" class="background-canvas"></canvas>
     <div class="background-filter"></div>
-
     <script>
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            
-            // Aguarda um tempo mínimo para mostrar o preloader
+        // Script do preloader com partículas animadas
+        const preloaderCanvas = document.getElementById("preloader-canvas");
+        const preloaderCtx = preloaderCanvas.getContext("2d");
+        preloaderCanvas.width = 200;
+        preloaderCanvas.height = 100;
+        let preloaderParticlesArray = [];
+
+        class PreloaderParticle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                preloaderCtx.beginPath();
+                preloaderCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                preloaderCtx.fillStyle = this.color;
+                preloaderCtx.fill();
+            }
+            update() {
+                if (this.x > preloaderCanvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > preloaderCanvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function initPreloader() {
+            preloaderParticlesArray = [];
+            let nParticles = 10;
+            for (let i = 0; i < nParticles; i++) {
+                let size = (Math.random() * 5) + 2;
+                let x = (Math.random() * ((200 - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((100 - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 3) - 1.5;
+                let directionY = (Math.random() * 3) - 1.5;
+                let color = '#fcd457';
+                preloaderParticlesArray.push(new PreloaderParticle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animatePreloader() {
+            requestAnimationFrame(animatePreloader);
+            preloaderCtx.clearRect(0, 0, 200, 100);
+            for (let i = 0; i < preloaderParticlesArray.length; i++) {
+                preloaderParticlesArray[i].update();
+            }
+        }
+
+        window.addEventListener('load', function () {
+            // Remover o preloader após o carregamento completo da página
             setTimeout(() => {
+                const preloader = document.querySelector('.preloader');
                 preloader.classList.add('fade-out');
-                
-                // Remove o preloader do DOM após a animação
                 setTimeout(() => {
-                    preloader.remove();
+                    preloader.style.display = 'none';
                 }, 500);
-            }, 1500); // Mostra por 1.5 segundos
+            }, 1000); // Duração do preloader (1 segundo)
         });
 
-        // Partículas do preloader
-        document.addEventListener('DOMContentLoaded', function() {
-            const preloaderCanvas = document.getElementById('preloader-canvas');
-            if (!preloaderCanvas) return;
-            
-            const ctx = preloaderCanvas.getContext('2d');
-            let particlesArray = [];
-            
-            // Configurar canvas
-            function resizePreloaderCanvas() {
-                preloaderCanvas.width = 200;
-                preloaderCanvas.height = 100;
-            }
-            
-            // Classe das partículas
-            class PreloaderParticle {
-                constructor() {
-                    this.x = Math.random() * preloaderCanvas.width;
-                    this.y = Math.random() * preloaderCanvas.height;
-                    this.size = Math.random() * 3 + 1;
-                    this.speedX = (Math.random() - 0.5) * 2;
-                    this.speedY = (Math.random() - 0.5) * 2;
-                    this.color = `hsl(${45 + Math.random() * 15}, 100%, ${70 + Math.random() * 20}%)`;
-                }
-                
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-                    
-                    // Rebater nas bordas
-                    if (this.x <= 0 || this.x >= preloaderCanvas.width) {
-                        this.speedX *= -1;
-                    }
-                    if (this.y <= 0 || this.y >= preloaderCanvas.height) {
-                        this.speedY *= -1;
-                    }
-                    
-                    // Manter dentro dos limites
-                    this.x = Math.max(0, Math.min(preloaderCanvas.width, this.x));
-                    this.y = Math.max(0, Math.min(preloaderCanvas.height, this.y));
-                }
-                
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                    
-                    // Adicionar brilho
-                    ctx.shadowColor = this.color;
-                    ctx.shadowBlur = 10;
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-            }
-            
-            // Inicializar partículas
-            function initPreloaderParticles() {
-                particlesArray = [];
-                for (let i = 0; i < 15; i++) {
-                    particlesArray.push(new PreloaderParticle());
-                }
-            }
-            
-            // Conectar partículas próximas
-            function connectPreloaderParticles() {
-                for (let a = 0; a < particlesArray.length; a++) {
-                    for (let b = a + 1; b < particlesArray.length; b++) {
-                        const dx = particlesArray[a].x - particlesArray[b].x;
-                        const dy = particlesArray[a].y - particlesArray[b].y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        
-                        if (distance < 80) {
-                            const opacity = 1 - (distance / 80);
-                            ctx.strokeStyle = `rgba(252, 212, 87, ${opacity * 0.3})`;
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-            
-            // Animar partículas
-            function animatePreloaderParticles() {
-                if (!document.getElementById('preloader')) return; // Para quando o preloader for removido
-                
-                ctx.clearRect(0, 0, preloaderCanvas.width, preloaderCanvas.height);
-                
-                for (let particle of particlesArray) {
-                    particle.update();
-                    particle.draw();
-                }
-                
-                connectPreloaderParticles();
-                requestAnimationFrame(animatePreloaderParticles);
-            }
-            
-            // Inicializar
-            resizePreloaderCanvas();
-            initPreloaderParticles();
-            animatePreloaderParticles();
-        });
-    </script>
+        initPreloader();
+        animatePreloader();
 
-    <script>
-        // Partículas de fundo
+        // Script do canvas de fundo (particles.js)
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
-        let mouse = {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particlesArray = []
+
+        let mouse ={
             x: undefined,
             y: undefined,
-            radius: (innerHeight/110) * (innerWidth/110)
-        };
-        let particlesArray = [];
-
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
+            radius: (canvas.height/110) * (canvas.width/110)
+        }
 
         window.addEventListener('mousemove', function(event){
             mouse.x = event.x;
@@ -329,7 +276,7 @@
         class Particle{
             constructor(x, y, directionX, directionY, size, color){
                 this.x = x;
-                this.y = y;
+                this.y=y;
                 this.directionX = directionX;
                 this.directionY = directionY;
                 this.size = size;
@@ -350,7 +297,7 @@
                 }
                 let dx = mouse.x - this.x;
                 let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
+                let distance = Math.sqrt(dx*dx + dy * dy)
                 if(distance < mouse.radius + this.size){
                     if(mouse.x < this.x && this.x < canvas.width - this.size * 10){
                         this.x += 10;
@@ -373,13 +320,13 @@
 
         function init(){
             particlesArray = [];
-            let nParticles = 60;
+            let nParticles = 100;
             for(let i=0; i < nParticles; i++){
                 let size = (Math.random()*5) + 1;
                 let x = (Math.random() * ((innerWidth - size * 2 )-(size * 2)) + size * 2);
                 let y = (Math.random() * ((innerHeight - size * 2 )-(size * 2)) + size * 2);
-                let directionX = (Math.random()*1.5)-0.75;
-                let directionY = (Math.random()*1.5)-0.75;
+                let directionX = (Math.random()*5)-2.5;
+                let directionY = (Math.random()*5)-2.5;
                 let color = '#fcd457';
                 particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
             }
@@ -427,7 +374,6 @@
         init();
         animate();
     </script>
-
     <div class="contato-container">
         <div class="contato-title">
             <i class="fa-solid fa-envelope"></i> Fale comigo

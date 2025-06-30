@@ -12,6 +12,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/global.css">
     <style>
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-content {
+            text-align: center;
+            color: #ffdd98;
+        }
+
+        .preloader-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+
+        .preloader-spinner {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 2rem;
+        }
+
+        .spinner-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid transparent;
+            border-top: 2px solid #ffdd98;
+            border-radius: 50%;
+            animation: spin 1.5s linear infinite;
+        }
+
+        .spinner-ring:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .spinner-ring:nth-child(2) {
+            animation-delay: 0.2s;
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            border-top-color: #ffc55a;
+        }
+
+        .spinner-ring:nth-child(3) {
+            animation-delay: 0.4s;
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+            border-top-color: #ffb347;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         body {
             color: #fff;
             font-family: 'Inter', Arial, sans-serif;
@@ -255,6 +350,21 @@
     </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <span class="prosto-one-regular">Eduardo Salarini</span>
+            </div>
+            <div class="preloader-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <div class="preloader-text">Carregando...</div>
+        </div>
+    </div>
+
     <canvas id="canvas" class="background-canvas"></canvas>
     <div class="background-filter"></div>
     <header class="mobile-header">
@@ -326,6 +436,22 @@
         </div>
     </div>
     <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            
+            // Aguarda um tempo mínimo para mostrar o preloader
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                
+                // Remove o preloader do DOM após a animação
+                setTimeout(() => {
+                    preloader.remove();
+                }, 500);
+            }, 1500); // Mostra por 1.5 segundos
+        });
+
+        // Controle do menu modal
         document.addEventListener('DOMContentLoaded', function() {
             const openBtn = document.getElementById('openMenuModal');
             const closeBtn = document.getElementById('closeMenuModal');

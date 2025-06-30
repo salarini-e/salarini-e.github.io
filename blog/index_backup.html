@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-container        <li class="nav-item mb-2">
+          <a class="nav-link" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Currículo</a>
+        </li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eduardo Salarini - Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="./blog.css">
+</head>
+<body class="scroll-container">
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+      <div class="preloader-content">
+          <div class="preloader-logo">
+              <span class="prosto-one-regular">Eduardo Salarini</span>
+          </div>
+          <div class="preloader-spinner">
+              <div class="spinner-ring"></div>
+              <div class="spinner-ring"></div>
+              <div class="spinner-ring"></div>
+          </div>
+          <div class="preloader-text">Carregando...</div>
+      </div>
+  </div>
+
+  <header>
+    <div class="navbar d-flex align-items-center" style="background: transparent;">
+      <span class="prosto-one-regular" style="font-size: 16pt; color: #ffdd98;">
+        Eduardo Salarini
+      </span>
+      <div class="ms-auto">
+        <div class="floating-menu-pill" id="openMenuModal">
+          <button class="btn menu" type="button" tabindex="0">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <span class="floating-menu-pill-text">Menu</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Modal customizado do menu -->
+  <div id="menuModal" class="custom-modal">
+    <div class="custom-modal-content">
+      <button class="close-modal" id="closeMenuModal" aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="nav flex-column mb-4 mt-4">
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="/"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="#"><i class="fa-solid fa-user me-2"></i>Quem sou</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="#"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link active" href="/blog/"><i class="fa-solid fa-pen-nib me-2"></i>Blog</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="#"><i class="fa-solid fa-envelope me-2"></i>Contato</a>
+        </li>
+      </ul>
+      <div class="d-flex justify-content-center gap-3 mb-3">
+        <a href="https://github.com/salarini-e" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/eduardo-salarini" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://lattes.cnpq.br/" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="Lattes"><i class="fa-solid fa-graduation-cap"></i></a>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary w-100 mb-2">Login</button>
+        <!-- <button class="btn btn-outline-primary w-100">Registrar</button>  -->
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="header">
+      <h1>Ultimos Artigos</h1>      
+    </div>
+    <div class="row">
+      <div id="articlesList" class="news">
+        
+       
+      </div>
+      <div class="fakeDivRight"></div>
+      <div class="divRight">
+        <div class="profile">
+          <img src="/novo/Imagem colada.png" alt="Perfil">
+          <div class="d-flex flex-column">
+            <span class="mt-1" style="font-weight: 600;">Eduardo Salarini</span>
+            <div class="" style="margin-top: -5px; font-size: 11pt; color: rgb(173, 173, 173);">32 anos</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="mb-0" style="color: rgb(102, 102, 102); text-align: justify;">Profissional brasileiro apaixonado por criar soluções inovadoras e experiências impactantes para os usuários.</p>
+          </div>
+        </div>
+        <hr style="border: 1px solid #adabab98; margin: 30px 0px;">
+        <div class="search-bar">
+          <input type="text" placeholder="Buscar notícias...">
+        </div>
+      
+        <div class="highlight categories" style="max-height: 130px; overflow-y: scroll; scrollbar-width: thin;">
+          <h2>Categorias</h2>
+          <ul>
+            <li>Tecnologia</li>
+            <li>Ciência</li>
+            <li>Saúde</li>
+            <li>Entretenimento</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ESalarini. Todos os direitos reservados.</p>
+    <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function get_articles() {
+      fetch('http://127.0.0.1:8000/blog/get-articles/')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.status === 200) { 
+            loadArticles(data.articles);
+          } else {
+            console.error('Erro na resposta:', data);
+          }
+        })
+        .catch(error => {
+          console.error('Erro na requisição:', error);
+        });
+    }
+    function loadArticles(articles){
+      const articlesList = document.getElementById('articlesList');
+      articles.forEach(article => {
+        const articleCard = `<div class="article">
+          <div class="img">
+            <a href="/blog/artigo/?slug=${article.slug}">
+              <img src="http://localhost:8000${article.imagem}" alt="Artigo">
+            </a>
+          </div>
+          <div class="divDescrition">
+            <h1 class="title">
+              ${article.titulo}
+            </h1>
+            <h2 class="data">
+              <i class="fa-solid fa-calendar-day me-2"></i>
+              ${article.dt_inclusao}
+            </h2>
+            <p class="descrition">
+              ${article.descricao}
+            </p>
+            <hr>
+            <ul>
+              ${listCategories(article.categorias)}
+            </ul>
+          </div>
+        </div>
+        `;
+        articlesList.innerHTML += articleCard;
+      });
+    }
+    function listCategories(categories){
+      let list = '';
+      categories.forEach(category => {
+        list += `<li>${category}</li>`;
+      });
+      return list;
+    }
+    get_articles();
+    // const articles = [
+    //   {
+    //     title: "Como os Algoritmos Estão Mudando o Mundo",
+    //     description: "Entenda como os algoritmos afetam todos os aspectos da nossa vida cotidiana e o impacto que podem causar no futuro.",
+    //     imageUrl: "https://via.placeholder.com/500x300",
+    //     link: "#"
+    //   },
+
+    // ];
+
+    // const articlesList = document.getElementById('articlesList');
+
+    // Função para exibir os artigos
+    // function loadArticles() {
+    //   articles.forEach(article => {
+    //     const articleCard = `
+    //       <div class="col-md-4">
+    //         <div class="article-card">
+    //           <img src="${article.imageUrl}" alt="Artigo">
+    //           <div class="article-card-body">
+    //             <h3>${article.title}</h3>
+    //             <p>${article.description}</p>
+    //             <a href="${article.link}" class="btn btn-primary">Leia Mais</a>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     `;
+    //     articlesList.innerHTML += articleCard;
+    //   });
+    // }
+
+    // Carregar os artigos ao carregar a página
+    // window.onload = loadArticles;
+
+    // Função de filtro para pesquisa
+    // document.getElementById('searchInput').addEventListener('input', function() {
+    //   const query = this.value.toLowerCase();
+    //   const filteredArticles = articles.filter(article =>
+    //     article.title.toLowerCase().includes(query) ||
+    //     article.description.toLowerCase().includes(query)
+    //   );
+    //   articlesList.innerHTML = '';
+    //   filteredArticles.forEach(article => {
+    //     const articleCard = `
+    //       <div class="col-md-4">
+    //         <div class="article-card">
+    //           <img src="${article.imageUrl}" alt="Artigo">
+    //           <div class="article-card-body">
+    //             <h3>${article.title}</h3>
+    //             <p>${article.description}</p>
+    //             <a href="${article.link}" class="btn btn-primary">Leia Mais</a>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     `;
+    //     articlesList.innerHTML += articleCard;
+    //   });
+    // });
+  </script>
+  <style>
+    /* Preloader */
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .preloader.fade-out {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .preloader-content {
+        text-align: center;
+        color: #ffdd98;
+    }
+
+    .preloader-logo {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        opacity: 0;
+        animation: fadeInUp 1s ease 0.5s forwards;
+    }
+
+    .preloader-spinner {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 2rem;
+    }
+
+    .spinner-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 3px solid transparent;
+        border-top: 3px solid #ffdd98;
+        border-radius: 50%;
+        animation: spin 1.5s linear infinite;
+    }
+
+    .spinner-ring:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .spinner-ring:nth-child(2) {
+        animation-delay: 0.2s;
+        width: 70%;
+        height: 70%;
+        top: 15%;
+        left: 15%;
+        border-top-color: #ffc55a;
+    }
+
+    .spinner-ring:nth-child(3) {
+        animation-delay: 0.4s;
+        width: 40%;
+        height: 40%;
+        top: 30%;
+        left: 30%;
+        border-top-color: #ffb347;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .preloader-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+        opacity: 0;
+        animation: fadeInUp 1s ease 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+    .prosto-one-regular {
+      font-family: 'Prosto One', Arial, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    /* Copiado do index principal */
+    .custom-modal {
+      display: none;
+      position: fixed;
+      z-index: 1050;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(20,20,30,0.85);
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    .custom-modal.show {
+      display: flex;
+      animation: fadeInBg 0.3s;
+    }
+    @keyframes fadeInBg {
+      from { background: rgba(20,20,30,0); }
+      to   { background: rgba(20,20,30,0.85); }
+    }
+    .custom-modal-content {
+      background: #23243a;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      padding: 2.5rem 2rem 2rem 2rem;
+      min-width: 320px;
+      max-width: 95vw;
+      width: 370px;
+      position: relative;
+      transform: translateY(-60vh);
+      opacity: 0;
+      animation: slideDownModal 0.5s cubic-bezier(.6,1.5,.5,1) forwards;
+    }
+    @keyframes slideDownModal {
+      from {
+        transform: translateY(-60vh) scale(0.95);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+    .close-modal {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: none;
+      border: none;
+      color: #ffdd98;
+      font-size: 1.5rem;
+      z-index: 2;
+      transition: color 0.2s;
+    }
+    .close-modal:hover {
+      color: #fff;
+    }
+    .custom-modal .nav-link {
+      color: #ffdd98;
+      font-weight: 500;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .custom-modal .nav-link.active,
+    .custom-modal .nav-link:hover {
+      background: #ffdd98;
+      color: #23243a !important;
+    }
+    .custom-modal .btn-outline-light {
+      border-color: #ffdd98;
+      color: #ffdd98;
+    }
+    .custom-modal .btn-outline-light:hover {
+      background: #ffdd98;
+      color: #23243a;
+    }
+    .custom-modal .btn-primary {
+      background: #ffdd98;
+      border: none;
+      color: #23243a;
+      font-weight: bold;
+    }
+    .custom-modal .btn-outline-primary {
+      border-color: #ffdd98;
+      color: #ffdd98;
+    }
+    .custom-modal .btn-outline-primary:hover {
+      background: #ffdd98;
+      color: #23243a;
+    }
+    .floating-menu-pill {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border: 2px solid #ffdd98;
+      border-radius: 999px;
+      background: transparent;
+      padding: 0px 16px 0px 0px;
+      gap: 0.5em;
+      height: 44px;
+      cursor: pointer;
+      color: #ffdd98;
+      transition: color 0.2s;
+    }
+    .floating-menu-pill::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0%;
+      background-color: #ffc55a;
+      z-index: 0;
+      transition: width 0.3s ease;
+      border-radius: 999px;
+    }
+    .floating-menu-pill:hover::before,
+    .floating-menu-pill.active::before {
+      width: 100%;
+    }
+    .floating-menu-pill > * {
+      position: relative;
+      z-index: 1;
+    }
+    .floating-menu-pill:hover,
+    .floating-menu-pill.active {
+      color: #23243a !important;
+    }
+    .floating-menu-pill .menu {
+      border: none !important;
+      background: transparent;
+      color: inherit;
+      box-shadow: none;
+      font-size: 1.3em;
+      outline: none;
+      border-radius: 999px;
+    }
+    .floating-menu-pill .menu:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px #ffdd9855;
+    }
+    .floating-menu-pill-text {
+      font-size: 1.08em;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      user-select: none;
+      padding-left: 2px;
+      padding-right: 2px;
+      background: transparent;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+    /* Social links styling (copiado do index) */
+    .social-links-home {
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .social-link-inline {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      text-decoration: none;
+      color: #ffdd98;
+      font-weight: 600;
+      font-size: 1.18rem;
+      transition: color 0.18s;
+      padding: 0.15em 0.5em;
+      border-radius: 8px;
+    }
+    .social-link-inline i {
+      font-size: 1.5em;
+      transition: color 0.18s, transform 0.15s;
+    }
+    .social-link-inline:hover,
+    .social-link-inline:focus {
+      color: #ffc55a;
+      background: none;
+      text-decoration: underline;
+    }
+    .social-link-inline:hover i,
+    .social-link-inline:focus i {
+      color: #ffc55a;
+      transform: scale(1.13);
+    }
+    .social-link-inline .label {
+      margin-left: 0.25em;
+      color: inherit;
+      font-size: 1.08em;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 4px #23243a55;
+    }
+    @media (max-width: 991px) {
+      .floating-menu-pill-text {
+        font-size: 0.95em;
+      }
+      .floating-menu-pill {
+        height: 36px;
+        padding: 2px 10px 2px 4px;
+      }
+    }
+  </style>
+  <script>
+    // Preloader
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        
+        // Aguarda um tempo mínimo para mostrar o preloader
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            
+            // Remove o preloader do DOM após a animação
+            setTimeout(() => {
+                preloader.remove();
+            }, 500);
+        }, 1500); // Mostra por 1.5 segundos
+    });
+
+    // Controle do menu modal
+    document.addEventListener('DOMContentLoaded', function() {
+      const openBtn = document.getElementById('openMenuModal');
+      const closeBtn = document.getElementById('closeMenuModal');
+      const modal = document.getElementById('menuModal');
+      const menuPill = openBtn;
+
+      function activateMenuPill() {
+        menuPill.classList.add('active');
+      }
+      function deactivateMenuPill() {
+        menuPill.classList.remove('active');
+      }
+
+      openBtn.addEventListener('click', function() {
+        modal.classList.add('show');
+        activateMenuPill();
+        const content = modal.querySelector('.custom-modal-content');
+        content.style.animation = 'none';
+        void content.offsetWidth;
+        content.style.animation = '';
+      });
+      function closeModal() {
+        modal.classList.remove('show');
+        deactivateMenuPill();
+      }
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

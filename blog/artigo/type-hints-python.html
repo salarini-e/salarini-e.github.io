@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salarini-e - Blog</title>
+    <meta name="description" content="Aprenda a usar Type Hints no Python para melhorar a legibilidade e manutenção do código.">
+    <meta name="keywords" content="Python, Type Hints, Tipagem, Programação, Desenvolvimento">
+    <meta name="author" content="Eduardo Salarini">
+    <title>Entenda Type Hints no Python - Eduardo Salarini</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -15,17 +18,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
     
+    <!-- Highlight.js para syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    
     <!-- Animações customizadas -->
     <link rel="stylesheet" href="/animacao.css">
-    
-    <script>
-      // Redireciona para versão mobile se for tela pequena
-      if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-        if (window.innerWidth < 768) {
-          window.location.href = "/m/index.html";
-        }
-      }
-    </script>
 </head>
 <body>
     <!-- Preloader -->
@@ -82,10 +81,11 @@
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <div class="col logo-superior d-flex">
-                        <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98;">
-                            BLOG
-                        </span>
+                    <div class="col-auto">
+                        <a href="/blog/" class="text-decoration-none">
+                            <i class="fa-solid fa-arrow-left me-2" style="color: #ffdd98;"></i>
+                            <span class="prosto-one-regular" style="font-size: 14pt; color: #ffdd98;">Voltar ao Blog</span>
+                        </a>
                     </div>
                     <div class="col">
     
@@ -103,65 +103,185 @@
         </div>
     </header>
 
-    <main class="container-fluid my-5 custom-animated slide-in-up custom-hidden">
+    <main class="container my-5 custom-animated slide-in-up custom-hidden">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10 col-xl-8">
-                <!-- Header do Blog -->
-                <div class="blog-header text-center mb-5 custom-animated fade-in-scale custom-hidden">
-                    <h1 class="display-4 mb-3" style="color: #ffdd98; font-weight: bold;">Últimos Artigos</h1>
-                    <p class="lead" style="color: #ffdd98; opacity: 0.8;">Compartilhando conhecimento sobre tecnologia, desenvolvimento e inovação</p>
-                </div>
+                <!-- Header do artigo -->
+                <article class="article-content">
+                    <header class="article-header mb-5 custom-animated fade-in-scale custom-hidden">
+                        <div class="article-meta mb-3">
+                            <span class="badge article-category">Python</span>
+                            <span class="article-date ms-3">
+                                <i class="fa-solid fa-calendar me-2"></i>15 Jan 2025
+                            </span>
+                            <span class="article-read-time ms-3">
+                                <i class="fa-solid fa-clock me-2"></i>8 min de leitura
+                            </span>
+                        </div>
+                        <h1 class="article-title">Entenda Type Hints no Python</h1>
+                        <p class="article-subtitle">Aprenda a usar Type Hints no Python para melhorar a legibilidade e manutenção do código</p>
+                    </header>
 
-                <!-- Barra de Busca -->
-                <div class="search-container mb-5 custom-animated slide-in-left custom-hidden">
-                    <div class="input-group">
-                        <input type="text" class="form-control search-input" placeholder="Buscar artigos...">
-                        <button class="btn search-btn" type="button">
-                            <i class="fa-solid fa-search"></i>
-                        </button>
+                    <!-- Conteúdo do artigo -->
+                    <div class="article-body custom-animated reveal custom-hidden">
+                        <p>O Python, apesar de ser uma linguagem dinamicamente tipada, permite o uso de <strong>type hints</strong> para melhorar a legibilidade do código e ajudar ferramentas de análise estática. Vamos explorar como usar type hints e ver exemplos práticos que você pode aplicar no seu dia a dia!</p>
+
+                        <h2>O que são Type Hints?</h2>
+                        <p>Type hints são anotações que indicam os tipos esperados para variáveis, parâmetros e valores de retorno de funções. Eles foram introduzidos no Python 3.5 através do módulo <code>typing</code> e, desde então, têm sido amplamente utilizados em projetos para tornar o código mais robusto e autodocumentado.</p>
+
+                        <p>Essas anotações não alteram o comportamento do código em tempo de execução, mas podem ser validadas por ferramentas como <a href="https://mypy-lang.org/" target="_blank">MyPy</a>, ajudando a detectar inconsistências.</p>
+
+                        <h2>Exemplos Práticos de Type Hints</h2>
+
+                        <h3>1. Função com Tipagem Básica</h3>
+                        <p>Em uma função simples que soma dois números inteiros, podemos usar type hints para especificar os tipos esperados:</p>
+                        <pre><code class="language-python">def soma(a: int, b: int) -> int:
+    """
+    Soma dois números inteiros.
+
+    :param a: Primeiro número inteiro.
+    :param b: Segundo número inteiro.
+    :return: Resultado da soma.
+    """
+    return a + b
+
+resultado = soma(5, 10)
+print(resultado)  # Saída: 15</code></pre>
+
+                        <h3>2. Trabalhando com Listas</h3>
+                        <p>Quando lidamos com coleções, como listas, podemos especificar o tipo dos elementos:</p>
+                        <pre><code class="language-python">from typing import List
+
+def calcular_media(notas: List[float]) -> float:
+    """
+    Calcula a média de uma lista de notas.
+
+    :param notas: Lista de notas (valores float).
+    :return: Média das notas.
+    """
+    return sum(notas) / len(notas)
+
+notas = [8.5, 9.0, 7.0, 6.5]
+media = calcular_media(notas)
+print(f"Média: {media:.2f}")  # Saída: Média: 7.75</code></pre>
+
+                        <h3>3. Parâmetros Opcionais</h3>
+                        <p>Para parâmetros opcionais, usamos o tipo <code>Optional</code>:</p>
+                        <pre><code class="language-python">from typing import Optional
+
+def saudacao(nome: Optional[str] = None) -> str:
+    """
+    Retorna uma saudação personalizada ou genérica.
+
+    :param nome: Nome da pessoa (opcional).
+    :return: Saudação.
+    """
+    if nome:
+        return f"Olá, {nome}!"
+    return "Olá, visitante!"
+
+print(saudacao("Eduardo"))  # Saída: Olá, Eduardo!
+print(saudacao())  # Saída: Olá, visitante!</code></pre>
+
+                        <h3>4. Usando Union para Tipos Múltiplos</h3>
+                        <p>Se um parâmetro pode ter mais de um tipo, utilizamos <code>Union</code>:</p>
+                        <pre><code class="language-python">from typing import Union
+
+def processar_dado(dado: Union[int, str]) -> str:
+    """
+    Processa um dado que pode ser inteiro ou string.
+
+    :param dado: Dado a ser processado.
+    :return: Descrição do dado.
+    """
+    if isinstance(dado, int):
+        return f"Número recebido: {dado}"
+    return f"Texto recebido: {dado}"
+
+print(processar_dado(42))  # Saída: Número recebido: 42
+print(processar_dado("Olá"))  # Saída: Texto recebido: Olá</code></pre>
+
+                        <h3>5. Funções Assíncronas com Tipagem</h3>
+                        <p>Funções assíncronas também podem se beneficiar de type hints:</p>
+                        <pre><code class="language-python">import asyncio
+from typing import Coroutine
+
+async def busca_dados(url: str) -> str:
+    """
+    Simula uma requisição assíncrona para buscar dados.
+
+    :param url: URL a ser acessada.
+    :return: Dados simulados.
+    """
+    await asyncio.sleep(1)  # Simula tempo de resposta
+    return f"Dados de {url}"
+
+async def main():
+    dados = await busca_dados("https://exemplo.com")
+    print(dados)
+
+asyncio.run(main())  # Saída: Dados de https://exemplo.com</code></pre>
+
+                        <h2>Benefícios do Uso de Type Hints</h2>
+                        <ul>
+                            <li>Melhora a legibilidade e a compreensão do código.</li>
+                            <li>Facilita a detecção de erros por ferramentas de análise estática.</li>
+                            <li>Ajuda na documentação automática e autocompletar em IDEs.</li>
+                        </ul>
+
+                        <h2>Conclusão</h2>
+                        <p>Type hints são uma ferramenta poderosa para escrever códigos mais claros, seguros e fáceis de manter. Adote essa prática nos seus projetos e experimente o impacto positivo na qualidade do seu desenvolvimento!</p>
                     </div>
-                </div>
 
-                <!-- Grid de Artigos -->
-                <div id="articlesList" class="row g-4 custom-animated slide-in-right custom-hidden">
-                    <!-- Os artigos serão carregados aqui via JavaScript -->
-                </div>
+                    <!-- Footer do artigo -->
+                    <footer class="article-footer mt-5 pt-4 border-top">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="author-info">
+                                    <img src="/novo/foto_sala3.png" alt="Eduardo Salarini" class="author-avatar">
+                                    <div>
+                                        <h6 class="mb-1">Eduardo Salarini</h6>
+                                        <p class="text-muted mb-0">Desenvolvedor Full Stack</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <div class="article-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Type Hints</span>
+                                    <span class="tag">Programação</span>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </article>
 
-                <!-- Categorias -->
-                <div class="categories-section mt-5 custom-animated fade-in custom-hidden">
-                    <h3 class="mb-3" style="color: #ffdd98;">Categorias</h3>
-                    <div class="categories-tags">
-                        <span class="category-tag">Tecnologia</span>
-                        <span class="category-tag">Desenvolvimento</span>
-                        <span class="category-tag">Python</span>
-                        <span class="category-tag">JavaScript</span>
-                        <span class="category-tag">React</span>
-                        <span class="category-tag">DevOps</span>
-                        <span class="category-tag">Banco de Dados</span>
-                        <span class="category-tag">Ciência de Dados</span>
+                <!-- Navegação entre artigos -->
+                <nav class="article-navigation mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="/blog/" class="nav-article">
+                                <i class="fa-solid fa-arrow-left me-2"></i>
+                                <span>Voltar ao Blog</span>
+                            </a>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <a href="/blog/artigo/graphql-django-fastapi.html" class="nav-article">
+                                <span>Próximo Artigo</span>
+                                <i class="fa-solid fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </nav>
             </div>
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="text-center py-4 custom-animated slide-in-up custom-hidden" style="border-top: 1px solid #ffdd98; margin-top: 5rem;">
-        <div class="container">
-            <p class="mb-1" style="color: #ffdd98;">&copy; 2025 Eduardo Salarini. Todos os direitos reservados.</p>
-            <p class="mb-0">
-                <a href="/politica-de-privacidade" class="text-decoration-none" style="color: #ffdd98; opacity: 0.7;">Política de Privacidade</a>
-                <span class="mx-2" style="color: #ffdd98; opacity: 0.7;">|</span>
-                <a href="/contato.html" class="text-decoration-none" style="color: #ffdd98; opacity: 0.7;">Contato</a>
-            </p>
-        </div>
-    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <style>
-        /* Preloader */
+        /* Preloader - igual às outras páginas */
         .preloader {
             position: fixed;
             top: 0;
@@ -227,7 +347,185 @@
             }
         }
 
-        /* Modal customizado - igual ao index */
+        /* Estilos do artigo */
+        .article-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-category {
+            background: #ffdd98;
+            color: #23243a;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .article-date, .article-read-time {
+            color: rgba(252, 212, 87, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .article-title {
+            color: #ffdd98;
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .article-subtitle {
+            color: rgba(252, 212, 87, 0.8);
+            font-size: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .article-body {
+            color: #ffdd98;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-body h2 {
+            color: #ffdd98;
+            font-weight: bold;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ffdd98;
+            padding-bottom: 0.5rem;
+        }
+
+        .article-body h3 {
+            color: #ffdd98;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .article-body code {
+            background: rgba(252, 212, 87, 0.1);
+            color: #ffc55a;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .article-body pre {
+            background: rgba(35, 36, 58, 0.9);
+            border: 1px solid #ffdd98;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .article-body pre code {
+            background: none;
+            color: #ffdd98;
+            padding: 0;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-body a {
+            color: #ffc55a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .article-body a:hover {
+            border-bottom-color: #ffc55a;
+        }
+
+        .article-footer {
+            border-top: 1px solid rgba(252, 212, 87, 0.3) !important;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ffdd98;
+        }
+
+        .author-info h6 {
+            color: #ffdd98;
+            font-weight: 600;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: end;
+        }
+
+        .tag {
+            background: rgba(252, 212, 87, 0.1);
+            color: #ffdd98;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(252, 212, 87, 0.3);
+        }
+
+        .article-navigation {
+            border-top: 1px solid rgba(252, 212, 87, 0.3);
+            padding-top: 2rem;
+        }
+
+        .nav-article {
+            display: flex;
+            align-items: center;
+            color: #ffdd98;
+            text-decoration: none;
+            padding: 1rem;
+            border: 1px solid rgba(252, 212, 87, 0.3);
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .nav-article:hover {
+            background: rgba(252, 212, 87, 0.1);
+            border-color: #ffdd98;
+            color: #ffdd98;
+        }
+
+        /* Menu e canvas - reutilizando estilos das outras páginas */
         .custom-modal {
             display: none;
             position: fixed;
@@ -310,7 +608,6 @@
             font-weight: bold;
         }
 
-        /* Menu flutuante - igual ao index */
         .floating-menu-pill {
             position: relative;
             overflow: hidden;
@@ -378,7 +675,6 @@
             align-items: center;
         }
 
-        /* Canvas como background fixo */
         .background-canvas {
             position: fixed;
             top: 0;
@@ -389,7 +685,6 @@
             pointer-events: none;
         }
 
-        /* Filtro de cor sobre o canvas */
         .background-filter {
             position: fixed;
             top: 0;
@@ -402,126 +697,23 @@
             transition: background 0.3s;
         }
 
-        /* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
         body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
             position: relative;
             z-index: 2;
         }
 
-        /* Impede rolagem na página */
         html, body {
             overflow-x: hidden;
-            overflow-y: auto;
-        }
-
-        /* Estilos específicos do blog */
-        .search-input {
-            background: rgba(35, 36, 58, 0.9);
-            border: 2px solid #ffdd98;
-            border-right: none;
-            border-radius: 10px 0 0 10px;
-            color: #ffdd98;
-            padding: 12px 16px;
-        }
-        
-        .search-input:focus {
-            background: rgba(35, 36, 58, 0.9);
-            border-color: #ffc55a;
-            color: #ffdd98;
-            box-shadow: none;
-        }
-        
-        .search-btn {
-            background: #ffdd98;
-            border: 2px solid #ffdd98;
-            border-radius: 0 10px 10px 0;
-            color: #23243a;
-            padding: 12px 20px;
-            transition: all 0.2s;
-        }
-        
-        .search-btn:hover {
-            background: #ffc55a;
-            border-color: #ffc55a;
-            color: #23243a;
-        }
-
-        .article-card {
-            background: rgba(35, 36, 58, 0.9);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(252, 212, 87, 0.3);
-            border-color: #ffdd98;
-        }
-        
-        .article-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .article-date {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #ffdd98;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        .article-title {
-            color: #ffdd98;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-        
-        .article-description {
-            color: rgba(252, 212, 87, 0.8);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        .article-meta {
-            color: rgba(252, 212, 87, 0.6);
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .categories-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .category-tag {
-            background: rgba(252, 212, 87, 0.1);
-            color: #ffdd98;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid #ffdd98;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        
-        .category-tag:hover {
-            background: #ffdd98;
-            color: #23243a;
         }
 
         @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
             .floating-menu-pill {
                 height: 36px;
                 padding: 2px 10px 2px 4px;
@@ -529,21 +721,23 @@
             .floating-menu-pill-text {
                 font-size: 0.95em;
             }
+            .article-tags {
+                justify-content: center;
+                margin-top: 1rem;
+            }
         }
     </style>
 
+    <!-- Scripts iguais às outras páginas -->
     <script>
         // Preloader
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
             
-            // Aguarda um tempo mínimo para mostrar o preloader
             setTimeout(() => {
                 preloader.classList.add('fade-out');
                 
-                // Ativar animações dos conteúdos após o preloader começar a sumir
                 setTimeout(() => {
-                    // Função para ativar animação de um elemento
                     function activateAnimation(selector) {
                         const element = document.querySelector(selector);
                         if (element) {
@@ -552,40 +746,17 @@
                         }
                     }
                     
-                    // Ativar animações em sequência
                     activateAnimation('header');
-                    
-                    setTimeout(() => {
-                        activateAnimation('main');
-                    }, 100);
-                    
-                    setTimeout(() => {
-                        activateAnimation('.blog-header');
-                    }, 200);
-                    
-                    setTimeout(() => {
-                        activateAnimation('.search-container');
-                    }, 300);
-                    
-                    setTimeout(() => {
-                        activateAnimation('#articlesList');
-                    }, 400);
-                    
-                    setTimeout(() => {
-                        activateAnimation('.categories-section');
-                    }, 500);
-                    
-                    setTimeout(() => {
-                        activateAnimation('footer');
-                    }, 600);
+                    setTimeout(() => activateAnimation('main'), 100);
+                    setTimeout(() => activateAnimation('.article-header'), 200);
+                    setTimeout(() => activateAnimation('.article-body'), 300);
                     
                 }, 100);
                 
-                // Remove o preloader do DOM após a animação
                 setTimeout(() => {
                     preloader.remove();
                 }, 500);
-            }, 1500); // Mostra por 1.5 segundos
+            }, 1500);
         });
 
         // Partículas do preloader
@@ -596,13 +767,11 @@
             const ctx = preloaderCanvas.getContext('2d');
             let particlesArray = [];
             
-            // Configurar canvas
             function resizePreloaderCanvas() {
                 preloaderCanvas.width = 200;
                 preloaderCanvas.height = 100;
             }
             
-            // Classe das partículas
             class PreloaderParticle {
                 constructor() {
                     this.x = Math.random() * preloaderCanvas.width;
@@ -617,7 +786,6 @@
                     this.x += this.speedX;
                     this.y += this.speedY;
                     
-                    // Rebater nas bordas
                     if (this.x <= 0 || this.x >= preloaderCanvas.width) {
                         this.speedX *= -1;
                     }
@@ -625,7 +793,6 @@
                         this.speedY *= -1;
                     }
                     
-                    // Manter dentro dos limites
                     this.x = Math.max(0, Math.min(preloaderCanvas.width, this.x));
                     this.y = Math.max(0, Math.min(preloaderCanvas.height, this.y));
                 }
@@ -636,7 +803,6 @@
                     ctx.fillStyle = this.color;
                     ctx.fill();
                     
-                    // Adicionar brilho
                     ctx.shadowColor = this.color;
                     ctx.shadowBlur = 10;
                     ctx.fill();
@@ -644,7 +810,6 @@
                 }
             }
             
-            // Inicializar partículas
             function initPreloaderParticles() {
                 particlesArray = [];
                 for (let i = 0; i < 15; i++) {
@@ -652,7 +817,6 @@
                 }
             }
             
-            // Conectar partículas próximas
             function connectPreloaderParticles() {
                 for (let a = 0; a < particlesArray.length; a++) {
                     for (let b = a + 1; b < particlesArray.length; b++) {
@@ -673,9 +837,8 @@
                 }
             }
             
-            // Animar partículas
             function animatePreloaderParticles() {
-                if (!document.getElementById('preloader')) return; // Para quando o preloader for removido
+                if (!document.getElementById('preloader')) return;
                 
                 ctx.clearRect(0, 0, preloaderCanvas.width, preloaderCanvas.height);
                 
@@ -688,23 +851,22 @@
                 requestAnimationFrame(animatePreloaderParticles);
             }
             
-            // Inicializar
             resizePreloaderCanvas();
             initPreloaderParticles();
             animatePreloaderParticles();
+
+            // Highlight.js
+            hljs.highlightAll();
         });
 
-        // Controle do menu modal
+        // Menu modal
         document.addEventListener('DOMContentLoaded', function() {
             const openBtn = document.getElementById('openMenuModal');
             const closeBtn = document.getElementById('closeMenuModal');
             const modal = document.getElementById('menuModal');
             const menuPill = openBtn;
 
-            if (!openBtn || !closeBtn || !modal) {
-                console.error('Erro: Elementos do menu não encontrados!');
-                return;
-            }
+            if (!openBtn || !closeBtn || !modal) return;
 
             function activateMenuPill() {
                 if (menuPill) menuPill.classList.add('active');
@@ -756,7 +918,7 @@
     </script>
 
     <script>
-        // Partículas de fundo igual ao index
+        // Partículas de fundo
         const canvas = document.getElementById("canvas");
         const ctx = canvas.getContext("2d");
         let mouse = {
@@ -877,126 +1039,6 @@
         resizeCanvas();
         init();
         animate();
-    </script>
-
-    <script>
-        // Função para carregar artigos (simulando dados)
-        function loadArticles() {
-            const articlesList = document.getElementById('articlesList');
-            
-            // Artigos de exemplo
-            const articles = [
-                {
-                    title: "Type Hints no Python: Melhorando a Qualidade do Seu Código",
-                    description: "Aprenda a usar Type Hints no Python para melhorar a legibilidade e manutenção do código.",
-                    date: "15 Jan 2025",
-                    image: "https://via.placeholder.com/400x200/3B82F6/FFFFFF?text=Type+Hints",
-                    categories: ["Python", "Backend"],
-                    link: "/blog/artigo/type-hints-python.html"
-                },
-                {
-                    title: "GraphQL com Django e FastAPI",
-                    description: "Aprenda a implementar GraphQL com Django e FastAPI. Guia completo com exemplos práticos.",
-                    date: "12 Jan 2025",
-                    image: "https://via.placeholder.com/400x200/E11D48/FFFFFF?text=GraphQL",
-                    categories: ["GraphQL", "Django", "FastAPI"],
-                    link: "/blog/artigo/graphql-django-fastapi.html"
-                },
-                {
-                    title: "Vale a pena ter um blog em 2025?",
-                    description: "Uma reflexão sobre a relevância de ter um blog em 2025, considerando as tendências digitais e hábitos de consumo de conteúdo.",
-                    date: "10 Jan 2025",
-                    image: "https://via.placeholder.com/400x200/F59E0B/FFFFFF?text=Blog+2025",
-                    categories: ["Reflexão", "Blog", "Conteúdo Digital"],
-                    link: "/blog/artigo/vale-a-pena-ter-blog-2025.html"
-                },
-                {
-                    title: "De Procedural a Orientado a Objetos: A Transformação do Seu Código",
-                    description: "Entenda as vantagens de usar a Programação Orientada a Objetos (POO) em vez de uma abordagem procedural para organizar o código.",
-                    date: "08 Jan 2025",
-                    image: "https://via.placeholder.com/400x200/10B981/FFFFFF?text=POO",
-                    categories: ["POO", "Fundamentos", "JavaScript"],
-                    link: "/blog/artigo/procedural-orientado-objetos.html"
-                },
-                {
-                    title: "React 18: Novidades e Melhores Práticas",
-                    description: "Descubra as principais funcionalidades do React 18 e como aplicar as melhores práticas em seus projetos.",
-                    date: "05 Jan 2025",
-                    image: "https://via.placeholder.com/400x200/06B6D4/FFFFFF?text=React+18",
-                    categories: ["React", "Frontend"],
-                    link: "#"
-                },
-                {
-                    title: "Ciência de Dados com Python: Guia Completo",
-                    description: "Um guia abrangente sobre análise de dados usando pandas, numpy e matplotlib para insights poderosos.",
-                    date: "02 Jan 2025",
-                    image: "https://via.placeholder.com/400x200/8B5CF6/FFFFFF?text=Data+Science",
-                    categories: ["Python", "Ciência de Dados"],
-                    link: "#"
-                }
-            ];
-
-            articles.forEach(article => {
-                const articleCard = `
-                    <div class="col-md-6 col-lg-4">
-                        <div class="article-card h-100">
-                            <div class="article-image" style="background-image: url('${article.image}')">
-                                <div class="article-date">
-                                    <i class="fa-solid fa-calendar me-1"></i>
-                                    ${article.date}
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <h5 class="article-title">${article.title}</h5>
-                                <p class="article-description mb-3">${article.description}</p>
-                                <div class="article-meta">
-                                    <span><i class="fa-solid fa-tags me-1"></i>${article.categories.join(', ')}</span>
-                                    <span><i class="fa-solid fa-clock me-1"></i>5 min</span>
-                                </div>
-                                <div class="mt-3">
-                                    <a href="${article.link}" class="btn btn-outline-warning btn-sm">
-                                        Ler mais <i class="fa-solid fa-arrow-right ms-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                articlesList.innerHTML += articleCard;
-            });
-        }
-
-        // Funcionalidade de busca
-        document.addEventListener('DOMContentLoaded', function() {
-            loadArticles();
-            
-            // Busca de artigos
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
-            
-            function performSearch() {
-                const searchTerm = searchInput.value.toLowerCase();
-                console.log('Buscando por:', searchTerm);
-                // Aqui você pode implementar a lógica de busca real
-            }
-            
-            searchBtn.addEventListener('click', performSearch);
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    performSearch();
-                }
-            });
-
-            // Filtro por categoria
-            const categoryTags = document.querySelectorAll('.category-tag');
-            categoryTags.forEach(tag => {
-                tag.addEventListener('click', function() {
-                    const category = this.textContent;
-                    console.log('Filtrando por categoria:', category);
-                    // Aqui você pode implementar a lógica de filtro real
-                });
-            });
-        });
     </script>
 </body>
 </html>
