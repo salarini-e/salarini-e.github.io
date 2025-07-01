@@ -32,7 +32,7 @@
     <div id="preloader" class="preloader">
         <div class="preloader-content">
             <div class="preloader-logo">
-                <span class="prosto-one-regular">Eduardo Salarini</span>
+                 <!-- <span class="prosto-one-regular">Eduardo Salarini</span> -->
             </div>
             <div class="preloader-particles">
                 <canvas id="preloader-canvas" class="preloader-canvas"></canvas>
@@ -54,19 +54,16 @@
             </div> -->
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
+                    <a class="nav-link" href="/index.html"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link active" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Currículo</a>
+                    <a class="nav-link active" href="/quem-sou-eu/index.html"><i class="fa-solid fa-user me-2"></i>Quem sou eu</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/projetos/"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
+                    <a class="nav-link" href="/portfolio.html"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
                 </li>
-                    <!-- <li class="nav-item mb-2">
-                        <a class="nav-link" href="#"><i class="fa-brands fa-github me-2"></i>Repositórios</a>
-                    </li> -->
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/blog/"><i class="fa-solid fa-pen-nib me-2"></i>Blog</a>
+                    <a class="nav-link" href="/blog/index.html"><i class="fa-solid fa-blog me-2"></i>Blog</a>
                 </li>
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="/contato.html"><i class="fa-solid fa-envelope me-2"></i>Contato</a>
@@ -84,943 +81,1352 @@
     </div>
     <canvas id="canvas" class="background-canvas"></canvas>
     <div class="background-filter"></div>
-    <header class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col logo-superior d-flex">
-                        <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98 ;">
-                            Quem sou eu
-                        </span>
-                    </div>
-                    <div class="col">
-    
-                    </div>
-                    <div class="idioma" style="width: 140px;">
-                        <div class="floating-menu-pill ms-auto my-auto" id="openMenuModal" >
-                            <button class="btn menu" type="button" tabindex="0">
-                                <i class="fa-solid fa-bars"></i>
-                            </button>
-                            <span class="floating-menu-pill-text">Menu</span>
-                        </div>
-                    </div>
+    <header class="container-fluid custom-animated slide-in-down custom-hidden">
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <div class="floating-menu-pill my-auto" id="openMenuModal">
+                    <button class="btn menu" type="button" tabindex="0">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <span class="floating-menu-pill-text">Menu</span>
                 </div>
             </div>
         </div>
     </header>
     
-    <!-- Container simulando folha A4 para Quem sou eu -->
-    <main class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 96vh; padding: 2vh 2vw;">
-        <div class="curriculum-sheet">
-            <div class="curriculum-content">
-                <!-- Cabeçalho do Quem sou eu -->
-                <div class="curriculum-header mb-4">
-                    <h1>Luís Eduardo Cordeiro Salarini</h1>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope me-2"></i>lecsalarini@gmail.com</p>
-                        <p><i class="fas fa-phone me-2"></i>(22) 99252-2121</p>
+    <main class="container-fluid my-5 custom-animated slide-in-up custom-hidden">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                
+                <!-- Hero Section -->
+                <div class="about-hero text-center mb-5 custom-animated fade-in-scale custom-hidden">
+                    <div class="hero-avatar mb-4">
+                        <img src="/novo/dudu_salarini.jpg" alt="Eduardo Salarini" class="profile-image">
+                        <div class="hero-status">
+                            <i class="fas fa-code"></i>
+                            <span>Desenvolvedor </span>
+                        </div>
+                    </div>
+                    <h1 class="display-4 mb-3" style="color: #ffdd98; font-weight: bold;">Eduardo Salarini</h1>
+                    <!-- <p class="lead mb-4" style="color: rgba(255, 221, 152, 0.9);">
+                        Transformando ideias em soluções digitais inovadoras
+                    </p> -->
+                    <div class="hero-social-links">
+                        <a href="https://github.com/salarini-e" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://lattes.cnpq.br/" target="_blank" class="social-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Resumo -->
-                <section class="curriculum-section mb-4">
-                    <h2>Resumo</h2>
-                    <p>Desenvolvedor Full-Stack com experiência sólida em backend com Python e Django, integração entre sistemas, automação, infraestrutura Fedora com Apache, e criação de aplicações web escaláveis. Organizado, estratégico e com foco em soluções eficientes e reutilizáveis. Experiência com projetos próprios e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>
-                </section>
-
-                <!-- Experiência Profissional -->
-                <section class="curriculum-section mb-4">
-                    <h2>Experiência Profissional</h2>
-                    <div class="experience-item">
-                        <div class="experience-header">
-                            <h3>Desenvolvedor Full-Stack</h3>
-                            <span class="period">2021 – Presente</span>
-                        </div>
-                        <div class="company">Prefeitura Municipal de Nova Friburgo</div>
-                  <ul class="experience-list">
-      <li>Desenvolvimento de sistemas internos utilizando Django, com foco em performance, escalabilidade e manutenibilidade.</li>
-      <li>Criação e manutenção de aplicações web com integração a bancos de dados relacionais, autenticação, relatórios e controle de permissões.</li>
-      <li>Implementação de soluções para leitura e visualização de logs do Apache em tempo real por meio de interfaces web com Bootstrap.</li>
-      <li>Administração de servidores Linux (Fedora), com configuração de ambiente de produção, tuning de performance, e deploys.</li>
-      <li>Gerenciamento de integração com storage remoto via FTP em sistemas legados, com posterior implementação de conexões seguras via SFTP em aplicações modernas com autenticação e automação de transferência.</li>
-      <li>Desenvolvimento de mecanismos de monitoramento de serviços e infraestrutura, utilizando Python e ferramentas de logwatching.</li>
-      <li>Colaboração em projetos estratégicos como sistemas de controle de ponto, feedback institucional e gestão de chamados técnicos.</li>
-      <li>Liderança técnica de estagiários de nível técnico e superior, com orientação em boas práticas de desenvolvimento, versionamento e documentação.</li>
-      <li>Contribuição na padronização da intranet institucional e melhoria da experiência do usuário com navegação estruturada por hierarquias e dropdowns.</li>
-    </ul>
+                <!-- História Pessoal -->
+                <div class="about-section mb-5 custom-animated slide-in-left custom-hidden">
+                    <div class="section-header mb-4">
+                        <h2 class="section-title">
+                            <i class="fas fa-user-astronaut me-3"></i>
+                            Minha História
+                        </h2>
                     </div>
-                </section>
-
-                <!-- Habilidades Técnicas -->
-<section class="curriculum-section mb-4">
-  <h2>Habilidades Técnicas</h2>
-  <div class="skills-grid">
-    <div class="skill-category">
-      <strong>Frontend:</strong> HTML5, CSS3, Bootstrap, JavaScript (ES6+), jQuery
-    </div>
-    <div class="skill-category">
-      <strong>Backend:</strong> Django, Flask, NodeJS, Codeigniter, APIs RESTful e GraphQL
-    </div>
-    <div class="skill-category">
-      <strong>Infraestrutura:</strong> Fedora Linux, Apache, Nginx, Mikrotik
-    </div>
-    <div class="skill-category">
-      <strong>Banco de Dados:</strong> MariaDB, MySQL, SQLite e PostgreSQL
-    </div>
-    <div class="skill-category">
-      <strong>Versionamento e Colaboração:</strong> Git e GitHub
-    </div>    
-    <div class="skill-category">
-      <strong>Outros:</strong> Shell Script, SFTP, SSH, consumo de APIs e automação de tarefas
-    </div>
-  </div>
-</section>
-
-
-                <!-- Formação Acadêmica -->
-                <section class="curriculum-section">
-                    <h2>Formação Acadêmica</h2>
-                    <div class="education-item">
-                        <div class="education-header">
-                            <h3>Análise e Desenvolvimento de Sistemas</h3>
-                            <span class="status">Em andamento</span>
-                        </div>
-                        <div class="institution">UniBF Centro Universitário</div>
+                    <div class="story-content">
+                        <p class="story-paragraph">
+                            Olá! Sou Eduardo Salarini, um desenvolvedor apaixonado por tecnologia e inovação. 
+                            Minha jornada começou com a curiosidade sobre como as coisas funcionam por trás das telas, 
+                            e hoje transformo essa paixão em soluções que fazem a diferença na vida das pessoas.
+                        </p>
+                        <p class="story-paragraph">
+                            Formado em Física pelo CEFET/RJ e atualmente cursando Análise e Desenvolvimento de Sistemas, 
+                            tenho uma visão única que combina pensamento analítico com criatividade técnica. 
+                            Acredito que a melhor tecnologia é aquela que resolve problemas reais de forma elegante.
+                        </p>
+                        <p class="story-paragraph">
+                            Quando não estou codando, você pode me encontrar explorando novas tecnologias, 
+                            contribuindo para projetos open source, ou planejando a próxima solução inovadora 
+                            que pode impactar positivamente a vida das pessoas.
+                        </p>
                     </div>
-                    <div class="education-item mt-3">
-                        <div class="education-header">
-                            <h3>Física</h3>
-                            <span class="status">Concluído</span>
-                        </div>
-                        <div class="institution">CEFET/RJ – Nova Friburgo</div>
+                </div>
+
+                <!-- Skills & Tech Stack -->
+                <div class="about-section mb-5 custom-animated slide-in-right custom-hidden">
+                    <div class="section-header mb-4">
+                        <h2 class="section-title">
+                            <i class="fas fa-code me-3"></i>
+                            Tecnologias & Habilidades
+                        </h2>
                     </div>
-                </section>
+                    <div class="skills-container">
+                        <div class="skill-category-modern">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-laptop-code"></i>
+                                Frontend
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Bootstrap</span>
+                                <span class="skill-tag">jQuery</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category-modern">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-server"></i>
+                                Backend
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Django</span>
+                                <span class="skill-tag">Flask</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">APIs RESTful</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category-modern">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-database"></i>
+                                Dados
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">SQLite</span>
+                                <span class="skill-tag">MariaDB</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category-modern">
+                            <h3 class="skill-category-title">
+                                <i class="fas fa-tools"></i>
+                                DevOps & Ferramentas
+                            </h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Apache</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">SSH</span>
+                                <span class="skill-tag">SFTP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experiência -->
+                <div class="about-section mb-5 custom-animated slide-in-left custom-hidden">
+                    <div class="section-header mb-4">
+                        <h2 class="section-title">
+                            <i class="fas fa-briefcase me-3"></i>
+                            Experiência Profissional
+                        </h2>
+                    </div>
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="timeline-title">Desenvolvedor Full-Stack</h3>
+                                    <span class="timeline-period">2021 - Presente</span>
+                                </div>
+                                <p class="timeline-company">Prefeitura Municipal de Nova Friburgo</p>
+                                <div class="timeline-description">
+                                    <p>Desenvolvimento de sistemas internos completos com Django, criação de soluções 
+                                    para monitoramento de logs em tempo real, administração de servidores Linux e 
+                                    liderança técnica de equipes de desenvolvimento.</p>
+                                </div>
+                                <div class="timeline-highlights">
+                                    <span class="highlight-tag">Django</span>
+                                    <span class="highlight-tag">Python</span>
+                                    <span class="highlight-tag">Linux</span>
+                                    <span class="highlight-tag">Apache</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educação -->
+                <div class="about-section mb-5 custom-animated slide-in-right custom-hidden">
+                    <div class="section-header mb-4">
+                        <h2 class="section-title">
+                            <i class="fas fa-graduation-cap me-3"></i>
+                            Formação
+                        </h2>
+                    </div>
+                    <div class="education-grid">
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="education-content">
+                                <h3 class="education-title">Análise e Desenvolvimento de Sistemas</h3>
+                                <p class="education-institution">UniBF Centro Universitário</p>
+                                <span class="education-status in-progress">Em andamento</span>
+                            </div>
+                        </div>
+                        
+                        <div class="education-card">
+                            <div class="education-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="education-content">
+                                <h3 class="education-title">Física</h3>
+                                <p class="education-institution">CEFET/RJ – Nova Friburgo</p>
+                                <span class="education-status completed">Concluído</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Valores e Filosofia -->
+                <div class="about-section mb-5 custom-animated fade-in custom-hidden">
+                    <div class="section-header mb-4">
+                        <h2 class="section-title">
+                            <i class="fas fa-heart me-3"></i>
+                            Valores & Filosofia
+                        </h2>
+                    </div>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="value-title">Inovação</h3>
+                            <p class="value-description">
+                                Sempre busco maneiras criativas e eficientes de resolver problemas, 
+                                explorando novas tecnologias e abordagens.
+                            </p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="value-title">Colaboração</h3>
+                            <p class="value-description">
+                                Acredito no poder do trabalho em equipe e no compartilhamento 
+                                de conhecimento para alcançar resultados excepcionais.
+                            </p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="value-title">Excelência</h3>
+                            <p class="value-description">
+                                Comprometo-me com a qualidade em cada linha de código, 
+                                sempre buscando as melhores práticas e soluções elegantes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="about-cta text-center mt-5 custom-animated fade-in custom-hidden">
+                    <div class="cta-content">
+                        <h3 style="color: white; margin-bottom: 20px;">Vamos criar algo incrível juntos?</h3>
+                        <p style="color: #ffdd98; margin-bottom: 30px;">
+                            Estou sempre aberto a novos desafios e oportunidades de colaboração.
+                        </p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="https://github.com/salarini-e" target="_blank" class="btn btn-outline-light">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="btn btn-outline-light">
+                                <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+                            </a>
+                            <a href="/contato.html" class="btn btn-primary">
+                                <i class="fas fa-envelope me-2"></i>Entre em contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 custom-animated slide-in-up custom-hidden" style="border-top: 1px solid #ffdd98; margin-top: 5rem;">
+        <div class="container">
+            <p class="mb-1" style="color: #ffdd98;">&copy; 2025 Eduardo Salarini. Todos os direitos reservados.</p>
+            <p class="mb-0">
+                <a href="/politica-de-privacidade" class="text-decoration-none" style="color: #ffdd98; opacity: 0.7;">Política de Privacidade</a>
+                <span class="mx-2" style="color: #ffdd98; opacity: 0.7;">|</span>
+                <a href="/contato.html" class="text-decoration-none" style="color: #ffdd98; opacity: 0.7;">Contato</a>
+            </p>
+        </div>
+    </footer>
     
-</body>
-/* Bootstrap JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<style>
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background:#000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.preloader-content {
-    text-align: center;
-    color: #ffdd98;
-}
-
-.preloader-logo {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0.5s forwards;
-}
-
-.preloader-particles {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    margin: 0 auto 2rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease 1s forwards;
-}
-
-.preloader-canvas {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.preloader-text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0s forwards;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Modal customizado */
-.custom-modal {
-    display: none;
-    position: fixed;
-    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
-    left: 0; top: 0; width: 100vw; height: 100vh;
-    background: rgba(20,20,30,0.85);
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s;
-}
-.custom-modal.show {
-    display: flex;
-    animation: fadeInBg 0.3s;
-}
-@keyframes fadeInBg {
-    from { background: rgba(20,20,30,0); }
-    to   { background: rgba(20,20,30,0.85); }
-}
-.custom-modal-content {
-    background: #030303;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.021);
-    padding: 2.5rem 2rem 2rem 2rem;
-    min-width: 320px;
-    max-width: 95vw;
-    width: 370px;
-    position: relative;
-    transform: translateY(-60vh);
-    opacity: 0;
-    animation: slideDownModal 0.5s cubic-bezier(.6,1.5,.5,1) forwards;
-}
-@keyframes slideDownModal {
-    from {
-        transform: translateY(-60vh) scale(0.95);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-}
-.close-modal {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    background: none;
-    border: none;
-    color: #ffdd98;
-    font-size: 1.5rem;
-    z-index: 2;
-    transition: color 0.2s;
-}
-.close-modal:hover {
-    color: #fff;
-}
-.custom-modal .nav-link {
-    color: #ffdd98;
-    font-weight: 500;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    transition: background 0.15s, color 0.15s;
-}
-.custom-modal .nav-link.active,
-.custom-modal .nav-link:hover {
-    background: #ffdd98;
-    color: #23243a !important;
-}
-.custom-modal .btn-outline-light {
-    border-color: #ffdd98;
-    color: #ffdd98;
-}
-.custom-modal .btn-outline-light:hover {
-    background: #ffdd98;
-    color: #23243a;
-}
-.custom-modal .btn-primary {
-    background: #ffdd98;
-    border: none;
-    color: #23243a;
-    font-weight: bold;
-}
-.custom-modal .btn-outline-primary {
-    border-color: #ffdd98;
-    color: #ffdd98;
-}
-.custom-modal .btn-outline-primary:hover {
-    background: #ffdd98;
-    color: #23243a;
-}
-.floating-menu-label-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.floating-menu-label-wrapper .menu {
-    border: 2px solid #ffdd98 !important;
-    border-radius: 12px;
-    background: transparent;
-    color: inherit;
-    position: relative;
-    z-index: 1;
-    transition: box-shadow 0.2s;
-}
-.floating-menu-label-wrapper .menu:focus,
-.floating-menu-label-wrapper .menu:hover {
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-label {
-    position: absolute;
-    top: -0.9em;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #23243a;
-    color: #ffdd98;
-    font-size: 0.95em;
-    font-weight: 500;
-    padding: 0 0.5em;
-    z-index: 2;
-    pointer-events: none;
-    border-radius: 8px;
-    line-height: 1;
-    letter-spacing: 0.02em;
-}
-.floating-menu-label-inline {
-    display: flex;
-    align-items: center;
-    border: 2px solid #ffdd98;
-    border-radius: 12px;
-    background: transparent;
-    padding: 2px 12px 2px 6px;
-    gap: 0.5em;
-    height: 40px;
-    /* Ajuste para centralizar verticalmente */
-}
-.floating-menu-label-inline .menu {
-    border: none !important;
-    background: transparent;
-    color: inherit;
-    box-shadow: none;
-    padding: 0 4px;
-    font-size: 1.3em;
-    outline: none;
-}
-.floating-menu-label-inline .menu:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-label-inline-text {
-    color: #ffdd98;
-    font-size: 1.08em;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    user-select: none;
-    padding-left: 2px;
-    padding-right: 2px;
-    background: transparent;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-}
-.floating-menu-pill {
-    position: relative;
-    overflow: hidden; /* Garante que o ::before não transborde */
-    display: flex;
-    align-items: center;
-    border: 2px solid #ffdd98;
-    border-radius: 999px;
-    background: transparent;
-    padding: 0px 16px 0px 0px;
-    gap: 0.5em;
-    height: 44px;
-    cursor: pointer;
-    color: #ffdd98; /* Cor padrão do texto */
-    transition: color 0.2s;
-}
-
-/* pseudo-elemento para o preenchimento animado */
-.floating-menu-pill::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    background-color: #ffc55a;
-    z-index: 0;
-    transition: width 0.3s ease;
-    border-radius: 999px;
-}
-
-/* hover: anima o preenchimento da esquerda pra direita */
-.floating-menu-pill:hover::before,
-.floating-menu-pill.active::before {
-    width: 100%;
-}
-
-/* coloca o conteúdo acima do ::before */
-.floating-menu-pill > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* hover: muda cor do texto */
-.floating-menu-pill:hover,
-.floating-menu-pill.active {
-    color: #23243a !important;
-}
-
-.floating-menu-pill .menu {
-    border: none !important;
-    background: transparent;
-    color: inherit;
-    box-shadow: none;
-    /* padding: 0 4px;*/
-    font-size: 1.3em;
-    outline: none;
-    border-radius: 999px;
-    /* Mantém o formato do botão original */
-}
-.floating-menu-pill .menu:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-pill-text {
-    /* color: #ffdd98; */
-    font-size: 1.08em;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    user-select: none;
-    padding-left: 2px;
-    padding-right: 2px;
-    background: transparent;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-}
-@media (max-width: 991px) {
-    .floating-menu-label {
-        font-size: 0.85em;
-    }
-    .floating-menu-label-inline-text {
-        font-size: 0.95em;
-    }
-    .floating-menu-label-inline {
-        height: 36px;
-        padding: 2px 8px 2px 4px;
-    }
-    .floating-menu-pill-text {
-        font-size: 0.95em;
-    }
-    .floating-menu-pill {
-        height: 36px;
-        padding: 2px 10px 2px 4px;
-    }
-}
-
-/* Canvas como background fixo */
-.background-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Filtro de cor sobre o canvas */
-.background-filter {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0.747);
-    transition: background 0.3s;
-}
-
-/* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
-body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
-    position: relative;
-    z-index: 2;
-}
-
-/* O modal deve sempre estar acima de tudo */
-.custom-modal {
-    display: none;
-    position: fixed;
-    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
-    left: 0; top: 0; width: 100vw; height: 100vh;
-    background: rgba(20,20,30,0.85);
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s;
-}
-
-/* Folha A4 do Quem sou eu */
-.curriculum-sheet {
-    background: white;
-    width: 96vw;
-    max-width: 210mm; /* Largura A4 real */
-    min-height: 297mm; /* Altura A4 real */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-}
-
-.curriculum-content {
-    padding: 40px;
-    color: #333;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    line-height: 1.6;
-}
-
-.curriculum-content h1 {
-    color: #2c3e50;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    border-bottom: 3px solid #ffdd98;
-    padding-bottom: 10px;
-}
-
-.curriculum-content p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Cabeçalho do Quem sou eu */
-.curriculum-header h1 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.contact-info {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Seções do Quem sou eu */
-.curriculum-section h2 {
-    color: #2c3e50;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ffdd98;
-    padding-bottom: 5px;
-}
-
-/* Grid de habilidades */
-.skills-grid {
-    display: grid;
-    gap: 12px;
-}
-
-.skill-category {
-    padding: 8px 0;
-    font-size: 1rem;
-    line-height: 1.4;
-}
-
-.skill-category strong {
-    color: #2c3e50;
-}
-
-/* Experiência profissional */
-.experience-item {
-    margin-bottom: 25px;
-}
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.experience-header h3 {
-    color: #2c3e50;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.period {
-    color: #666;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-.company {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.experience-list {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.experience-list li {
-    margin-bottom: 5px;
-    font-size: 1rem;
-    line-height: 1.4;
-}
-
-/* Formação acadêmica */
-.education-item {
-    margin-bottom: 15px;
-}
-
-.education-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.education-header h3 {
-    color: #2c3e50;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0;
-}
-
-.status {
-    color: #666;
-    font-weight: 500;
-    font-size: 0.95rem;
-}
-
-.institution {
-    color: #666;
-    font-style: italic;
-}
-
-/* Responsivo para tablets e mobile */
-@media (max-width: 768px) {
-    .curriculum-sheet {
-        width: 98vw;
-        min-height: auto;
-        margin: 10px 0;
-    }
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
-    .curriculum-content {
-        padding: 20px;
-    }
-    
-    .curriculum-content h1 {
-        font-size: 2rem;
-    }
-}
-
-/* Permite rolagem na página do Quem sou eu */
-html, body {
-    height: auto;
-    overflow-x: hidden;
-}
-</style>
-<script>
-// Preloader
-window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    
-    // Aguarda um tempo mínimo para mostrar o preloader
-    setTimeout(() => {
-        preloader.classList.add('fade-out');
-        
-        // Remove o preloader do DOM após a animação
-        setTimeout(() => {
-            preloader.remove();
-        }, 500);
-    }, 1500); // Mostra por 1.5 segundos
-});
-
-// Partículas do preloader
-document.addEventListener('DOMContentLoaded', function() {
-    const preloaderCanvas = document.getElementById('preloader-canvas');
-    if (!preloaderCanvas) return;
-    
-    const ctx = preloaderCanvas.getContext('2d');
-    let particlesArray = [];
-    
-    // Configurar canvas
-    function resizePreloaderCanvas() {
-        preloaderCanvas.width = 200;
-        preloaderCanvas.height = 100;
-    }
-    
-    // Classe das partículas
-    class PreloaderParticle {
-        constructor() {
-            this.x = Math.random() * preloaderCanvas.width;
-            this.y = Math.random() * preloaderCanvas.height;
-            this.size = Math.random() * 3 + 1;
-            this.speedX = (Math.random() - 0.5) * 2;
-            this.speedY = (Math.random() - 0.5) * 2;
-            this.color = `hsl(${45 + Math.random() * 15}, 100%, ${70 + Math.random() * 20}%)`;
+    <style>
+        /* Reset e base - igual ao index */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            
-            // Rebater nas bordas
-            if (this.x <= 0 || this.x >= preloaderCanvas.width) {
-                this.speedX *= -1;
+
+        html {
+            scroll-behavior: smooth;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        body {
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Main com scroll interno para conteúdo */
+        main {
+            height: calc(100vh - 140px); /* Descontar header e footer */
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Preloader - igual ao blog */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background:#000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-content {
+            text-align: center;
+            color: #ffdd98;
+        }
+
+        .preloader-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+
+        .preloader-particles {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
+
+        .preloader-canvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .preloader-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            if (this.y <= 0 || this.y >= preloaderCanvas.height) {
-                this.speedY *= -1;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modal customizado - igual ao blog */
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 99999 !important;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(20,20,30,0.85);
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .custom-modal.show {
+            display: flex;
+            animation: fadeInBg 0.3s;
+        }
+        @keyframes fadeInBg {
+            from { background: rgba(20,20,30,0); }
+            to   { background: rgba(20,20,30,0.85); }
+        }
+        .custom-modal-content {
+            background: #030303;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.021);
+            padding: 2.5rem 2rem 2rem 2rem;
+            min-width: 320px;
+            max-width: 95vw;
+            width: 370px;
+            position: relative;
+            transform: translateY(-60vh);
+            opacity: 0;
+            animation: slideDownModal 0.5s cubic-bezier(.6,1.5,.5,1) forwards;
+        }
+        @keyframes slideDownModal {
+            from {
+                transform: translateY(-60vh) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        .close-modal {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: #ffdd98;
+            font-size: 1.5rem;
+            z-index: 2;
+            transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: #fff;
+        }
+        .custom-modal .nav-link {
+            color: #ffdd98;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .custom-modal .nav-link.active,
+        .custom-modal .nav-link:hover {
+            background: #ffdd98;
+            color: #23243a !important;
+        }
+        .custom-modal .btn-outline-light {
+            border-color: #ffdd98;
+            color: #ffdd98;
+        }
+        .custom-modal .btn-outline-light:hover {
+            background: #ffdd98;
+            color: #23243a;
+        }
+        .custom-modal .btn-primary {
+            background: #ffdd98;
+            border: none;
+            color: #23243a;
+            font-weight: bold;
+        }
+
+        /* Menu flutuante - igual ao blog */
+        .floating-menu-pill {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border: 2px solid #ffdd98;
+            border-radius: 999px;
+            background: transparent;
+            padding: 0px 16px 0px 0px;
+            gap: 0.5em;
+            height: 44px;
+            cursor: pointer;
+            color: #ffdd98;
+            transition: color 0.2s;
+        }
+
+        .floating-menu-pill::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background-color: #ffc55a;
+            z-index: 0;
+            transition: width 0.3s ease;
+            border-radius: 999px;
+        }
+
+        .floating-menu-pill:hover::before,
+        .floating-menu-pill.active::before {
+            width: 100%;
+        }
+
+        .floating-menu-pill > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .floating-menu-pill:hover,
+        .floating-menu-pill.active {
+            color: #23243a !important;
+        }
+
+        .floating-menu-pill .menu {
+            border: none !important;
+            background: transparent;
+            color: inherit;
+            box-shadow: none;
+            font-size: 1.3em;
+            outline: none;
+            border-radius: 999px;
+        }
+
+        .floating-menu-pill-text {
+            font-size: 1.08em;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            user-select: none;
+            padding-left: 2px;
+            padding-right: 2px;
+            background: transparent;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Canvas como background fixo */
+        .background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Filtro de cor sobre o canvas */
+        .background-filter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.747);
+            transition: background 0.3s;
+        }
+
+        /* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
+        body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            margin-bottom: 4rem;
+        }
+
+        .hero-avatar {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #ffdd98;
+            box-shadow: 0 10px 30px rgba(252, 212, 87, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(252, 212, 87, 0.4);
+        }
+
+        .hero-status {
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ffdd98, #ffc55a);
+            color: #2c3e50;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(252, 212, 87, 0.3);
+        }
+
+        .hero-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ffdd98;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffdd98;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #ffdd98;
+            color: #23243a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(252, 212, 87, 0.3);
+        }
+
+        /* Seções */
+        .about-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #ffdd98;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-title i {
+            color: #ffc55a;
+        }
+
+        /* História */
+        .story-content {
+            background: rgba(35, 36, 58, 0.6);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #ffdd98;
+        }
+
+        .story-paragraph {
+            color: rgba(252, 212, 87, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-paragraph:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category-modern {
+            background: rgba(35, 36, 58, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid rgba(252, 212, 87, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category-modern:hover {
+            border-color: #ffdd98;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(252, 212, 87, 0.2);
+        }
+
+        .skill-category-title {
+            color: #ffdd98;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(252, 212, 87, 0.2);
+            color: #ffdd98;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(252, 212, 87, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: #ffdd98;
+            color: #2c3e50;
+        }
+
+        /* Timeline */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #ffdd98;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(252, 212, 87, 0.2);
+        }
+
+        .timeline-marker::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 3rem;
+            background: rgba(252, 212, 87, 0.3);
+        }
+
+        .timeline-content {
+            background: rgba(35, 36, 58, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #ffdd98;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .timeline-title {
+            color: #ffdd98;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .timeline-period {
+            background: rgba(252, 212, 87, 0.2);
+            color: #ffdd98;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .timeline-company {
+            color: rgba(252, 212, 87, 0.8);
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .timeline-description p {
+            color: rgba(252, 212, 87, 0.9);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .highlight-tag {
+            background: rgba(252, 212, 87, 0.1);
+            color: #ffdd98;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(252, 212, 87, 0.3);
+        }
+
+        /* Educação */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: rgba(35, 36, 58, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 2px solid rgba(252, 212, 87, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .education-card:hover {
+            border-color: #ffdd98;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(252, 212, 87, 0.2);
+        }
+
+        .education-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffdd98, #ffc55a);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .education-icon i {
+            font-size: 1.8rem;
+            color: #2c3e50;
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .education-title {
+            color: #ffdd98;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-institution {
+            color: rgba(252, 212, 87, 0.8);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-status {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .education-status.completed {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .education-status.in-progress {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* Valores */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: rgba(35, 36, 58, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid rgba(252, 212, 87, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: #ffdd98;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(252, 212, 87, 0.2);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffdd98, #ffc55a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .value-icon i {
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+
+        .value-title {
+            color: #ffdd98;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .value-description {
+            color: rgba(252, 212, 87, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Call to Action */
+        .about-cta {
+            background: rgba(35, 36, 58, 0.6);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            border: 2px solid rgba(252, 212, 87, 0.3);
+        }
+
+        .btn-outline-light {
+            border-color: #ffdd98;
+            color: #ffdd98;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: #ffdd98;
+            border-color: #ffdd98;
+            color: #2c3e50;
+        }
+
+        .btn-primary {
+            background: #ffdd98;
+            border-color: #ffdd98;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: #ffc55a;
+            border-color: #ffc55a;
+            color: #2c3e50;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .floating-menu-pill {
+                height: 36px;
+                padding: 2px 10px 2px 4px;
+            }
+            .floating-menu-pill-text {
+                font-size: 0.95em;
             }
             
-            // Manter dentro dos limites
-            this.x = Math.max(0, Math.min(preloaderCanvas.width, this.x));
-            this.y = Math.max(0, Math.min(preloaderCanvas.height, this.y));
-        }
-        
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = this.color;
-            ctx.fill();
+            .profile-image {
+                width: 140px;
+                height: 140px;
+            }
             
-            // Adicionar brilho
-            ctx.shadowColor = this.color;
-            ctx.shadowBlur = 10;
-            ctx.fill();
-            ctx.shadowBlur = 0;
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .education-card {
+                flex-direction: column;
+                text-align: center;
+            }
         }
-    }
-    
-    // Inicializar partículas
-    function initPreloaderParticles() {
-        particlesArray = [];
-        for (let i = 0; i < 15; i++) {
-            particlesArray.push(new PreloaderParticle());
+
+        @media (max-width: 576px) {
+            .story-content,
+            .timeline-content,
+            .skill-category-modern,
+            .education-card,
+            .value-card {
+                padding: 1.5rem;
+            }
+            
+            .about-cta {
+                padding: 2rem 1.5rem;
+            }
         }
-    }
-    
-    // Conectar partículas próximas
-    function connectPreloaderParticles() {
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a + 1; b < particlesArray.length; b++) {
-                const dx = particlesArray[a].x - particlesArray[b].x;
-                const dy = particlesArray[a].y - particlesArray[b].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+    </style>    <script>
+        // Preloader - igual ao blog
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
                 
-                if (distance < 80) {
-                    const opacity = 1 - (distance / 80);
-                    ctx.strokeStyle = `rgba(252, 212, 87, ${opacity * 0.3})`;
-                    ctx.lineWidth = 1;
+                setTimeout(() => {
+                    function activateAnimation(selector) {
+                        const elements = document.querySelectorAll(selector);
+                        elements.forEach(el => {
+                            el.classList.remove('custom-hidden');
+                        });
+                    }
+                    
+                    activateAnimation('header');
+                    
+                    setTimeout(() => {
+                        activateAnimation('main');
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        activateAnimation('.about-hero');
+                    }, 200);
+                    
+                    setTimeout(() => {
+                        activateAnimation('.about-section');
+                    }, 300);
+                    
+                    setTimeout(() => {
+                        activateAnimation('footer');
+                    }, 400);
+                    
+                }, 100);
+                
+                setTimeout(() => {
+                    preloader.remove();
+                }, 500);
+            }, 1500);
+        });
+
+        // Partículas do preloader - igual ao blog
+        document.addEventListener('DOMContentLoaded', function() {
+            const preloaderCanvas = document.getElementById('preloader-canvas');
+            if (!preloaderCanvas) return;
+            
+            const ctx = preloaderCanvas.getContext('2d');
+            let particlesArray = [];
+            
+            function resizePreloaderCanvas() {
+                preloaderCanvas.width = 200;
+                preloaderCanvas.height = 100;
+            }
+            
+            class PreloaderParticle {
+                constructor() {
+                    this.x = Math.random() * preloaderCanvas.width;
+                    this.y = Math.random() * preloaderCanvas.height;
+                    this.size = Math.random() * 3 + 1;
+                    this.speedX = (Math.random() - 0.5) * 2;
+                    this.speedY = (Math.random() - 0.5) * 2;
+                }
+                
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    
+                    if (this.x > preloaderCanvas.width || this.x < 0) {
+                        this.speedX = -this.speedX;
+                    }
+                    if (this.y > preloaderCanvas.height || this.y < 0) {
+                        this.speedY = -this.speedY;
+                    }
+                }
+                
+                draw() {
+                    ctx.fillStyle = '#fcd457';
                     ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                    ctx.stroke();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
                 }
             }
-        }
-    }
-    
-    // Animar partículas
-    function animatePreloaderParticles() {
-        if (!document.getElementById('preloader')) return; // Para quando o preloader for removido
+            
+            function initPreloaderParticles() {
+                particlesArray = [];
+                for (let i = 0; i < 15; i++) {
+                    particlesArray.push(new PreloaderParticle());
+                }
+            }
+            
+            function connectPreloaderParticles() {
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        let distance = Math.sqrt(
+                            Math.pow(particlesArray[a].x - particlesArray[b].x, 2) +
+                            Math.pow(particlesArray[a].y - particlesArray[b].y, 2)
+                        );
+                        if (distance < 80) {
+                            ctx.strokeStyle = `rgba(252, 212, 87, ${1 - distance / 80})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            function animatePreloaderParticles() {
+                if (!document.getElementById('preloader')) return;
+                
+                ctx.clearRect(0, 0, preloaderCanvas.width, preloaderCanvas.height);
+                
+                for (let particle of particlesArray) {
+                    particle.update();
+                    particle.draw();
+                }
+                
+                connectPreloaderParticles();
+                requestAnimationFrame(animatePreloaderParticles);
+            }
+            
+            resizePreloaderCanvas();
+            initPreloaderParticles();
+            animatePreloaderParticles();
+        });
+
+        // Controle do menu modal - igual ao blog
+        document.addEventListener('DOMContentLoaded', function() {
+            const openBtn = document.getElementById('openMenuModal');
+            const closeBtn = document.getElementById('closeMenuModal');
+            const modal = document.getElementById('menuModal');
+            const menuPill = openBtn;
+
+            if (!openBtn || !closeBtn || !modal) {
+                console.error('Erro: Elementos do menu não encontrados!');
+                return;
+            }
+
+            function activateMenuPill() {
+                if (menuPill) menuPill.classList.add('active');
+            }
+            function deactivateMenuPill() {
+                if (menuPill) menuPill.classList.remove('active');
+            }
+
+            function openModal(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                modal.classList.add('show');
+                activateMenuPill();
+                
+                const content = modal.querySelector('.custom-modal-content');
+                if (content) {
+                    content.style.transform = 'translateY(-60vh) scale(0.95)';
+                    content.style.opacity = '0';
+                    setTimeout(() => {
+                        content.style.transform = 'translateY(0) scale(1)';
+                        content.style.opacity = '1';
+                    }, 10);
+                }
+            }
+
+            openBtn.addEventListener('click', openModal);
+            
+            const menuButton = openBtn.querySelector('.menu');
+            if (menuButton) {
+                menuButton.addEventListener('click', openModal);
+            }
+            
+            function closeModal() {
+                modal.classList.remove('show');
+                deactivateMenuPill();
+            }
+            
+            closeBtn.addEventListener('click', closeModal);
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Partículas de fundo - igual ao blog
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        let mouse = {
+            x: undefined,
+            y: undefined,
+            radius: (window.innerHeight/110) * (window.innerWidth/110)
+        };
+        let particlesArray = [];
         
-        ctx.clearRect(0, 0, preloaderCanvas.width, preloaderCanvas.height);
-        
-        for (let particle of particlesArray) {
-            particle.update();
-            particle.draw();
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            mouse.radius = (canvas.height/110) * (canvas.width/110);
         }
         
-        connectPreloaderParticles();
-        requestAnimationFrame(animatePreloaderParticles);
-    }
-    
-    // Inicializar
-    resizePreloaderCanvas();
-    initPreloaderParticles();
-    animatePreloaderParticles();
-});
+        function init(){
+            particlesArray = [];
+            let nParticles = 60;
+            for(let i=0; i < nParticles; i++){
+                let size = (Math.random()*5) + 1;
+                let x = (Math.random() * ((window.innerWidth - size * 2 )-(size * 2)) + size * 2);
+                let y = (Math.random() * ((window.innerHeight - size * 2 )-(size * 2)) + size * 2);
+                let directionX = (Math.random()*1.5)-0.75;
+                let directionY = (Math.random()*1.5)-0.75;
+                let color = '#fcd457';
 
-// Controle do menu modal
-document.addEventListener('DOMContentLoaded', function() {
-    const openBtn = document.getElementById('openMenuModal');
-    const closeBtn = document.getElementById('closeMenuModal');
-    const modal = document.getElementById('menuModal');
-    const menuPill = openBtn; // floating-menu-pill
-
-    function activateMenuPill() {
-        menuPill.classList.add('active');
-    }
-    function deactivateMenuPill() {
-        // Remove com transição suave
-        menuPill.classList.remove('active');
-    }
-
-    openBtn.addEventListener('click', function() {
-        modal.classList.add('show');
-        activateMenuPill();
-        // For re-triggering animation
-        const content = modal.querySelector('.custom-modal-content');
-        content.style.animation = 'none';
-        void content.offsetWidth; // trigger reflow
-        content.style.animation = '';
-    });
-    function closeModal() {
-        modal.classList.remove('show');
-        deactivateMenuPill();
-    }
-    closeBtn.addEventListener('click', closeModal);
-    // Fechar ao clicar fora do conteúdo
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    // Fechar com ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === "Escape") {
-            closeModal();
-        }
-    });
-});
-</script>
-<script>
-    // Partículas de fundo igual ao mobile
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-    let mouse = {
-        x: undefined,
-        y: undefined,
-        radius: (window.innerHeight/110) * (window.innerWidth/110)
-    };
-    let particlesArray = [];
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        mouse.radius = (canvas.height/110) * (canvas.width/110);
-    }
-    function init(){
-        particlesArray = [];
-        let nParticles = 60; // <-- Altere aqui para ajustar a quantidade de partículas (padrão: 60)
-        for(let i=0; i < nParticles; i++){
-            let size = (Math.random()*5) + 1;
-            let x = (Math.random() * ((window.innerWidth - size * 2 )-(size * 2)) + size * 2);
-            let y = (Math.random() * ((window.innerHeight - size * 2 )-(size * 2)) + size * 2);
-
-            // Velocidade das partículas: diminua o valor absoluto para deixá-las mais lentas
-            let directionX = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
-            let directionY = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
-            let color = '#fcd457';
-
-            particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
-        }
-    }
-    class Particle{
-        constructor(x, y, directionX, directionY, size, color){
-            this.x = x;
-            this.y = y;
-            this.directionX = directionX;
-            this.directionY = directionY;
-            this.size = size;
-            this.color = color;
-        }
-        draw(){
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-            ctx.fillStyle = '#fcd457';
-            ctx.fill();
-        }
-        update(){
-            if(this.x > canvas.width || this.x < 0){
-                this.directionX = -this.directionX;
+                particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
             }
-            if(this.y > canvas.height || this.y < 0){
-                this.directionY = -this.directionY;
-            }
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx*dx + dy*dy);
-            if(distance < mouse.radius + this.size){
-                if(mouse.x < this.x && this.x < canvas.width - this.size * 10){
-                    this.x += 10;
-                }
-                if(mouse.x > this.x && this.x > this.size * 10){
-                    this.x -= 10;
-                }
-                if(mouse.y < this.y && this.y < canvas.height - this.size * 10){
-                    this.y += 10;
-                }
-                if(mouse.y > this.y && this.y > this.size * 10){
-                    this.y -= 10;
-                }
-            }
-            this.x += this.directionX;
-            this.y += this.directionY;
-            this.draw();
         }
-    }
-    function animate(){
-        requestAnimationFrame(animate);
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        for(let i=0; i<particlesArray.length; i++){
-            particlesArray[i].update();
+        
+        class Particle{
+            constructor(x, y, directionX, directionY, size, color){
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw(){
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = '#fcd457';
+                ctx.fill();
+            }
+            update(){
+                if(this.x > canvas.width || this.x < 0){
+                    this.directionX = -this.directionX;
+                }
+                if(this.y > canvas.height || this.y < 0){
+                    this.directionY = -this.directionY;
+                }
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                if(distance < mouse.radius + this.size){
+                    if(mouse.x < this.x && this.x < canvas.width - this.size * 10){
+                        this.x += 10;
+                    }
+                    if(mouse.x > this.x && this.x > this.size * 10){
+                        this.x -= 10;
+                    }
+                    if(mouse.y < this.y && this.y < canvas.height - this.size * 10){
+                        this.y += 10;
+                    }
+                    if(mouse.y > this.y && this.y > this.size * 10){
+                        this.y -= 10;
+                    }
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
         }
-        connect();
-    }
-    function connect(){
-        let opacityValue = 1;
-        for(let a=0; a<particlesArray.length; a++){
-            for(let b = a; b<particlesArray.length;b++){
-                let distance = ((particlesArray[a].x - particlesArray[b].x)* (particlesArray[a].x-particlesArray[b].x))+((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y-particlesArray[b].y));
-                if(distance < (canvas.width/7) * (canvas.height/7)){
-                    opacityValue = 1 - (distance/30000);
-                    ctx.strokeStyle='rgba(252,212,87,' + opacityValue + ')';
-                    ctx.lineWidth = 1;
-                    ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                    ctx.stroke();
+        
+        function animate(){
+            requestAnimationFrame(animate);
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            for(let i=0; i<particlesArray.length; i++){
+                particlesArray[i].update();
+            }
+            connect();
+        }
+        
+        function connect(){
+            let opacityValue = 1;
+            for(let a=0; a<particlesArray.length; a++){
+                for(let b = a; b<particlesArray.length;b++){
+                    let distance = ((particlesArray[a].x - particlesArray[b].x)* (particlesArray[a].x-particlesArray[b].x))+((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y-particlesArray[b].y));
+                    if(distance < (canvas.width/7) * (canvas.height/7)){
+                        opacityValue = 1 - (distance/30000);
+                        ctx.strokeStyle='rgba(252,212,87,' + opacityValue + ')';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
                 }
             }
         }
-    }
-    window.addEventListener('resize',function(){
+        
+        window.addEventListener('resize',function(){
+            resizeCanvas();
+            init();
+        });
+        
+        window.addEventListener('mousemove', function(event){
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+        
+        window.addEventListener('mouseout', function(){
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
+        
         resizeCanvas();
         init();
-    });
-    window.addEventListener('mousemove', function(event){
-        mouse.x = event.x;
-        mouse.y = event.y;
-    });
-    window.addEventListener('mouseout', function(){
-        mouse.x = undefined;
-        mouse.y = undefined;
-    });
-    // Inicialização correta do canvas e partículas
-    resizeCanvas();
-    init();
-    animate();
-</script>
+        animate();
+    </script>
+</body>
 </html>

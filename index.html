@@ -34,7 +34,7 @@
     <div id="preloader" class="preloader">
         <div class="preloader-content">
             <div class="preloader-logo">
-                <span class="prosto-one-regular">Eduardo Salarini</span>
+                <!-- <span class="prosto-one-regular">Eduardo Salarini</span> -->
             </div>
             <div class="preloader-particles">
                 <canvas id="preloader-canvas" class="preloader-canvas"></canvas>
@@ -56,19 +56,16 @@
             </div> -->
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item mb-2">
-                    <a class="nav-link active" href="#"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
+                    <a class="nav-link active" href="/index.html"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Currículo</a>
+                    <a class="nav-link" href="/quem-sou-eu/index.html"><i class="fa-solid fa-user me-2"></i>Quem sou eu</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/projetos/"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
+                    <a class="nav-link" href="/portfolio.html"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
                 </li>
-                    <!-- <li class="nav-item mb-2">
-                        <a class="nav-link" href="#"><i class="fa-brands fa-github me-2"></i>Repositórios</a>
-                    </li> -->
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/blog/"><i class="fa-solid fa-pen-nib me-2"></i>Blog</a>
+                    <a class="nav-link" href="/blog/index.html"><i class="fa-solid fa-blog me-2"></i>Blog</a>
                 </li>
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="/contato.html"><i class="fa-solid fa-envelope me-2"></i>Contato</a>
@@ -88,523 +85,824 @@
     <div class="background-filter"></div>
     <!-- <script type="module" src="/js/generative-art/dots.js"></script>    -->
     <header class="container-fluid custom-animated slide-in-down custom-hidden">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col-1 logo-superior d-flex">
-                        <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98 ;">
-                            <!-- Salarini-e -->
-                        </span>
-                    </div>
-                    <div class="col">
-    
-                    </div>
-                    <div class="idioma" style="width: 140px;">
-                        <div class="floating-menu-pill ms-auto my-auto" id="openMenuModal" >
-                            <button class="btn menu" type="button" tabindex="0">
-                                <i class="fa-solid fa-bars"></i>
-                            </button>
-                            <span class="floating-menu-pill-text">Menu</span>
-                        </div>
-                    </div>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <div class="floating-menu-pill my-auto" id="openMenuModal">
+                    <button class="btn menu" type="button" tabindex="0">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <span class="floating-menu-pill-text">Menu</span>
                 </div>
             </div>
         </div>
     </header>
-    <main class="container-fluid my-auto custom-animated slide-in-up custom-hidden" style="height: 95%;">
-        <div class="row" style="height: 100%;">
-            <div class="col-lg-4 p-5 d-flex custom-animated slide-in-left custom-hidden">
-                <div class="m-auto">
-                    <img src="/novo/foto_sala3.png" class="hover-lift" style="border-radius: 15px; max-height: 80vh !important; margin-top: -75px;" alt="">
-                </div>
-            </div>
-            <div class="col-lg-8 d-flex p-5 custom-animated slide-in-right custom-hidden">
-                <div class="m-auto" style="max-width: 720px; color: white;">
-                    <!-- <h1 class="display-1 mb-5">Bem vindo!</h1> -->
-                    <div class="row w-100 d-flex">
-                        <div class="mt-4 me-5 mb-sm-4 col-lg-1 col-sm-12 flex-column stagger-children">
-                            <img src="./novo/python.webp" class="mx-lg-auto ms-sm-auto" style="height: 70px;" alt="">
-                            <img src="./novo/react.webp" class="mt-3 mx-sm-3 mx-lg-auto" style="height: 70px;" alt="">
-                            <img src="./novo/fedora.png" class="mt-3 mx-lg-auto me-sm-auto" style="height: 70px;" alt="">                                                        
-                        </div>
-                        <div class="col">
-                            <h2 class="display-6 custom-animated fade-in-scale" style="font-weight: bold; font-size: 48px;">Eduardo Salarini</h2>
-                            <h4 class="mb-4 custom-animated" style="font-weight: bold; width: 325px;">Desenvolvedor Full Stack</h4>
-                            <p class="custom-animated reveal custom-hidden" style="text-align: justify;">Profissional brasileiro apaixonado por criar soluções inovadoras e experiências impactantes para os usuários. Com foco em desenvolver sistemas web eficientes, dedicado a a construir ferramentas que aproximam pessoas e transformam o cotidiano. Experiente com projetos próprios, públicos e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>
-                            <div class="d-flex social-links-home mt-4 mb-2 stagger-children">
-                                <a href="https://github.com/salarini-e" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                    <span class="label">GitHub</span>
+    <main class="container-fluid custom-animated slide-in-up custom-hidden">
+        
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-8 order-lg-1 order-2">
+                        <div class="hero-content">
+                            <div class="hero-badge mb-3">
+                                <i class="fas fa-code"></i>
+                                <span>Desenvolvedor Full Stack</span>
+                            </div>
+                            <h1 class="hero-title mb-4">
+                                Olá, eu sou <br>
+                                <span class="text-gradient">Eduardo Salarini</span>
+                            </h1>
+                            <p class="hero-description mb-4">
+                                Transformo ideias em soluções eficientes. Dedicado a a construir ferramentas que aproximam pessoas e transformam o cotidiano. 
+                            </p>
+                            
+                            <!-- Stats rápidas -->
+                            <div class="hero-stats mb-4">
+                                <div class="stat-item">
+                                    <span class="stat-number">4+</span>
+                                    <span class="stat-label">Anos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">15+</span>
+                                    <span class="stat-label">Projetos</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">8</span>
+                                    <span class="stat-label">Tecnologias</span>
+                                </div>
+                            </div>
+                            
+                            <!-- CTAs -->
+                            <div class="hero-actions">
+                                <a href="/portfolio.html" class="btn btn-primary btn-lg me-3">
+                                    <i class="fas fa-folder-open me-2"></i>Ver Projetos
                                 </a>
-                                <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" rel="noopener noreferrer" class="social-link-inline" title="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                    <span class="label">LinkedIn</span>
-                                </a>
-                                <a href="/contato.html" class="social-link-inline" title="Contato">
-                                    <i class="fa-solid fa-envelope"></i>
-                                    <span class="label">Contato</span>
+                                <a href="/contato.html" class="btn btn-outline-light btn-lg">
+                                    <i class="fas fa-envelope me-2"></i>Entre em Contato
                                 </a>
                             </div>
-                        <div class="d-flex">                            
-                            <!-- <button class="btn btn-outline-primary me-1">
-                                Github
-                            </button>
-                            <a href="/blog/" class="btn btn-outline-primary mx-1">
-                                Linkedin
-                            </a>
-                            <button class="btn btn-outline-primary mx-1">
-                                Contato
-                            </button> -->
-                            <!-- <button class="btn btn-outline-primary mx-1">
-                                Saiba mais
-                            </button> -->
+                            
+                            <!-- Social Links -->
+                            <div class="hero-social mt-4">
+                                <a href="https://github.com/salarini-e" target="_blank" class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="social-icon">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://lattes.cnpq.br/" target="_blank" class="social-icon">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    
+                    <div class="col-lg-4 order-lg-2 order-1 text-center">
+                        <div class="hero-image-container">
+                            <div class="orbit-system">
+                                <div class="photo-center">
+                                    <img src="/novo/dudu_salarini.jpg" alt="Eduardo Salarini" class="hero-image">
+                                </div>
+                                <div class="orbit orbit-1">
+                                    <div class="tech-orbit-item">
+                                        <img src="./novo/python.webp" alt="Python">
+                                    </div>
+                                </div>
+                                <div class="orbit orbit-2">
+                                    <div class="tech-orbit-item">
+                                        <img src="./novo/react.webp" alt="React">
+                                    </div>
+                                </div>
+                                <div class="orbit orbit-3">
+                                    <div class="tech-orbit-item">
+                                        <img src="./novo/fedora.png" alt="Linux">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="footer-text mb-0">&copy; 2025 Eduardo Salarini. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="footer-links">
+                        <a href="/quem-sou-eu/index.html">Sobre</a>
+                        <a href="/portfolio.html">Projetos</a>
+                        <a href="/blog/index.html">Blog</a>
+                        <a href="/contato.html">Contato</a>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </footer>
     
 </body>
 <!-- Bootstrap JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<style>
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background:#000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    <style>
+        /* Reset e base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
+        html {
+            scroll-behavior: smooth;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+        }
 
-.preloader-content {
-    text-align: center;
-    color: #ffdd98;
-}
+        body {
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+        }
 
-.preloader-logo {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0.5s forwards;
-}
+        /* Preloader - igual ao blog */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background:#000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
 
-.preloader-particles {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    margin: 0 auto 2rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease 1s forwards;
-}
+        .preloader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
 
-.preloader-canvas {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
+        .preloader-content {
+            text-align: center;
+            color: #ffdd98;
+        }
 
-.preloader-text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0s forwards;
-}
+        .preloader-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .preloader-particles {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 1s forwards;
+        }
 
-/* Modal customizado */
-.custom-modal {
-    display: none;
-    position: fixed;
-    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
-    left: 0; top: 0; width: 100vw; height: 100vh;
-    background: rgba(20,20,30,0.85);
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s;
-}
-.custom-modal.show {
-    display: flex;
-    animation: fadeInBg 0.3s;
-}
-@keyframes fadeInBg {
-    from { background: rgba(20,20,30,0); }
-    to   { background: rgba(20,20,30,0.85); }
-}
-.custom-modal-content {
-    background: #030303;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.021);
-    padding: 2.5rem 2rem 2rem 2rem;
-    min-width: 320px;
-    max-width: 95vw;
-    width: 370px;
-    position: relative;
-    transform: translateY(-60vh);
-    opacity: 0;
-    animation: slideDownModal 0.5s cubic-bezier(.6,1.5,.5,1) forwards;
-}
-@keyframes slideDownModal {
-    from {
-        transform: translateY(-60vh) scale(0.95);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-}
-.close-modal {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    background: none;
-    border: none;
-    color: #ffdd98;
-    font-size: 1.5rem;
-    z-index: 2;
-    transition: color 0.2s;
-}
-.close-modal:hover {
-    color: #fff;
-}
-.custom-modal .nav-link {
-    color: #ffdd98;
-    font-weight: 500;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    transition: background 0.15s, color 0.15s;
-}
-.custom-modal .nav-link.active,
-.custom-modal .nav-link:hover {
-    background: #ffdd98;
-    color: #23243a !important;
-}
-.custom-modal .btn-outline-light {
-    border-color: #ffdd98;
-    color: #ffdd98;
-}
-.custom-modal .btn-outline-light:hover {
-    background: #ffdd98;
-    color: #23243a;
-}
-.custom-modal .btn-primary {
-    background: #ffdd98;
-    border: none;
-    color: #23243a;
-    font-weight: bold;
-}
-.custom-modal .btn-outline-primary {
-    border-color: #ffdd98;
-    color: #ffdd98;
-}
-.custom-modal .btn-outline-primary:hover {
-    background: #ffdd98;
-    color: #23243a;
-}
-.floating-menu-label-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.floating-menu-label-wrapper .menu {
-    border: 2px solid #ffdd98 !important;
-    border-radius: 12px;
-    background: transparent;
-    color: inherit;
-    position: relative;
-    z-index: 1;
-    transition: box-shadow 0.2s;
-}
-.floating-menu-label-wrapper .menu:focus,
-.floating-menu-label-wrapper .menu:hover {
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-label {
-    position: absolute;
-    top: -0.9em;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #23243a;
-    color: #ffdd98;
-    font-size: 0.95em;
-    font-weight: 500;
-    padding: 0 0.5em;
-    z-index: 2;
-    pointer-events: none;
-    border-radius: 8px;
-    line-height: 1;
-    letter-spacing: 0.02em;
-}
-.floating-menu-label-inline {
-    display: flex;
-    align-items: center;
-    border: 2px solid #ffdd98;
-    border-radius: 12px;
-    background: transparent;
-    padding: 2px 12px 2px 6px;
-    gap: 0.5em;
-    height: 40px;
-    /* Ajuste para centralizar verticalmente */
-}
-.floating-menu-label-inline .menu {
-    border: none !important;
-    background: transparent;
-    color: inherit;
-    box-shadow: none;
-    padding: 0 4px;
-    font-size: 1.3em;
-    outline: none;
-}
-.floating-menu-label-inline .menu:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-label-inline-text {
-    color: #ffdd98;
-    font-size: 1.08em;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    user-select: none;
-    padding-left: 2px;
-    padding-right: 2px;
-    background: transparent;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-}
-.floating-menu-pill {
-    position: relative;
-    overflow: hidden; /* Garante que o ::before não transborde */
-    display: flex;
-    align-items: center;
-    border: 2px solid #ffdd98;
-    border-radius: 999px;
-    background: transparent;
-    padding: 0px 16px 0px 0px;
-    gap: 0.5em;
-    height: 44px;
-    cursor: pointer;
-    color: #ffdd98; /* Cor padrão do texto */
-    transition: color 0.2s;
-}
+        .preloader-canvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
 
-/* pseudo-elemento para o preenchimento animado */
-.floating-menu-pill::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0%;
-    background-color: #ffc55a;
-    z-index: 0;
-    transition: width 0.3s ease;
-    border-radius: 999px;
-}
+        .preloader-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0s forwards;
+        }
 
-/* hover: anima o preenchimento da esquerda pra direita */
-.floating-menu-pill:hover::before,
-.floating-menu-pill.active::before {
-    width: 100%;
-}
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* coloca o conteúdo acima do ::before */
-.floating-menu-pill > * {
-    position: relative;
-    z-index: 1;
-}
+        /* Modal customizado - igual ao blog */
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 99999 !important;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(20,20,30,0.85);
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .custom-modal.show {
+            display: flex;
+            animation: fadeInBg 0.3s;
+        }
+        @keyframes fadeInBg {
+            from { background: rgba(20,20,30,0); }
+            to   { background: rgba(20,20,30,0.85); }
+        }
+        .custom-modal-content {
+            background: #030303;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.021);
+            padding: 2.5rem 2rem 2rem 2rem;
+            min-width: 320px;
+            max-width: 95vw;
+            width: 370px;
+            position: relative;
+            transform: translateY(-60vh);
+            opacity: 0;
+            animation: slideDownModal 0.5s cubic-bezier(.6,1.5,.5,1) forwards;
+        }
+        @keyframes slideDownModal {
+            from {
+                transform: translateY(-60vh) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        .close-modal {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: none;
+            border: none;
+            color: #ffdd98;
+            font-size: 1.5rem;
+            z-index: 2;
+            transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: #fff;
+        }
+        .custom-modal .nav-link {
+            color: #ffdd98;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .custom-modal .nav-link.active,
+        .custom-modal .nav-link:hover {
+            background: #ffdd98;
+            color: #23243a !important;
+        }
+        .custom-modal .btn-outline-light {
+            border-color: #ffdd98;
+            color: #ffdd98;
+        }
+        .custom-modal .btn-outline-light:hover {
+            background: #ffdd98;
+            color: #23243a;
+        }
+        .custom-modal .btn-primary {
+            background: #ffdd98;
+            border: none;
+            color: #23243a;
+            font-weight: bold;
+        }
 
-/* hover: muda cor do texto */
-.floating-menu-pill:hover,
-.floating-menu-pill.active {
-    color: #23243a !important;
-}
+        /* Menu flutuante - igual ao blog */
+        .floating-menu-pill {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border: 2px solid #ffdd98;
+            border-radius: 999px;
+            background: transparent;
+            padding: 0px 16px 0px 0px;
+            gap: 0.5em;
+            height: 44px;
+            cursor: pointer;
+            color: #ffdd98;
+            transition: color 0.2s;
+        }
 
-.floating-menu-pill .menu {
-    border: none !important;
-    background: transparent;
-    color: inherit;
-    box-shadow: none;
-    /* padding: 0 4px;*/
-    font-size: 1.3em;
-    outline: none;
-    border-radius: 999px;
-    /* Mantém o formato do botão original */
-}
-.floating-menu-pill .menu:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffdd9855;
-}
-.floating-menu-pill-text {
-    /* color: #ffdd98; */
-    font-size: 1.08em;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    user-select: none;
-    padding-left: 2px;
-    padding-right: 2px;
-    background: transparent;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-}
-@media (max-width: 991px) {
-    .floating-menu-label {
-        font-size: 0.85em;
-    }
-    .floating-menu-label-inline-text {
-        font-size: 0.95em;
-    }
-    .floating-menu-label-inline {
-        height: 36px;
-        padding: 2px 8px 2px 4px;
-    }
-    .floating-menu-pill-text {
-        font-size: 0.95em;
-    }
-    .floating-menu-pill {
-        height: 36px;
-        padding: 2px 10px 2px 4px;
-    }
-}
+        .floating-menu-pill::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background-color: #ffc55a;
+            z-index: 0;
+            transition: width 0.3s ease;
+            border-radius: 999px;
+        }
 
-/* Canvas como background fixo */
-.background-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 0;
-    pointer-events: none;
-}
+        .floating-menu-pill:hover::before,
+        .floating-menu-pill.active::before {
+            width: 100%;
+        }
 
-/* Filtro de cor sobre o canvas */
-.background-filter {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0.747);
-    transition: background 0.3s;
-}
+        .floating-menu-pill > * {
+            position: relative;
+            z-index: 1;
+        }
 
-/* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
-body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
-    position: relative;
-    z-index: 2;
-}
+        .floating-menu-pill:hover,
+        .floating-menu-pill.active {
+            color: #23243a !important;
+        }
 
-/* O modal deve sempre estar acima de tudo */
+        .floating-menu-pill .menu {
+            border: none !important;
+            background: transparent;
+            color: inherit;
+            box-shadow: none;
+            font-size: 1.3em;
+            outline: none;
+            border-radius: 999px;
+        }
 
-/* Impede rolagem na página */
-html, body {
-    overflow: hidden !important;
-    height: 100%;
-}
+        .floating-menu-pill-text {
+            font-size: 1.08em;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            user-select: none;
+            padding-left: 2px;
+            padding-right: 2px;
+            background: transparent;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+        }
 
-/* Social links estilo mobile + label (ajustado para não sobrepor) */
-.social-links-home {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin: 24px 0 12px 0;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.social-link-inline {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    /* background: #23243a; */
-    color: #ffdd98;
-    border-radius: 50px;
-    min-width: 48px;
-    height: 48px;
-    font-size: 1.35rem;
-    transition: background 0.18s, color 0.18s, transform 0.15s;
-    text-decoration: none;
-    padding: 0 18px 0 14px;
-    position: relative;
-    white-space: nowrap;
-    box-sizing: border-box;
-}
-.social-link-inline .label {
-    display: inline-block;
-    color: #ffdd98;
-    font-size: 0.9em;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    margin-left: 12px;
-    text-shadow: 0 1px 4px #23243a55;
-    transition: color 0.18s;
-    line-height: 1;
-}
-.social-link-inline:hover, .social-link-inline:focus {
-    /* background: #ffdd98; */
-    /* color: #23243a; */
-    transform: scale(1.08);
-}
-.social-link-inline:hover .label,
-.social-link-inline:focus .label {
-    opacity: 0.8;
-}
-.social-link-inline i {
-    font-size: 1.5em;
-    transition: color 0.18s, transform 0.15s;
-}
-.social-link-inline:hover i,
-.social-link-inline:focus i {
-    /* color: #23243a; */
-    transform: scale(1.13);
-}
-@media (max-width: 600px) {
-    .social-links-home {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .social-link-inline {
-        width: 90vw;
-        justify-content: center;
-        font-size: 1.15rem;
-        padding: 0 12px 0 10px;
-    }
-    .social-link-inline .label {
-        font-size: 1em;
-        margin-left: 8px;
-    }
-}
-</style>
+        /* Canvas como background fixo */
+        .background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Filtro de cor sobre o canvas */
+        .background-filter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.747);
+            transition: background 0.3s;
+        }
+
+        /* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
+        body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Header */
+        header {
+            padding: 1rem 0 0.5rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 0;
+            max-height: 100vh;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px; /* Espaço para o header fixo */
+            padding-bottom: 80px; /* Espaço para o footer fixo */
+            overflow: hidden;
+        }
+
+        .hero-content {
+            padding-right: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(252, 212, 87, 0.1);
+            color: #ffdd98;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(252, 212, 87, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffdd98, #ffc55a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffdd98;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .hero-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(252, 212, 87, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffdd98;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #ffdd98;
+            color: #23243a;
+            border-color: #ffdd98;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Image - Sistema de Órbita */
+        .hero-image-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orbit-system {
+            position: relative;
+            width: 350px;
+            height: 350px;
+        }
+
+        .photo-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .hero-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffdd98;
+            box-shadow: 0 0 0 8px rgba(252, 212, 87, 0.1);
+        }
+
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(252, 212, 87, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-1 {
+            width: 260px;
+            height: 260px;
+            animation: rotate 20s linear infinite;
+        }
+
+        .orbit-2 {
+            width: 320px;
+            height: 320px;
+            animation: rotate 25s linear infinite reverse;
+        }
+
+        .orbit-3 {
+            width: 380px;
+            height: 380px;
+            animation: rotate 30s linear infinite;
+        }
+
+        .tech-orbit-item {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(252, 212, 87, 0.15);
+            border: 2px solid rgba(252, 212, 87, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .tech-orbit-item:hover {
+            background: rgba(252, 212, 87, 0.3);
+            border-color: #ffdd98;
+            transform: scale(1.1);
+        }
+
+        .orbit-1 .tech-orbit-item {
+            top: -25px;
+            left: calc(50% - 25px);
+            animation: counter-rotate 20s linear infinite;
+        }
+
+        .orbit-2 .tech-orbit-item {
+            top: calc(50% - 25px);
+            right: -25px;
+            animation: counter-rotate 25s linear infinite;
+        }
+
+        .orbit-3 .tech-orbit-item {
+            bottom: -25px;
+            left: calc(50% - 25px);
+            animation: counter-rotate 30s linear infinite reverse;
+        }
+
+        .tech-orbit-item img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        @keyframes counter-rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        /* Footer */
+        .footer-section {
+            border-top: 1px solid rgba(252, 212, 87, 0.3);
+            background: rgba(35, 36, 58, 0.5);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-text {
+            color: rgba(252, 212, 87, 0.8);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-end;
+        }
+
+        .footer-links a {
+            color: rgba(252, 212, 87, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffdd98;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: #ffdd98;
+            border-color: #ffdd98;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: #ffc55a;
+            border-color: #ffc55a;
+            color: #2c3e50;
+        }
+
+        .btn-outline-light {
+            border-color: #ffdd98;
+            color: #ffdd98;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: #ffdd98;
+            border-color: #ffdd98;
+            color: #2c3e50;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                gap: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions .btn {
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .hero-section {
+                padding-top: 70px;
+            }
+
+            header {
+                padding: 0.5rem 0;
+            }
+
+            .hero-image-container {
+                height: 320px;
+                max-width: 320px;
+            }
+
+            .orbit-system {
+                width: 280px;
+                height: 280px;
+            }
+
+            .hero-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .orbit-1 {
+                width: 200px;
+                height: 200px;
+            }
+
+            .orbit-2 {
+                width: 240px;
+                height: 240px;
+            }
+
+            .orbit-3 {
+                width: 280px;
+                height: 280px;
+            }
+
+            .tech-orbit-item {
+                width: 40px;
+                height: 40px;
+            }
+
+            .tech-orbit-item img {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding-top: 60px;
+            }
+
+            .minimal-menu-btn {
+                width: 32px;
+                height: 32px;
+            }
+
+            header {
+                padding: 0.3rem 0;
+            }
+
+            .hero-image-container {
+                height: 260px;
+                max-width: 260px;
+            }
+
+            .orbit-system {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .orbit-1 {
+                width: 160px;
+                height: 160px;
+            }
+
+            .orbit-2 {
+                width: 190px;
+                height: 190px;
+            }
+
+            .orbit-3 {
+                width: 220px;
+                height: 220px;
+            }
+
+            .tech-orbit-item {
+                width: 36px;
+                height: 36px;
+            }
+
+            .tech-orbit-item img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
 <script>
 // Preloader
 window.addEventListener('load', function() {
@@ -787,7 +1085,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const openBtn = document.getElementById('openMenuModal');
     const closeBtn = document.getElementById('closeMenuModal');
     const modal = document.getElementById('menuModal');
-    const menuPill = openBtn; // floating-menu-pill
+    const menuPill = openBtn;
 
     if (!openBtn || !closeBtn || !modal) {
         console.error('Erro: Elementos do menu não encontrados!');
@@ -801,25 +1099,25 @@ document.addEventListener('DOMContentLoaded', function() {
         if (menuPill) menuPill.classList.remove('active');
     }
 
-    // Adicionar event listener ao container e ao botão
     function openModal(e) {
         e.preventDefault();
         e.stopPropagation();
         modal.classList.add('show');
         activateMenuPill();
         
-        // For re-triggering animation
         const content = modal.querySelector('.custom-modal-content');
         if (content) {
-            content.style.animation = 'none';
-            void content.offsetWidth; // trigger reflow
-            content.style.animation = '';
+            content.style.transform = 'translateY(-60vh) scale(0.95)';
+            content.style.opacity = '0';
+            setTimeout(() => {
+                content.style.transform = 'translateY(0) scale(1)';
+                content.style.opacity = '1';
+            }, 10);
         }
     }
 
     openBtn.addEventListener('click', openModal);
     
-    // Também adicionar ao botão interno
     const menuButton = openBtn.querySelector('.menu');
     if (menuButton) {
         menuButton.addEventListener('click', openModal);
@@ -832,14 +1130,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     closeBtn.addEventListener('click', closeModal);
     
-    // Fechar ao clicar fora do conteúdo
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
     });
     
-    // Fechar com ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === "Escape") {
             closeModal();
@@ -864,7 +1160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     function init(){
         particlesArray = [];
-        let nParticles = 60; // <-- Altere aqui para ajustar a quantidade de partículas (padrão: 60)
+        let nParticles = 35; // <-- Reduzido de 60 para 35 partículas
         for(let i=0; i < nParticles; i++){
             let size = (Math.random()*5) + 1;
             let x = (Math.random() * ((window.innerWidth - size * 2 )-(size * 2)) + size * 2);
@@ -900,10 +1196,37 @@ document.addEventListener('DOMContentLoaded', function() {
             if(this.y > canvas.height || this.y < 0){
                 this.directionY = -this.directionY;
             }
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx*dx + dy*dy);
-            if(distance < mouse.radius + this.size){
+            
+            // Campo de força do sistema de órbitas
+            const orbitCenter = {
+                x: canvas.width * 0.75, // Posição aproximada da foto no layout
+                y: canvas.height * 0.5
+            };
+            const forceRadius = 280; // Raio do campo de força aumentado
+            
+            let dx = orbitCenter.x - this.x;
+            let dy = orbitCenter.y - this.y;
+            let distanceToOrbit = Math.sqrt(dx*dx + dy*dy);
+            
+            // Se a partícula está muito perto do sistema de órbitas
+            if(distanceToOrbit < forceRadius) {
+                let forceStrength = (forceRadius - distanceToOrbit) / forceRadius;
+                let pushX = (this.x - orbitCenter.x) / distanceToOrbit * forceStrength * 6; // Intensidade aumentada
+                let pushY = (this.y - orbitCenter.y) / distanceToOrbit * forceStrength * 6; // Intensidade aumentada
+                
+                this.x += pushX;
+                this.y += pushY;
+                
+                // Adiciona um leve efeito de "vibração" quando é repelida
+                this.directionX += (Math.random() - 0.5) * 0.8 * forceStrength; // Vibração mais intensa
+                this.directionY += (Math.random() - 0.5) * 0.8 * forceStrength; // Vibração mais intensa
+            }
+            
+            // Interação com mouse (original)
+            let dxMouse = mouse.x - this.x;
+            let dyMouse = mouse.y - this.y;
+            let distanceToMouse = Math.sqrt(dxMouse*dxMouse + dyMouse*dyMouse);
+            if(distanceToMouse < mouse.radius + this.size){
                 if(mouse.x < this.x && this.x < canvas.width - this.size * 10){
                     this.x += 10;
                 }
@@ -917,6 +1240,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.y -= 10;
                 }
             }
+            
             this.x += this.directionX;
             this.y += this.directionY;
             this.draw();

@@ -1,20 +1,23 @@
+<!-- linkedin e curriculo lattes -->
+<!-- projetos e githubs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salarini-e - Projetos</title>
+    <title>Salarini-e - Quem sou eu</title>
 
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-     <link rel="stylesheet" href="/global.css">
-     <link rel="stylesheet" href="/novo/index.css">
+     <!-- <link rel="stylesheet" href="novo-style.css"> -->
+      <link rel="stylesheet" href="/global.css">
+      <link rel="stylesheet" href="/novo/index.css">
 
-     <!-- Importação das fontes -->
+     <!-- Importação das fontes Archivo Black, Cabin Sketch e Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
-    
     <script>
       // Redireciona para versão mobile se for tela pequena
       if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
@@ -44,16 +47,24 @@
             <button class="close-modal" id="closeMenuModal" aria-label="Fechar menu">
                 <i class="fa-solid fa-xmark"></i>
             </button>
+            <!-- <div class="text-center mb-4">
+                <img src="/novo/foto_sala.png" alt="Avatar" class="rounded-circle shadow" style="width: 90px; border: 4px solid #ffdd98;">
+                <h3 class="mt-3 mb-0 prosto-one-regular" style="color: #ffdd98;">Eduardo Salarini</h3>
+                <span class="text-secondary" style="font-size: 1.1rem;">Desenvolvedor Full Stack</span>
+            </div> -->
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="/"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Currículo</a>
+                    <a class="nav-link active" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Currículo</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link active" href="/projetos/"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
+                    <a class="nav-link" href="/projetos/"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
                 </li>
+                    <!-- <li class="nav-item mb-2">
+                        <a class="nav-link" href="#"><i class="fa-brands fa-github me-2"></i>Repositórios</a>
+                    </li> -->
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="/blog/"><i class="fa-solid fa-pen-nib me-2"></i>Blog</a>
                 </li>
@@ -79,7 +90,7 @@
                 <div class="row">
                     <div class="col logo-superior d-flex">
                         <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98 ;">
-                            PROJETOS
+                            Quem sou eu
                         </span>
                     </div>
                     <div class="col">
@@ -98,213 +109,98 @@
         </div>
     </header>
     
-    <!-- Container principal para projetos -->
-    <main class="container-fluid" style="min-height: 96vh; padding: 2vh 2vw;">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="projects-container">
-                    
-                    <!-- Cabeçalho da seção -->
-                    <div class="projects-header text-center mb-5">
-                        <h1 class="display-4 mb-3" style="color: white; font-weight: bold;">Meus Projetos</h1>
-                        <p class="lead" style="color: #ffdd98; max-width: 600px; margin: 0 auto;">
-                            Explore alguns dos projetos que desenvolvi ao longo da minha carreira, 
-                            desde sistemas web completos até automações e ferramentas especializadas.
-                        </p>
+    <!-- Container simulando folha A4 para Quem sou eu -->
+    <main class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 96vh; padding: 2vh 2vw;">
+        <div class="curriculum-sheet">
+            <div class="curriculum-content">
+                <!-- Cabeçalho do Quem sou eu -->
+                <div class="curriculum-header mb-4">
+                    <h1>Luís Eduardo Cordeiro Salarini</h1>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope me-2"></i>lecsalarini@gmail.com</p>
+                        <p><i class="fas fa-phone me-2"></i>(22) 99252-2121</p>
                     </div>
-
-                    <!-- Grade de projetos -->
-                    <div class="projects-grid">
-                        
-                        <!-- Projeto 1 -->
-                        <div class="project-card">
-                            <div class="project-card-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-globe"></i>
-                                </div>
-                                <h3>Sistema de Gestão Municipal</h3>
-                            </div>
-                            <div class="project-card-body">
-                                <p>Sistema web completo para gestão administrativa municipal, desenvolvido em Django com interface responsiva e múltiplos módulos integrados.</p>
-                                <div class="project-technologies">
-                                    <span class="tech-tag">Django</span>
-                                    <span class="tech-tag">Python</span>
-                                    <span class="tech-tag">Bootstrap</span>
-                                    <span class="tech-tag">MySQL</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fab fa-github me-2"></i>Ver Código
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-external-link-alt me-2"></i>Demo
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projeto 2 -->
-                        <div class="project-card">
-                            <div class="project-card-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <h3>Monitor de Logs Apache</h3>
-                            </div>
-                            <div class="project-card-body">
-                                <p>Aplicação web para monitoramento e visualização de logs do Apache em tempo real, com dashboard interativo e alertas automáticos.</p>
-                                <div class="project-technologies">
-                                    <span class="tech-tag">Python</span>
-                                    <span class="tech-tag">Flask</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">Chart.js</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fab fa-github me-2"></i>Ver Código
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-external-link-alt me-2"></i>Demo
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projeto 3 -->
-                        <div class="project-card">
-                            <div class="project-card-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-sync-alt"></i>
-                                </div>
-                                <h3>Automação SFTP</h3>
-                            </div>
-                            <div class="project-card-body">
-                                <p>Sistema de automação para transferência segura de arquivos via SFTP, com agendamento, logs detalhados e notificações.</p>
-                                <div class="project-technologies">
-                                    <span class="tech-tag">Python</span>
-                                    <span class="tech-tag">SFTP</span>
-                                    <span class="tech-tag">Cron</span>
-                                    <span class="tech-tag">Linux</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fab fa-github me-2"></i>Ver Código
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projeto 4 -->
-                        <div class="project-card">
-                            <div class="project-card-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <h3>Sistema de Controle de Ponto</h3>
-                            </div>
-                            <div class="project-card-body">
-                                <p>Aplicação para controle de ponto eletrônico com interface web, relatórios automáticos e integração com sistemas legados.</p>
-                                <div class="project-technologies">
-                                    <span class="tech-tag">Django</span>
-                                    <span class="tech-tag">PostgreSQL</span>
-                                    <span class="tech-tag">Redis</span>
-                                    <span class="tech-tag">Celery</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fab fa-github me-2"></i>Ver Código
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-external-link-alt me-2"></i>Demo
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projeto 5 -->
-                        <div class="project-card">
-                            <div class="project-card-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <h3>Portal de Feedback</h3>
-                            </div>
-                            <div class="project-card-body">
-                                <p>Sistema para coleta e análise de feedback institucional, com dashboard analítico e relatórios gerenciais automatizados.</p>
-                                <div class="project-technologies">
-                                    <span class="tech-tag">Django</span>
-                                    <span class="tech-tag">Chart.js</span>
-                                    <span class="tech-tag">SQLite</span>
-                                    <span class="tech-tag">Bootstrap</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fab fa-github me-2"></i>Ver Código
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-external-link-alt me-2"></i>Demo
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Projeto 6 -->
-                        <div class="project-card">
-                            <div class="project-card-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                                <h3>Sistema de Chamados</h3>
-                            </div>
-                            <div class="project-card-body">
-                                <p>Plataforma completa para gestão de chamados técnicos com sistema de tickets, notificações e painel administrativo.</p>
-                                <div class="project-technologies">
-                                    <span class="tech-tag">Django</span>
-                                    <span class="tech-tag">WebSockets</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">jQuery</span>
-                                </div>
-                            </div>
-                            <div class="project-card-footer">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fab fa-github me-2"></i>Ver Código
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-external-link-alt me-2"></i>Demo
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Call to action -->
-                    <div class="projects-cta text-center mt-5">
-                        <div class="cta-content">
-                            <h3 style="color: white; margin-bottom: 20px;">Interessado em algum projeto?</h3>
-                            <p style="color: #ffdd98; margin-bottom: 30px;">
-                                Entre em contato para saber mais detalhes ou para discutir uma possível colaboração.
-                            </p>
-                            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                                <a href="https://github.com/salarini-e" target="_blank" class="btn btn-outline-light">
-                                    <i class="fab fa-github me-2"></i>GitHub
-                                </a>
-                                <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="btn btn-outline-light">
-                                    <i class="fab fa-linkedin-in me-2"></i>LinkedIn
-                                </a>
-                                <a href="/contato.html" class="btn btn-primary">
-                                    <i class="fas fa-envelope me-2"></i>Contato
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Resumo -->
+                <section class="curriculum-section mb-4">
+                    <h2>Resumo</h2>
+                    <p>Desenvolvedor Full-Stack com experiência sólida em backend com Python e Django, integração entre sistemas, automação, infraestrutura Fedora com Apache, e criação de aplicações web escaláveis. Organizado, estratégico e com foco em soluções eficientes e reutilizáveis. Experiência com projetos próprios e corporativos, com habilidades que abrangem front-end, backend, DevOps e bancos de dados relacionais.</p>
+                </section>
+
+                <!-- Experiência Profissional -->
+                <section class="curriculum-section mb-4">
+                    <h2>Experiência Profissional</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Desenvolvedor Full-Stack</h3>
+                            <span class="period">2021 – Presente</span>
+                        </div>
+                        <div class="company">Prefeitura Municipal de Nova Friburgo</div>
+                  <ul class="experience-list">
+      <li>Desenvolvimento de sistemas internos utilizando Django, com foco em performance, escalabilidade e manutenibilidade.</li>
+      <li>Criação e manutenção de aplicações web com integração a bancos de dados relacionais, autenticação, relatórios e controle de permissões.</li>
+      <li>Implementação de soluções para leitura e visualização de logs do Apache em tempo real por meio de interfaces web com Bootstrap.</li>
+      <li>Administração de servidores Linux (Fedora), com configuração de ambiente de produção, tuning de performance, e deploys.</li>
+      <li>Gerenciamento de integração com storage remoto via FTP em sistemas legados, com posterior implementação de conexões seguras via SFTP em aplicações modernas com autenticação e automação de transferência.</li>
+      <li>Desenvolvimento de mecanismos de monitoramento de serviços e infraestrutura, utilizando Python e ferramentas de logwatching.</li>
+      <li>Colaboração em projetos estratégicos como sistemas de controle de ponto, feedback institucional e gestão de chamados técnicos.</li>
+      <li>Liderança técnica de estagiários de nível técnico e superior, com orientação em boas práticas de desenvolvimento, versionamento e documentação.</li>
+      <li>Contribuição na padronização da intranet institucional e melhoria da experiência do usuário com navegação estruturada por hierarquias e dropdowns.</li>
+    </ul>
+                    </div>
+                </section>
+
+                <!-- Habilidades Técnicas -->
+<section class="curriculum-section mb-4">
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <strong>Frontend:</strong> HTML5, CSS3, Bootstrap, JavaScript (ES6+), jQuery
+    </div>
+    <div class="skill-category">
+      <strong>Backend:</strong> Django, Flask, NodeJS, Codeigniter, APIs RESTful e GraphQL
+    </div>
+    <div class="skill-category">
+      <strong>Infraestrutura:</strong> Fedora Linux, Apache, Nginx, Mikrotik
+    </div>
+    <div class="skill-category">
+      <strong>Banco de Dados:</strong> MariaDB, MySQL, SQLite e PostgreSQL
+    </div>
+    <div class="skill-category">
+      <strong>Versionamento e Colaboração:</strong> Git e GitHub
+    </div>    
+    <div class="skill-category">
+      <strong>Outros:</strong> Shell Script, SFTP, SSH, consumo de APIs e automação de tarefas
+    </div>
+  </div>
+</section>
+
+
+                <!-- Formação Acadêmica -->
+                <section class="curriculum-section">
+                    <h2>Formação Acadêmica</h2>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Análise e Desenvolvimento de Sistemas</h3>
+                            <span class="status">Em andamento</span>
+                        </div>
+                        <div class="institution">UniBF Centro Universitário</div>
+                    </div>
+                    <div class="education-item mt-3">
+                        <div class="education-header">
+                            <h3>Física</h3>
+                            <span class="status">Concluído</span>
+                        </div>
+                        <div class="institution">CEFET/RJ – Nova Friburgo</div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
     
 </body>
-<!-- Bootstrap JS and dependencies -->
+/* Bootstrap JS and dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <style>
 /* Preloader */
@@ -359,7 +255,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     opacity: 0;
-    animation: fadeInUp 1s ease 1s forwards;
+    animation: fadeInUp 1s ease 0s forwards;
 }
 
 @keyframes fadeInUp {
@@ -377,7 +273,7 @@
 .custom-modal {
     display: none;
     position: fixed;
-    z-index: 99999 !important;
+    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
     left: 0; top: 0; width: 100vw; height: 100vh;
     background: rgba(20,20,30,0.85);
     justify-content: center;
@@ -455,11 +351,89 @@
     color: #23243a;
     font-weight: bold;
 }
-
-/* Estilos do menu pill */
+.custom-modal .btn-outline-primary {
+    border-color: #ffdd98;
+    color: #ffdd98;
+}
+.custom-modal .btn-outline-primary:hover {
+    background: #ffdd98;
+    color: #23243a;
+}
+.floating-menu-label-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.floating-menu-label-wrapper .menu {
+    border: 2px solid #ffdd98 !important;
+    border-radius: 12px;
+    background: transparent;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+    transition: box-shadow 0.2s;
+}
+.floating-menu-label-wrapper .menu:focus,
+.floating-menu-label-wrapper .menu:hover {
+    box-shadow: 0 0 0 2px #ffdd9855;
+}
+.floating-menu-label {
+    position: absolute;
+    top: -0.9em;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #23243a;
+    color: #ffdd98;
+    font-size: 0.95em;
+    font-weight: 500;
+    padding: 0 0.5em;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 8px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+.floating-menu-label-inline {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffdd98;
+    border-radius: 12px;
+    background: transparent;
+    padding: 2px 12px 2px 6px;
+    gap: 0.5em;
+    height: 40px;
+    /* Ajuste para centralizar verticalmente */
+}
+.floating-menu-label-inline .menu {
+    border: none !important;
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+    padding: 0 4px;
+    font-size: 1.3em;
+    outline: none;
+}
+.floating-menu-label-inline .menu:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffdd9855;
+}
+.floating-menu-label-inline-text {
+    color: #ffdd98;
+    font-size: 1.08em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    user-select: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: transparent;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
 .floating-menu-pill {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Garante que o ::before não transborde */
     display: flex;
     align-items: center;
     border: 2px solid #ffdd98;
@@ -469,9 +443,11 @@
     gap: 0.5em;
     height: 44px;
     cursor: pointer;
-    color: #ffdd98;
+    color: #ffdd98; /* Cor padrão do texto */
     transition: color 0.2s;
 }
+
+/* pseudo-elemento para o preenchimento animado */
 .floating-menu-pill::before {
     content: "";
     position: absolute;
@@ -484,28 +460,42 @@
     transition: width 0.3s ease;
     border-radius: 999px;
 }
+
+/* hover: anima o preenchimento da esquerda pra direita */
 .floating-menu-pill:hover::before,
 .floating-menu-pill.active::before {
     width: 100%;
 }
+
+/* coloca o conteúdo acima do ::before */
 .floating-menu-pill > * {
     position: relative;
     z-index: 1;
 }
+
+/* hover: muda cor do texto */
 .floating-menu-pill:hover,
 .floating-menu-pill.active {
     color: #23243a !important;
 }
+
 .floating-menu-pill .menu {
     border: none !important;
     background: transparent;
     color: inherit;
     box-shadow: none;
+    /* padding: 0 4px;*/
     font-size: 1.3em;
     outline: none;
     border-radius: 999px;
+    /* Mantém o formato do botão original */
+}
+.floating-menu-pill .menu:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffdd9855;
 }
 .floating-menu-pill-text {
+    /* color: #ffdd98; */
     font-size: 1.08em;
     font-weight: 500;
     letter-spacing: 0.01em;
@@ -516,6 +506,25 @@
     line-height: 1;
     display: flex;
     align-items: center;
+}
+@media (max-width: 991px) {
+    .floating-menu-label {
+        font-size: 0.85em;
+    }
+    .floating-menu-label-inline-text {
+        font-size: 0.95em;
+    }
+    .floating-menu-label-inline {
+        height: 36px;
+        padding: 2px 8px 2px 4px;
+    }
+    .floating-menu-pill-text {
+        font-size: 0.95em;
+    }
+    .floating-menu-pill {
+        height: 36px;
+        padding: 2px 10px 2px 4px;
+    }
 }
 
 /* Canvas como background fixo */
@@ -542,194 +551,191 @@
     transition: background 0.3s;
 }
 
-/* Garante que o conteúdo fique acima do filtro e do canvas */
+/* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal */
 body > *:not(.background-canvas):not(.background-filter):not(.custom-modal) {
     position: relative;
     z-index: 2;
 }
 
-/* Container de projetos */
-.projects-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Grade de projetos */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-/* Card do projeto */
-.project-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
-}
-
-.project-card-header {
-    padding: 25px 25px 20px 25px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.project-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #ffdd98, #ffc55a);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
+/* O modal deve sempre estar acima de tudo */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999 !important; /* aumenta ainda mais para garantir prioridade */
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(20,20,30,0.85);
     justify-content: center;
-    margin-bottom: 15px;
+    align-items: center;
+    transition: background 0.3s;
 }
 
-.project-icon i {
-    font-size: 28px;
+/* Folha A4 do Quem sou eu */
+.curriculum-sheet {
+    background: white;
+    width: 96vw;
+    max-width: 210mm; /* Largura A4 real */
+    min-height: 297mm; /* Altura A4 real */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.curriculum-content {
+    padding: 40px;
+    color: #333;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+.curriculum-content h1 {
     color: #2c3e50;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #ffdd98;
+    padding-bottom: 10px;
 }
 
-.project-card-header h3 {
-    color: #2c3e50;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin: 0;
-    line-height: 1.3;
-}
-
-.project-card-body {
-    padding: 20px 25px;
-}
-
-.project-card-body p {
+.curriculum-content p {
+    font-size: 1.1rem;
     color: #666;
-    font-size: 1rem;
-    line-height: 1.5;
     margin-bottom: 20px;
 }
 
-.project-technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+/* Cabeçalho do Quem sou eu */
+.curriculum-header h1 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.tech-tag {
-    background: #f8f9fa;
+.contact-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Seções do Quem sou eu */
+.curriculum-section h2 {
     color: #2c3e50;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid #e9ecef;
-}
-
-.project-card-footer {
-    padding: 20px 25px 25px 25px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.project-card-footer .btn {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.btn-outline-primary {
-    border-color: #2c3e50;
-    color: #2c3e50;
-}
-
-.btn-outline-primary:hover {
-    background: #2c3e50;
-    border-color: #2c3e50;
-    color: white;
-}
-
-.btn-primary {
-    background: #ffdd98;
-    border-color: #ffdd98;
-    color: #2c3e50;
-}
-
-.btn-primary:hover {
-    background: #ffc55a;
-    border-color: #ffc55a;
-    color: #2c3e50;
-}
-
-/* CTA Section */
-.projects-cta {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 50px 30px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 221, 152, 0.2);
-}
-
-.cta-content h3 {
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffdd98;
+    padding-bottom: 5px;
 }
 
-.projects-cta .btn {
-    padding: 12px 24px;
+/* Grid de habilidades */
+.skills-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.skill-category {
+    padding: 8px 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.skill-category strong {
+    color: #2c3e50;
+}
+
+/* Experiência profissional */
+.experience-item {
+    margin-bottom: 25px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.experience-header h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.period {
+    color: #666;
     font-weight: 500;
-    border-radius: 10px;
-    transition: all 0.2s ease;
+    font-size: 0.95rem;
 }
 
-.projects-cta .btn-outline-light {
-    border-color: #ffdd98;
-    color: #ffdd98;
+.company {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
 }
 
-.projects-cta .btn-outline-light:hover {
-    background: #ffdd98;
-    color: #23243a;
+.experience-list {
+    margin: 0;
+    padding-left: 20px;
 }
 
-/* Responsividade */
+.experience-list li {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Formação acadêmica */
+.education-item {
+    margin-bottom: 15px;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.education-header h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.status {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.institution {
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsivo para tablets e mobile */
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .curriculum-sheet {
+        width: 98vw;
+        min-height: auto;
+        margin: 10px 0;
     }
     
-    .project-card-header,
-    .project-card-body,
-    .project-card-footer {
+    .curriculum-content {
         padding: 20px;
     }
     
-    .projects-cta {
-        padding: 30px 20px;
-    }
-    
-    .floating-menu-pill {
-        height: 36px;
-        padding: 2px 10px 2px 4px;
-    }
-    
-    .floating-menu-pill-text {
-        font-size: 0.95em;
+    .curriculum-content h1 {
+        font-size: 2rem;
     }
 }
 
-/* Permite rolagem na página */
+/* Permite rolagem na página do Quem sou eu */
 html, body {
     height: auto;
     overflow-x: hidden;
@@ -862,37 +868,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const openBtn = document.getElementById('openMenuModal');
     const closeBtn = document.getElementById('closeMenuModal');
     const modal = document.getElementById('menuModal');
-    const menuPill = openBtn;
+    const menuPill = openBtn; // floating-menu-pill
 
     function activateMenuPill() {
         menuPill.classList.add('active');
     }
     function deactivateMenuPill() {
+        // Remove com transição suave
         menuPill.classList.remove('active');
     }
 
     openBtn.addEventListener('click', function() {
         modal.classList.add('show');
         activateMenuPill();
+        // For re-triggering animation
         const content = modal.querySelector('.custom-modal-content');
         content.style.animation = 'none';
-        void content.offsetWidth;
+        void content.offsetWidth; // trigger reflow
         content.style.animation = '';
     });
-    
     function closeModal() {
         modal.classList.remove('show');
         deactivateMenuPill();
     }
-    
     closeBtn.addEventListener('click', closeModal);
-    
+    // Fechar ao clicar fora do conteúdo
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
     });
-    
+    // Fechar com ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === "Escape") {
             closeModal();
@@ -901,7 +907,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-    // Partículas de fundo
+    // Partículas de fundo igual ao mobile
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     let mouse = {
@@ -910,27 +916,27 @@ document.addEventListener('DOMContentLoaded', function() {
         radius: (window.innerHeight/110) * (window.innerWidth/110)
     };
     let particlesArray = [];
-    
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         mouse.radius = (canvas.height/110) * (canvas.width/110);
     }
-    
     function init(){
         particlesArray = [];
-        let nParticles = 60;
+        let nParticles = 60; // <-- Altere aqui para ajustar a quantidade de partículas (padrão: 60)
         for(let i=0; i < nParticles; i++){
             let size = (Math.random()*5) + 1;
             let x = (Math.random() * ((window.innerWidth - size * 2 )-(size * 2)) + size * 2);
             let y = (Math.random() * ((window.innerHeight - size * 2 )-(size * 2)) + size * 2);
-            let directionX = (Math.random()*1.5)-0.75;
-            let directionY = (Math.random()*1.5)-0.75;
+
+            // Velocidade das partículas: diminua o valor absoluto para deixá-las mais lentas
+            let directionX = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
+            let directionY = (Math.random()*1.5)-0.75; // <-- Altere aqui para ajustar a velocidade (padrão: -0.75 a 0.75)
             let color = '#fcd457';
+
             particlesArray.push(new Particle(x,y,directionX,directionY,size,color));
         }
     }
-    
     class Particle{
         constructor(x, y, directionX, directionY, size, color){
             this.x = x;
@@ -975,7 +981,6 @@ document.addEventListener('DOMContentLoaded', function() {
             this.draw();
         }
     }
-    
     function animate(){
         requestAnimationFrame(animate);
         ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -984,7 +989,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         connect();
     }
-    
     function connect(){
         let opacityValue = 1;
         for(let a=0; a<particlesArray.length; a++){
@@ -1002,22 +1006,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
     window.addEventListener('resize',function(){
         resizeCanvas();
         init();
     });
-    
     window.addEventListener('mousemove', function(event){
         mouse.x = event.x;
         mouse.y = event.y;
     });
-    
     window.addEventListener('mouseout', function(){
         mouse.x = undefined;
         mouse.y = undefined;
     });
-    
+    // Inicialização correta do canvas e partículas
     resizeCanvas();
     init();
     animate();

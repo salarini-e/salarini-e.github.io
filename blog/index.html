@@ -32,7 +32,7 @@
     <div id="preloader" class="preloader">
         <div class="preloader-content">
             <div class="preloader-logo">
-                <span class="prosto-one-regular">Eduardo Salarini</span>
+                 <!-- <span class="prosto-one-regular">Eduardo Salarini</span> -->
             </div>
             <div class="preloader-particles">
                 <canvas id="preloader-canvas" class="preloader-canvas"></canvas>
@@ -49,16 +49,16 @@
             </button>
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
+                    <a class="nav-link" href="/index.html"><i class="fa-solid fa-house me-2"></i>Página Inicial</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/quem-sou-eu/"><i class="fa-solid fa-user me-2"></i>Currículo</a>
+                    <a class="nav-link" href="/quem-sou-eu/index.html"><i class="fa-solid fa-user me-2"></i>Quem sou eu</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link" href="/projetos/"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
+                    <a class="nav-link" href="/portfolio.html"><i class="fa-solid fa-folder-open me-2"></i>Projetos</a>
                 </li>
                 <li class="nav-item mb-2">
-                    <a class="nav-link active" href="/blog/"><i class="fa-solid fa-pen-nib me-2"></i>Blog</a>
+                    <a class="nav-link active" href="/blog/index.html"><i class="fa-solid fa-blog me-2"></i>Blog</a>
                 </li>
                 <li class="nav-item mb-2">
                     <a class="nav-link" href="/contato.html"><i class="fa-solid fa-envelope me-2"></i>Contato</a>
@@ -79,25 +79,13 @@
     <div class="background-filter"></div>
 
     <header class="container-fluid custom-animated slide-in-down custom-hidden">
-        <div class="row">
-            <div class="col">
-                <div class="row">
-                    <div class="col logo-superior d-flex">
-                        <span class="m-auto prosto-one-regular" style="font-size: 16pt; color: #ffdd98;">
-                            BLOG
-                        </span>
-                    </div>
-                    <div class="col">
-    
-                    </div>
-                    <div class="idioma" style="width: 140px;">
-                        <div class="floating-menu-pill ms-auto my-auto" id="openMenuModal">
-                            <button class="btn menu" type="button" tabindex="0">
-                                <i class="fa-solid fa-bars"></i>
-                            </button>
-                            <span class="floating-menu-pill-text">Menu</span>
-                        </div>
-                    </div>
+        <div class="row justify-content-end">
+            <div class="col-auto">
+                <div class="floating-menu-pill my-auto" id="openMenuModal">
+                    <button class="btn menu" type="button" tabindex="0">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <span class="floating-menu-pill-text">Menu</span>
                 </div>
             </div>
         </div>
@@ -408,10 +396,31 @@
             z-index: 2;
         }
 
-        /* Impede rolagem na página */
-        html, body {
-            overflow-x: hidden;
+        /* Reset e base - igual ao index */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        body {
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Main com scroll interno para conteúdo */
+        main {
+            height: calc(100vh - 140px); /* Descontar header e footer */
             overflow-y: auto;
+            overflow-x: hidden;
         }
 
         /* Estilos específicos do blog */
