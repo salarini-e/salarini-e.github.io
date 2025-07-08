@@ -1,0 +1,746 @@
+/* Estilos específicos para a página index - Baseado no original */
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    z-index: 99999 !important;
+    left: 0; 
+    top: 0; 
+    width: 100vw; 
+    height: 100vh;
+    background: rgba(20,20,30,0.85);
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Modal customizado do menu */
+.custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999 !important;
+    left: 0; 
+    top: 0; 
+    width: 100vw; 
+    height: 100vh;
+    background: rgba(20,20,30,0.85);
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.custom-modal.show {
+    display: flex;
+    animation: fadeInBg 0.3s;
+}
+
+@keyframes fadeInBg {
+    from { background: rgba(20,20,30,0); }
+    to   { background: rgba(20,20,30,0.85); }
+}
+
+.custom-modal-content {
+    background: #030303;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.021);
+    padding: 2.5rem 2rem 2rem 2rem;
+    min-width: 320px;
+    max-width: 95vw;
+    width: 370px;
+    position: relative;
+    transform: translateY(-60vh);
+    opacity: 0;
+    animation: slideDownModal 0.5s cubic-bezier(.6,1.5,.5,1) forwards;
+}
+
+@keyframes slideDownModal {
+    from {
+        transform: translateY(-60vh) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: #ffdd98;
+    font-size: 1.5rem;
+    z-index: 2;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+.custom-modal .nav-link {
+    color: #ffdd98;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.custom-modal .nav-link.active,
+.custom-modal .nav-link:hover {
+    background: #ffdd98;
+    color: #23243a !important;
+}
+
+.custom-modal .btn-outline-light {
+    border-color: #ffdd98;
+    color: #ffdd98;
+}
+
+.custom-modal .btn-outline-light:hover {
+    background: #ffdd98;
+    color: #23243a;
+}
+
+.custom-modal .btn-primary {
+    background: #ffdd98;
+    border: none;
+    color: #23243a;
+    font-weight: bold;
+}
+
+/* Menu flutuante */
+.floating-menu-pill {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Aumentado para ficar sempre visível */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffdd98;
+    border-radius: 999px;
+    background: transparent;
+    padding: 0px 16px 0px 0px;
+    gap: 0.5em;
+    height: 44px;
+    max-width: 120px; /* Tamanho máximo definido */
+    min-width: 44px;  /* Tamanho mínimo (apenas o botão) */
+    cursor: pointer;
+    color: #ffdd98;
+    transition: color 0.2s, max-width 0.3s ease;
+    white-space: nowrap;
+    /* Garantir que está sempre no canto da tela */
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.floating-menu-pill::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #ffc55a;
+    z-index: 0;
+    transition: width 0.3s ease;
+    border-radius: 999px;
+}
+
+.floating-menu-pill:hover::before,
+.floating-menu-pill.active::before {
+    width: 100%;
+}
+
+.floating-menu-pill > * {
+    position: relative;
+    z-index: 1;
+}
+
+.floating-menu-pill:hover,
+.floating-menu-pill.active {
+    color: #23243a !important;
+}
+
+.floating-menu-pill .menu {
+    border: none !important;
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+    font-size: 1.3em;
+    outline: none;
+    border-radius: 999px;
+}
+
+.floating-menu-pill-text {
+    font-size: 1.08em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    user-select: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: transparent;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease, width 0.3s ease;
+}
+
+/* Estado compacto do botão flutuante */
+.floating-menu-pill.compact {
+    max-width: 44px;
+    padding: 0;
+}
+
+.floating-menu-pill.compact .floating-menu-pill-text {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+/* Estado expandido ao hover */
+.floating-menu-pill:hover {
+    max-width: 120px;
+    padding: 0px 16px 0px 0px;
+}
+
+.floating-menu-pill:hover .floating-menu-pill-text {
+    opacity: 1;
+    width: auto;
+}
+
+/* Canvas como background fixo */
+.background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Filtro de cor sobre o canvas */
+.background-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.747);
+    transition: background 0.3s;
+}
+
+/* Garante que o conteúdo fique acima do filtro e do canvas, mas NÃO o modal nem o botão flutuante */
+body > *:not(.background-canvas):not(.background-filter):not(.custom-modal):not(.floating-menu-pill) {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 0;
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 0; /* Sem espaço para header */
+    padding-bottom: 0; /* Sem espaço para footer fixo */
+    overflow: hidden;
+}
+
+.hero-content {
+    padding-right: 2rem;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(252, 212, 87, 0.1);
+    color: #ffdd98;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(252, 212, 87, 0.3);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #ffdd98, #ffc55a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffdd98;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(252, 212, 87, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffdd98;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #ffdd98;
+    color: #23243a;
+    border-color: #ffdd98;
+    transform: translateY(-2px);
+}
+
+/* Hero Image - Sistema de Órbita */
+.hero-image-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit-system {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.photo-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.hero-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffdd98;
+    box-shadow: 0 0 0 8px rgba(252, 212, 87, 0.1);
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(252, 212, 87, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+    width: 260px;
+    height: 260px;
+    animation: rotate 20s linear infinite;
+}
+
+.orbit-2 {
+    width: 320px;
+    height: 320px;
+    animation: rotate 25s linear infinite reverse;
+}
+
+.orbit-3 {
+    width: 380px;
+    height: 380px;
+    animation: rotate 30s linear infinite;
+}
+
+.tech-orbit-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(252, 212, 87, 0.15);
+    border: 2px solid rgba(252, 212, 87, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.tech-orbit-item:hover {
+    background: rgba(252, 212, 87, 0.3);
+    border-color: #ffdd98;
+    transform: scale(1.1);
+}
+
+.orbit-1 .tech-orbit-item {
+    top: -25px;
+    left: calc(50% - 25px);
+    animation: counter-rotate 20s linear infinite;
+}
+
+.orbit-2 .tech-orbit-item {
+    top: calc(50% - 25px);
+    right: -25px;
+    animation: counter-rotate 25s linear infinite;
+}
+
+.orbit-3 .tech-orbit-item {
+    bottom: -25px;
+    left: calc(50% - 25px);
+    animation: counter-rotate 30s linear infinite reverse;
+}
+
+.tech-orbit-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes counter-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Footer */
+.footer-section {
+    border-top: 1px solid rgba(252, 212, 87, 0.3);
+    background: rgba(35, 36, 58, 0.5);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.footer-text {
+    color: rgba(252, 212, 87, 0.8);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end;
+}
+
+.footer-links a {
+    color: rgba(252, 212, 87, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffdd98;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #ffdd98;
+    border-color: #ffdd98;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #ffc55a;
+    border-color: #ffc55a;
+    color: #2c3e50;
+}
+
+.btn-outline-light {
+    border-color: #ffdd98;
+    color: #ffdd98;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: #ffdd98;
+    border-color: #ffdd98;
+    color: #2c3e50;
+}
+
+/* Animações customizadas */
+.custom-animated {
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.custom-hidden {
+    opacity: 0;
+}
+
+.custom-visible {
+    opacity: 1;
+}
+
+.slide-in-down.custom-hidden {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.slide-in-down.custom-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-in-up.custom-hidden {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.slide-in-up.custom-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-stats {
+        gap: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .hero-section {
+        padding-top: 0;
+    }
+
+    .hero-image-container {
+        height: 320px;
+        max-width: 320px;
+    }
+
+    .orbit-system {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .orbit-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .orbit-2 {
+        width: 240px;
+        height: 240px;
+    }
+
+    .orbit-3 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tech-orbit-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tech-orbit-item img {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Responsividade do botão flutuante */
+    .floating-menu-pill {
+        top: 15px;
+        right: 15px;
+        height: 40px;
+        max-width: 110px;
+        min-width: 40px;
+        padding: 0px 12px 0px 0px;
+    }
+    
+    .floating-menu-pill.compact {
+        max-width: 40px;
+    }
+    
+    .floating-menu-pill:hover {
+        max-width: 110px;
+        padding: 0px 12px 0px 0px;
+    }
+    
+    .floating-menu-pill-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 0;
+    }
+
+    .hero-image-container {
+        height: 260px;
+        max-width: 260px;
+    }
+
+    .orbit-system {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .orbit-1 {
+        width: 160px;
+        height: 160px;
+    }
+
+    .orbit-2 {
+        width: 190px;
+        height: 190px;
+    }
+
+    .orbit-3 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .tech-orbit-item {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tech-orbit-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Responsividade do botão flutuante */
+    .floating-menu-pill {
+        top: 10px;
+        right: 10px;
+        height: 38px;
+        max-width: 100px;
+        min-width: 38px;
+        padding: 0px 10px 0px 0px;
+    }
+    
+    .floating-menu-pill.compact {
+        max-width: 38px;
+    }
+    
+    .floating-menu-pill:hover {
+        max-width: 100px;
+        padding: 0px 10px 0px 0px;
+    }
+    
+    .floating-menu-pill-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Garantir que nenhum container corte o botão flutuante */
+html, body {
+    overflow-x: visible !important;
+}
+
+.container, .container-fluid {
+    overflow: visible !important;
+}
+
+/* Garantir que o botão flutuante nunca seja cortado */
+.floating-menu-pill {
+    /* Forçar visibilidade total */
+    visibility: visible !important;
+    opacity: 1 !important;
+}

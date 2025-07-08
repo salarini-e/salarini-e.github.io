@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/novo/index.css">
+    <link rel="stylesheet" href="/novo/novo-style.css">
+    <link rel="stylesheet" href="/css/animacao.css">
+    <link rel="stylesheet" href="/css/index-styles.css">
+    <link rel="stylesheet" href="/css/404-styles.css">
+    <link rel="stylesheet" href="/css/common-styles.css">
+
+    <!-- Importação das fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <%- include('partials/preloader') %>
+
+    <!-- Modal do menu -->
+    <%- include('partials/menu-modal') %>
+
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <!-- Partículas de fundo -->
+        <div class="particles-container">
+            <canvas id="particles-canvas"></canvas>
+        </div>
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <section class="error-section">
+                        <div class="error-content">
+                            <h1 class="error-code">404</h1>
+                            <h2 class="error-title">Página não encontrada</h2>
+                            <p class="error-description">
+                                Ops! A página que você está procurando não existe ou foi movida.
+                            </p>
+                            <div class="error-actions">
+                                <a href="/" class="btn btn-primary btn-lg me-3">
+                                    <i class="fas fa-home me-2"></i>Voltar ao Início
+                                </a>
+                                <a href="/contato" class="btn btn-outline-light btn-lg">
+                                    <i class="fas fa-envelope me-2"></i>Reportar Problema
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Particles JS -->
+    <script>
+        // Particles animation for 404 page
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Particle system
+        const particles = [];
+        const particleCount = 50;
+        
+        class Particle {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * canvas.height;
+            }
+            
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = 0;
+                this.speed = Math.random() * 2 + 1;
+                this.size = Math.random() * 3 + 1;
+                this.opacity = Math.random() * 0.5 + 0.3;
+            }
+            
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = '#ffdd98';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        
+        // Create particles
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+        
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+    </script>
+
+</body>
+</html>

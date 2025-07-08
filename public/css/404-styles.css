@@ -1,0 +1,84 @@
+/* 404 Error Page Styles */
+
+/* Partículas de fundo */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+#particles-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.error-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: #ffdd98;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.error-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.error-description {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.error-actions {
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ffdd98, #ffc107);
+    border: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.btn-outline-light {
+    border-color: #ffdd98;
+    color: #ffdd98;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffdd98;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 6rem;
+    }
+    
+    .error-title {
+        font-size: 2rem;
+    }
+    
+    .error-description {
+        font-size: 1rem;
+    }
+}

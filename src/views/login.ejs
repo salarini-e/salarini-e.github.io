@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/novo/index.css">
+    <link rel="stylesheet" href="/novo/novo-style.css">
+    <link rel="stylesheet" href="/css/animacao.css">
+    <link rel="stylesheet" href="/css/index-styles.css">
+    <link rel="stylesheet" href="/css/login-styles.css">
+    <link rel="stylesheet" href="/css/common-styles.css">
+
+    <!-- Importação das fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <%- include('partials/preloader') %>
+
+    <!-- Modal do menu -->
+    <%- include('partials/menu-modal') %>
+
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <!-- Partículas de fundo -->
+        <div class="particles-container">
+            <canvas id="particles-canvas"></canvas>
+        </div>
+        
+        <div class="container">
+            <div class="row justify-content-center align-items-center min-vh-100">
+                <div class="col-lg-5 col-md-7 col-sm-9">
+                    <!-- Formulário de Login -->
+                    <section class="login-section custom-animated slide-in-down custom-hidden">
+                        <div class="login-container">
+                            <!-- Header do Login -->
+                            <div class="login-header text-center mb-4">
+                                <h1 class="page-title">Área Restrita</h1>
+                                <p class="page-subtitle">Acesse o painel administrativo</p>
+                            </div>
+
+                            <!-- Formulário -->
+                            <form id="loginForm" class="login-form">
+                                <!-- Campo Email/Usuário -->
+                                <div class="form-group mb-3">
+                                    <label for="email" class="form-label">
+                                        <i class="fas fa-user me-2"></i>Email ou Usuário
+                                    </label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+
+                                <!-- Campo Senha -->
+                                <div class="form-group mb-3">
+                                    <label for="password" class="form-label">
+                                        <i class="fas fa-lock me-2"></i>Senha
+                                    </label>
+                                    <div class="password-input-container">
+                                        <input type="password" class="form-control" id="password" name="password" required>
+                                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                                            <i class="fas fa-eye" id="toggleIcon"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Lembrar de mim -->
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">
+                                        Lembrar de mim
+                                    </label>
+                                </div>
+
+                                <!-- Botão de Login -->
+                                <button type="submit" class="btn btn-primary w-100 mb-3">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Entrar
+                                </button>
+
+                                <!-- Link de recuperação -->
+                                <div class="text-center">
+                                    <a href="#" class="forgot-password" onclick="showForgotPassword()">
+                                        Esqueceu sua senha?
+                                    </a>
+                                </div>
+                            </form>
+
+                            <!-- Mensagem de Status -->
+                            <div id="statusMessage" class="status-message d-none"></div>
+                        </div>
+                    </section>
+
+                    <!-- Modal de Recuperação de Senha -->
+                    <div class="forgot-password-modal d-none" id="forgotModal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5>Recuperar Senha</h5>
+                                <button type="button" class="btn-close" onclick="closeForgotPassword()">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Digite seu email para receber as instruções de recuperação:</p>
+                                <form id="forgotForm">
+                                    <div class="form-group mb-3">
+                                        <input type="email" class="form-control" id="forgotEmail" placeholder="Seu email" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="fas fa-envelope me-2"></i>Enviar Instruções
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 custom-animated slide-in-up custom-hidden custom-footer">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Eduardo Salarini. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="/" class="footer-link">Início</a>
+                <span class="footer-separator">|</span>
+                <a href="/sobre" class="footer-link">Sobre</a>
+                <span class="footer-separator">|</span>
+                <a href="/contato" class="footer-link">Contato</a>
+                <span class="footer-separator">|</span>
+                <a href="/politica-de-privacidade" class="footer-link">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Particles JS -->
+    <script>
+        // Particles animation
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Particle system
+        const particles = [];
+        const particleCount = 40;
+        
+        class Particle {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * canvas.height;
+            }
+            
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = 0;
+                this.speed = Math.random() * 1.2 + 0.3;
+                this.size = Math.random() * 2.5 + 1;
+                this.opacity = Math.random() * 0.4 + 0.2;
+            }
+            
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = '#ffdd98';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        
+        // Create particles
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+        
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+        
+        // Login functionality
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+        
+        function showForgotPassword() {
+            document.getElementById('forgotModal').classList.remove('d-none');
+        }
+        
+        function closeForgotPassword() {
+            document.getElementById('forgotModal').classList.add('d-none');
+        }
+        
+        function showMessage(message, type = 'info') {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.className = `status-message alert alert-${type}`;
+            statusDiv.textContent = message;
+            statusDiv.classList.remove('d-none');
+            
+            setTimeout(() => {
+                statusDiv.classList.add('d-none');
+            }, 5000);
+        }
+        
+        // Handle login form
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simulação de login (substitua pela lógica real)
+            if (email && password) {
+                showMessage('Processando login...', 'info');
+                
+                // Simular requisição
+                setTimeout(() => {
+                    // Aqui você implementaria a lógica real de autenticação
+                    showMessage('Credenciais inválidas. Tente novamente.', 'danger');
+                }, 2000);
+            } else {
+                showMessage('Por favor, preencha todos os campos.', 'warning');
+            }
+        });
+        
+        // Handle forgot password form
+        document.getElementById('forgotForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('forgotEmail').value;
+            
+            if (email) {
+                showMessage('Instruções enviadas para seu email!', 'success');
+                closeForgotPassword();
+            } else {
+                showMessage('Por favor, digite um email válido.', 'warning');
+            }
+        });
+    </script>
+    
+</body>
+</html>

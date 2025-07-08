@@ -1,0 +1,38 @@
+{
+  "name": "salarini-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio pessoal de Eduardo Salarini - Site desenvolvido com Node.js e Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm run copy-assets",
+    "copy-assets": "cpx \"public/**/*\" dist/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "nodejs",
+    "express",
+    "web-development",
+    "full-stack"
+  ],
+  "author": "Eduardo Salarini <eduardo@salarini.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "helmet": "^7.2.0"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

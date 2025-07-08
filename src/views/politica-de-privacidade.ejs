@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/novo/index.css">
+    <link rel="stylesheet" href="/novo/novo-style.css">
+    <link rel="stylesheet" href="/css/animacao.css">
+    <link rel="stylesheet" href="/css/index-styles.css">
+    <link rel="stylesheet" href="/css/politica-styles.css">
+    <link rel="stylesheet" href="/css/common-styles.css">
+
+    <!-- Importação das fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <%- include('partials/preloader') %>
+
+    <!-- Modal do menu -->
+    <%- include('partials/menu-modal') %>
+
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+        <!-- Partículas de fundo -->
+        <div class="particles-container">
+            <canvas id="particles-canvas"></canvas>
+        </div>
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Cabeçalho da página -->
+                    <section class="politica-header text-center py-5 custom-animated slide-in-down custom-hidden">
+                        <h1 class="page-title">Política de Privacidade</h1>
+                        <p class="page-subtitle">Como protegemos e utilizamos suas informações pessoais</p>
+                    </section>
+
+                    <!-- Conteúdo da política -->
+                    <section class="politica-content custom-animated slide-in-up custom-hidden">
+                        <div class="policy-section">
+                            <h2 class="section-header">1. Informações que Coletamos</h2>
+                            <p>Este site coleta as seguintes informações:</p>
+                            <ul>
+                                <li><strong>Informações de Contato:</strong> Nome, email e mensagem enviados através do formulário de contato</li>
+                                <li><strong>Dados de Navegação:</strong> Informações sobre seu uso do site, incluindo páginas visitadas e tempo de permanência</li>
+                                <li><strong>Dados Técnicos:</strong> Endereço IP, tipo de navegador, sistema operacional e dados de cookies</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-section">
+                            <h2 class="section-header">2. Como Utilizamos suas Informações</h2>
+                            <p>Utilizamos suas informações para:</p>
+                            <ul>
+                                <li>Responder às suas mensagens de contato</li>
+                                <li>Melhorar a experiência do usuário no site</li>
+                                <li>Analisar o tráfego e comportamento dos visitantes</li>
+                                <li>Manter a segurança e funcionalidade do site</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-section">
+                            <h2 class="section-header">3. Compartilhamento de Informações</h2>
+                            <p>Não vendemos, trocamos ou transferimos suas informações pessoais para terceiros, exceto:</p>
+                            <ul>
+                                <li>Quando necessário para cumprir a lei</li>
+                                <li>Para proteger nossos direitos e segurança</li>
+                                <li>Com provedores de serviços confiáveis que nos ajudam a operar o site</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-section">
+                            <h2 class="section-header">4. Cookies</h2>
+                            <p>Este site utiliza cookies para:</p>
+                            <ul>
+                                <li>Melhorar a experiência de navegação</li>
+                                <li>Analisar o tráfego do site</li>
+                                <li>Personalizar conteúdo e anúncios</li>
+                            </ul>
+                            <p>Você pode desabilitar os cookies nas configurações do seu navegador, mas isso pode afetar a funcionalidade do site.</p>
+                        </div>
+
+                        <div class="policy-section">
+                            <h2 class="section-header">5. Segurança</h2>
+                            <p>Implementamos medidas de segurança apropriadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                        </div>
+
+                        <div class="policy-section">
+                            <h2 class="section-header">6. Seus Direitos</h2>
+                            <p>Você tem o direito de:</p>
+                            <ul>
+                                <li>Acessar suas informações pessoais</li>
+                                <li>Corrigir informações inexatas</li>
+                                <li>Solicitar a exclusão de suas informações</li>
+                                <li>Retirar seu consentimento</li>
+                            </ul>
+                        </div>
+
+                        <div class="policy-section">
+                            <h2 class="section-header">7. Alterações nesta Política</h2>
+                            <p>Esta política pode ser atualizada periodicamente. Recomendamos que você revise esta página regularmente para se manter informado sobre como protegemos suas informações.</p>
+                        </div>
+
+                        <div class="policy-section">
+                            <h2 class="section-header">8. Contato</h2>
+                            <p>Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco:</p>
+                            <div class="contact-info">
+                                <p><strong>Email:</strong> eduardo@salarini.dev</p>
+                                <p><strong>Site:</strong> <a href="/" class="footer-link">esalarini.com.br</a></p>
+                            </div>
+                        </div>
+
+                        <div class="last-updated">
+                            <p><em>Última atualização: Janeiro de 2025</em></p>
+                        </div>
+                    </section>
+
+                    <!-- Call to Action -->
+                    <section class="cta-section text-center py-5 custom-animated slide-in-up custom-hidden">
+                        <div class="cta-container">
+                            <h3 class="cta-title">Dúvidas sobre nossa política?</h3>
+                            <p class="cta-text">
+                                Entre em contato comigo para esclarecer qualquer questão sobre privacidade e proteção de dados.
+                            </p>
+                            <a href="/contato" class="btn btn-primary btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Entrar em Contato
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 custom-animated slide-in-up custom-hidden custom-footer">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 Eduardo Salarini. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="/sobre" class="footer-link">Sobre</a>
+                <span class="footer-separator">|</span>
+                <a href="/portfolio" class="footer-link">Projetos</a>
+                <span class="footer-separator">|</span>
+                <a href="/blog" class="footer-link">Blog</a>
+                <span class="footer-separator">|</span>
+                <a href="/contato" class="footer-link">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Particles JS -->
+    <script>
+        // Particles animation
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        // Particle system
+        const particles = [];
+        const particleCount = 30;
+        
+        class Particle {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * canvas.height;
+            }
+            
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = 0;
+                this.speed = Math.random() * 1.5 + 0.5;
+                this.size = Math.random() * 2 + 1;
+                this.opacity = Math.random() * 0.3 + 0.2;
+            }
+            
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = '#ffdd98';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        
+        // Create particles
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+        
+        // Animation loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+    </script>
+    
+</body>
+</html>

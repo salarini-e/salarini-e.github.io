@@ -1,0 +1,54 @@
+/* Estilos comuns para todas as páginas */
+
+/* Títulos principais */
+.page-title {
+    color: #ffdd98 !important;
+    font-weight: bold !important;
+}
+
+.page-subtitle {
+    color: #ffdd98 !important;
+    opacity: 0.8 !important;
+}
+
+/* Seções de cabeçalho */
+.section-header h3 {
+    color: #ffdd98 !important;
+}
+
+.cta-title {
+    color: white !important;
+    margin-bottom: 20px !important;
+}
+
+.cta-text {
+    color: #ffdd98 !important;
+    margin-bottom: 30px !important;
+}
+
+/* Footer */
+.custom-footer {
+    border-top: 1px solid #ffdd98 !important;
+    margin-top: 5rem !important;
+}
+
+.footer-copyright {
+    color: #ffdd98 !important;
+}
+
+.footer-link {
+    color: #ffdd98 !important;
+    opacity: 0.7 !important;
+    text-decoration: none !important;
+}
+
+.footer-separator {
+    color: #ffdd98 !important;
+    opacity: 0.7 !important;
+}
+
+/* Elementos específicos do JavaScript (para evitar conflitos) */
+.article-image-dynamic {
+    background-size: cover;
+    background-position: center;
+}

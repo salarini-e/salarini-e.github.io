@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/novo/index.css">
+    <link rel="stylesheet" href="/novo/novo-style.css">
+    <link rel="stylesheet" href="/css/animacao.css">
+    <link rel="stylesheet" href="/css/index-styles.css">
+    <link rel="stylesheet" href="/css/portfolio-styles.css">
+    <link rel="stylesheet" href="/css/common-styles.css">
+
+    <!-- Importação das fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
+    
+    <script>
+      // Redireciona para versão mobile se for tela pequena
+      if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+        if (window.innerWidth < 768) {
+          window.location.href = "/m/index.html";
+        }
+      }
+    </script>
+</head>
+<body>
+    <!-- Preloader -->
+    <%- include('partials/preloader') %>
+
+    <!-- Modal customizado do menu -->
+    <%- include('partials/menu-modal') %>
+
+    <!-- Canvas de fundo -->
+    <canvas id="canvas" class="background-canvas"></canvas>
+    <div class="background-filter"></div>
+    
+    <!-- Botão flutuante do menu -->
+    <div class="floating-menu-pill" id="openMenuModal">
+        <button class="btn menu" type="button" tabindex="0">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="floating-menu-pill-text">Menu</span>
+    </div>
+    
+    <main class="container-fluid my-5 custom-animated slide-in-up custom-hidden">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <!-- Header da página -->
+                <div class="projects-header text-center mb-5 custom-animated fade-in-scale custom-hidden">
+                    <h1 class="display-4 mb-3 page-title">Meus Projetos</h1>
+                    <p class="lead page-subtitle">Tecnologias, soluções e ideias transformadas em realidade</p>
+                </div>
+
+                <!-- Grade de projetos -->
+                <div class="projects-grid custom-animated slide-in-right custom-hidden">
+                    
+                    <!-- Projeto 1 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Sistema de Gestão Municipal</h3>
+                        </div>
+                        <div class="project-card-body">
+                            <p>Sistema web completo para gestão administrativa municipal, desenvolvido em Django com interface responsiva e múltiplos módulos integrados.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-github me-2"></i>Ver Código
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Monitor de Logs Apache</h3>
+                        </div>
+                        <div class="project-card-body">
+                            <p>Aplicação web para monitoramento e visualização de logs do Apache em tempo real, com dashboard interativo e alertas automáticos.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-github me-2"></i>Ver Código
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3>Automação SFTP</h3>
+                        </div>
+                        <div class="project-card-body">
+                            <p>Sistema de automação para transferência segura de arquivos via SFTP, com agendamento, logs detalhados e notificações.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">SFTP</span>
+                                <span class="tech-tag">Cron</span>
+                                <span class="tech-tag">Linux</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-github me-2"></i>Ver Código
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 4 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Sistema de Controle de Ponto</h3>
+                        </div>
+                        <div class="project-card-body">
+                            <p>Aplicação para controle de ponto eletrônico com interface web, relatórios automáticos e integração com sistemas legados.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Celery</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-github me-2"></i>Ver Código
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 5 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Portal de Feedback</h3>
+                        </div>
+                        <div class="project-card-body">
+                            <p>Sistema para coleta e análise de feedback institucional, com dashboard analítico e relatórios gerenciais automatizados.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">SQLite</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-github me-2"></i>Ver Código
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 6 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <div class="project-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Sistema de Chamados</h3>
+                        </div>
+                        <div class="project-card-body">
+                            <p>Plataforma completa para gestão de chamados técnicos com sistema de tickets, notificações e painel administrativo.</p>
+                            <div class="project-technologies">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">WebSockets</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">jQuery</span>
+                            </div>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-github me-2"></i>Ver Código
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="fas fa-external-link-alt me-2"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Tecnologias -->
+                <div class="technologies-section mt-5 custom-animated fade-in custom-hidden">
+                    <h3 class="mb-4 text-center section-header">Tecnologias Utilizadas</h3>
+                    <div class="technologies-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Call to action -->
+                <div class="projects-cta text-center mt-5 custom-animated fade-in custom-hidden">
+                    <div class="cta-content">
+                        <h3 class="cta-title">Interessado em algum projeto?</h3>
+                        <p class="cta-text">
+                            Entre em contato para saber mais detalhes ou para discutir uma possível colaboração.
+                        </p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="https://github.com/salarini-e" target="_blank" class="btn btn-outline-light">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="btn btn-outline-light">
+                                <i class="fab fa-linkedin-in me-2"></i>LinkedIn
+                            </a>
+                            <a href="/contato" class="btn btn-primary">
+                                <i class="fas fa-envelope me-2"></i>Contato
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 custom-animated slide-in-up custom-hidden custom-footer">
+        <div class="container">
+            <p class="mb-1 footer-copyright">&copy; 2025 Eduardo Salarini. Todos os direitos reservados.</p>
+            <p class="mb-0">
+                <a href="/politica-de-privacidade" class="footer-link">Política de Privacidade</a>
+                <span class="mx-2 footer-separator">|</span>
+                <a href="/contato" class="footer-link">Contato</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+    
+</body>
+</html>
+

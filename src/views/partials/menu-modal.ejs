@@ -1,0 +1,49 @@
+<!-- Modal customizado do menu -->
+<div id="menuModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <button class="close-modal" id="closeMenuModal" aria-label="Fechar menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="nav flex-column mb-4 mt-4">
+            <li class="nav-item mb-2">
+                <a class="nav-link <%= page === 'home' ? 'active' : '' %>" href="/">
+                    <i class="fa-solid fa-house me-2"></i>Página Inicial
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link <%= page === 'about' ? 'active' : '' %>" href="/quem-sou-eu">
+                    <i class="fa-solid fa-user me-2"></i>Quem sou eu
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link <%= page === 'portfolio' ? 'active' : '' %>" href="/portfolio">
+                    <i class="fa-solid fa-folder-open me-2"></i>Projetos
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link <%= page === 'blog' ? 'active' : '' %>" href="/blog">
+                    <i class="fa-solid fa-blog me-2"></i>Blog
+                </a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link <%= page === 'contato' ? 'active' : '' %>" href="/contato">
+                    <i class="fa-solid fa-envelope me-2"></i>Contato
+                </a>
+            </li>
+        </ul>
+        <div class="d-flex justify-content-center gap-3 mb-3">
+            <a href="https://github.com/salarini-e" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/eduardo-salarini-1b5a272a2/" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://lattes.cnpq.br/" target="_blank" class="btn btn-outline-light btn-sm rounded-circle" title="Lattes">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </a>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary w-100 mb-2">Login</button>                
+        </div>
+    </div>
+</div>

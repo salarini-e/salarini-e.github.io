@@ -270,11 +270,13 @@
 /* Transições suaves para elementos ocultos */
 .custom-hidden {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
 
 .custom-visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsividade - reduzir animações em telas menores */
