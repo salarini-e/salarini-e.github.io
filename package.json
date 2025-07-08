@@ -5,13 +5,10 @@
   "description": "Portfolio pessoal de Eduardo Salarini - Site desenvolvido com Node.js e Express",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "gulp",
     "dev": "nodemon server.js",
-    "build": "npm run copy-assets",
-    "copy-assets": "cpx \"public/**/*\" dist/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build": "gulp build",    
+    "deploy": "gh-pages -d public"
   },
   "keywords": [
     "portfolio",
@@ -33,6 +30,7 @@
   },
   "devDependencies": {
     "cpx": "^1.5.0",
+    "gh-pages": "^6.3.0",
     "nodemon": "^3.1.10"
   },
   "engines": {
