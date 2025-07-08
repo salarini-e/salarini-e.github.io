@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="<%= locals.lang || 'pt-br' %>">
+<%- include('partials/head') %>
+<body>
+    <!-- Preloader -->
+    <%- include('partials/preloader') %>
+
+    <!-- Modal customizado do menu -->
+    <%- include('partials/menu-modal') %>
+
+    <% if (locals.useBackgroundCanvas !== false) { %>
+        <!-- Canvas de fundo -->
+        <%- include('partials/background-canvas') %>
+    <% } %>
+
+    <% if (locals.useParticlesBackground) { %>
+        <!-- Partículas de fundo -->
+        <%- include('partials/particles-background') %>
+    <% } %>
+    
+    <% if (locals.useFloatingMenu !== false) { %>
+        <!-- Botão flutuante do menu -->
+        <%- include('partials/floating-menu-button') %>
+    <% } %>
+
+    <% if (locals.useHeader) { %>
+        <!-- Header -->
+        <%- include('partials/header') %>
+    <% } %>
+
+    <!-- Main Content -->
+    <%- body %>
+
+    <% if (locals.useFooter) { %>
+        <!-- Footer -->
+        <%- include('partials/footer') %>
+    <% } %>
+
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
+    
+</body>
+</html>
