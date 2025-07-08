@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/novo/novo-style.css">
     <link rel="stylesheet" href="/css/animacao.css">
     <link rel="stylesheet" href="/css/index-styles.css">
+    <link rel="stylesheet" href="/css/preloader-styles.css">
     <% if (locals.additionalCSS) { %>
         <% additionalCSS.forEach(function(css) { %>
             <link rel="stylesheet" href="<%= css %>">
@@ -23,15 +24,11 @@
     <!-- Importação das fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cabin+Sketch:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+SC:wght@100..900&family=Prosto+One&display=swap" rel="stylesheet">
-    
-    <% if (locals.mobileRedirect && mobileRedirect !== false) { %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWJ57R1VPQ"></script>
     <script>
-      // Redireciona para versão mobile se for tela pequena
-      if (window.location.pathname === "<%= locals.redirectPath || '/' %>" || window.location.pathname === "<%= locals.redirectPath || '/' %>index.html") {
-        if (window.innerWidth < 768) {
-          window.location.href = "/m/index.html";
-        }
-      }
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-QWJ57R1VPQ');
     </script>
-    <% } %>
 </head>

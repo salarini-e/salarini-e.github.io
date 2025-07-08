@@ -1,5 +1,6 @@
 // Arquivo JavaScript principal
 document.addEventListener('DOMContentLoaded', function() {
+    
     // Configuração do preloader
     const preloader = document.getElementById('preloader');
     if (preloader) {
