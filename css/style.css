@@ -1,0 +1,211 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Remove scrollbar do corpo da página */
+    height: 100%; /* Certifica que o body ocupa 100% da altura da janela */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffc55a;
+    color: #333;
+}
+header{
+    background-color: #000000;
+    background-image: url('https://cdn.wallpapersafari.com/37/27/4N1n9D.jpg');
+    background-size: cover;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+}
+header .avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+nav h1{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    /* margin: 20px; */
+    /* width: 100%; */
+}
+nav a {
+    margin: 0 30px 0 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+header #redes{
+    display: flex;
+    justify-content: center;
+}
+header #redes div{
+    display: flex;
+    margin: 0 10px;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;    
+}
+header #redes div a{
+    display: flex;
+    color: #000000;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+header #redes div a i{
+    margin: auto
+}
+#main{
+    margin: 10px 40px 0px 40px;
+    height: 75vh;
+}
+#main .content{
+    width: cal(100% - 20px);
+    /* height: cal(100% - 10px);    */
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;     
+    padding: 20px 20px 20px 60px;
+}
+#main .content #bemvindo h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 22pt;
+    text-transform: uppercase;
+}
+#main .content #bemvindo .row .col h2{
+    font-size: 16pt;
+}
+#main .content p{
+    text-indent: 40px;
+    line-height: 1.5;
+    font-size: 12pt;
+}
+#main-left{
+    margin: 10px 0px 0px 40px;
+    height: 75vh;
+    overflow-y: auto;
+    
+}
+#main-left div:first-child{
+    width: 100%;
+    height: 100%;   
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;     
+    overflow-y: auto;
+}
+#main-right{
+    overflow-y: auto;
+    height: 79vh;     
+}
+#main-right section {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#blog-title{
+    color: white;
+    background-color: #000000;
+    background-image: url('https://cdn.wallpapersafari.com/37/27/4N1n9D.jpg');      
+}
+#main-right h2{
+    margin-top: 0;
+    margin-bottom: 0;    
+    padding: 0 !important;
+}
+.project, article {
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-top: 10px;
+}
+input, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+input[type="submit"] {
+    margin-top: 20px;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #1e5837;
+}
+
+
+.repo {
+    display: flex;
+    background-color: #949494;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.repo a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.repo a:hover {
+    text-decoration: underline;
+}
+.repo h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.spinner {
+    border: 8px solid #bebebe;
+    border-top: 8px solid  #383838;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#github, #history {
+    position: relative;
+}
+
+#github .spinner, #history .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#main ul li {
+    margin-bottom: 10px;
+}

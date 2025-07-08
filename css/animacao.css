@@ -1,0 +1,311 @@
+/* =========================================
+   ANIMAÇÕES CUSTOMIZADAS
+   ========================================= */
+
+/* Classe base para elementos animados */
+.custom-animated {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animação de entrada deslizando de cima */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-down {
+    animation-name: slideInDown;
+    animation-delay: 0.1s;
+}
+
+/* Animação de entrada deslizando de baixo */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-up {
+    animation-name: slideInUp;
+    animation-delay: 0.2s;
+}
+
+/* Animação de entrada deslizando da esquerda */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation-name: slideInLeft;
+    animation-delay: 0.4s;
+}
+
+/* Animação de entrada deslizando da direita */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation-name: slideInRight;
+    animation-delay: 0.6s;
+}
+
+/* Animação de fade com escala */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-scale {
+    animation-name: fadeInScale;
+    animation-delay: 0.3s;
+}
+
+/* Animação de rotação suave */
+@keyframes fadeInRotate {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.fade-in-rotate {
+    animation-name: fadeInRotate;
+    animation-delay: 0.5s;
+}
+
+/* Animação de bouncing */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.bounce-in {
+    animation-name: bounceIn;
+    animation-delay: 0.4s;
+    animation-duration: 1s;
+}
+
+/* Animação de entrada com blur */
+@keyframes fadeInBlur {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+    }
+}
+
+.fade-in-blur {
+    animation-name: fadeInBlur;
+    animation-delay: 0.7s;
+}
+
+/* Animação de typewriter para texto */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCursor {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #ffdd98;
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid #ffdd98;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typewriter 2s steps(30, end), blinkCursor 0.5s step-end infinite;
+    animation-delay: 1s;
+}
+
+/* Animação de ondulação */
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.wave {
+    animation-name: wave;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Animação de pulso suave */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pulse {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Animação de entrada sequencial para filhos */
+.stagger-children > * {
+    opacity: 0;
+    animation-name: slideInUp;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Animação de hover para elementos interativos */
+.hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(252, 212, 87, 0.2);
+}
+
+/* Animação de entrada com efeito de revelação */
+@keyframes reveal {
+    from {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.reveal {
+    animation-name: reveal;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Transições suaves para elementos ocultos */
+.custom-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.custom-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsividade - reduzir animações em telas menores */
+@media (max-width: 768px) {
+    .custom-animated {
+        animation-duration: 0.5s;
+    }
+    
+    .stagger-children > * {
+        animation-duration: 0.4s;
+    }
+    
+    .typewriter {
+        animation-duration: 1.5s;
+    }
+}
+
+/* Preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .custom-animated,
+    .stagger-children > *,
+    .hover-lift,
+    .wave,
+    .pulse {
+        animation: none;
+        transition: none;
+    }
+    
+    .custom-hidden {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,121 @@
+/* Reset e base - igual ao index */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    color: #ffdd98;
+    font-family: 'Poppins', 'Inter', Arial, sans-serif;
+}
+
+/* Container com posicionamento fixo */
+.contato-container {
+    max-width: 420px;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.781);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 2.5rem 2rem 2rem 2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border: 1px solid rgba(255, 221, 152, 0.2);
+}
+
+.contato-title {
+    color: #ffdd98;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.form-label {
+    color: #ffdd98;
+    font-weight: 500;
+}
+
+.form-control {
+    background: #23243a;
+    color: #ffdd98;
+    border: 2px solid #ffdd98;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.form-control:focus {
+    background: #23243a;
+    color: #ffdd98;
+    border-color: #ffc55a;
+    box-shadow: 0 0 0 2px #ffdd9855;
+}
+
+.btn-enviar {
+    background: #ffdd98;
+    color: #23243a;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    padding: 0.7em 0;
+    font-size: 1.1em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-enviar:hover, 
+.btn-enviar:focus {
+    background: #ffc55a;
+    color: #23243a;
+}
+
+.voltar-link {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #ffdd98;
+    text-decoration: underline;
+    font-size: 1em;
+}
+
+.voltar-link:hover {
+    color: #ffc55a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contato-container {
+        width: 95%;
+        padding: 2rem 1.5rem;
+        max-width: 380px;
+    }
+    
+    .contato-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-container {
+        width: 95%;
+        padding: 1.5rem 1rem;
+        max-width: 320px;
+    }
+    
+    .contato-title {
+        font-size: 1.6rem;
+    }
+}
